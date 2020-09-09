@@ -1,5 +1,11 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+
+from .models import ContainerItem
 
 
 def index(request):
-    return HttpResponse("Hello, world Pajton i Django!")
+    containers = ContainerItem.objects.all()
+    context = {
+        'containers': containers
+    }
+    return render(request, 'index.html', context)
