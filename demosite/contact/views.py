@@ -1,5 +1,12 @@
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from django.urls import reverse
 
 
-def index(request):
-    return HttpResponse("Hello, world Pajton i Django!")
+def contact(request):
+    return render(request, 'contact.html')
+
+
+def contact_send_message(request):
+    # TODO+ obsłużyć formularz
+    return HttpResponseRedirect(reverse('main'))

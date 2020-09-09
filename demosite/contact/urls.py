@@ -3,5 +3,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    # /contact
+    path('', views.contact, name='contact'),
+    # /contact/send_message
+    path('send_message', views.contact_send_message, name='send_message')
 ]
