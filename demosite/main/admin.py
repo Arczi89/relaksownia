@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import SliderItem, ContainerItem
+
+admin.site.register(SliderItem)
+admin.site.register(ContainerItem)
