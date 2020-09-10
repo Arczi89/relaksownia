@@ -1,12 +1,14 @@
 {% extends 'main\base.html' %}
+{% load static %}
 
 {% block content %}
     {% if containers %}
-    <div class="container" id="container">
+    <div class="columns" id="container">
         {% for container in containers %}
-        <div class="span4 container-item">
+        <div class="span4 column-item">
             <div class="container-image">
-                <img width="80" height="80" alt="{{ container.image_alternate_text }}" src="{{ container.image_url }}"/>
+                <!-- TODO+ znalazłem poprawniejszy sposób zaciągania statików-->
+                <img width="80" height="80" alt="{{ container.image_alternate_text }}" src="{% get_static_prefix %}main/{{ container.image_url }}"/>
             </div>
             <div class="container-description">
                 <h3> header </h3>

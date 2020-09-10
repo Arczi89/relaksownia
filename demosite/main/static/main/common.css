@@ -1,3 +1,21 @@
+body {
+    background-color: black;
+    color: white;
+}
 .content-container {
     padding: 100px;
 }
+
+/* main style */
+.columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.column-item {
+    padding: 1rem;
+    border: gold 2px solid;
+}
+
