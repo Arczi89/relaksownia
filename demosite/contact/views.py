@@ -1,6 +1,4 @@
-from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.urls import reverse
 
 
 def contact(request):
@@ -9,4 +7,4 @@ def contact(request):
 
 def contact_send_message(request):
     # TODO+ obsłużyć formularz
-    return HttpResponseRedirect(reverse('main'))
+    return render(request, 'contact.html')

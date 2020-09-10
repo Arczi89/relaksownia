@@ -8,4 +8,4 @@ def main(request):
     context = {
         'containers': containers
     }
-    return render(request, 'main.html', context)
+    return render(request, 'main/main.html', context)
