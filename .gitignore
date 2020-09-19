@@ -101,9 +101,6 @@ ENV/
 .mypy_cache/
 
 .DS_Store
-db.sqlite3
-demosite/db.sqlite3
-*/*sqlite3*
 media/
 *.pyc
 *.db
