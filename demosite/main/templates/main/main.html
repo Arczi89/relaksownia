@@ -5,41 +5,48 @@
 
 {% if slider_items %}
 <div class="carousel carousel_container" id="carousel_container">
-    <div id="carousel" class="carousel slide slide_container" data-ride="carousel">
+    <div id="carousel" class="carousel slide slide_container carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            {% for slider in slider_items %}
+            {% if slider.visible %}
+            <li data-target="#carousel_container" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %} active {% endif %}"></li>
+            {% endif %}
+            {% endfor %}
+        </ol>
         <div class="carousel-inner">
             {% for slider in slider_items %}
             {% if slider.visible %}
-            <div class="carousel-item active" data-interval="10000">
-                <img class="d-block w-100" src="{{ slider.image.url }}" alt="{{ slider.image_alternate_text }}"/>
+            <div class="carousel-item {% if forloop.first %} active {% endif %}" data-interval="10000">
+                <img class="d-block w-100" src="{{ slider.image.url }}" alt="{{ slider.image_alternate_text }}" />
             </div>
             {% endif %}
             {% endfor %}
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
+    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
 {% endif %}
 
 {% if info %}
 <div class="info">
-    <div class="info-container" id="info-container">
+    <div class="info-container thin_gold_border" id="info-container">
         <div class="info-img">
-            <img src="{{ info.photo.url }}" alt="{{ photo_alternate_text }}" height="400" width="350"/>
+            <img src="{{ info.photo.url }}" alt="{{ photo_alternate_text }}" height="400" width="380"/>
         </div>
         <div class="info-desc">
             {{ info.description }}
         </div>
     </div>
 
-    <div class="video-container" id="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/2OEL4P1Rz04" frameborder="0"
+    <div class="video-container thin_gold_border" id="video-container">
+        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/2OEL4P1Rz04" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
     </div>
@@ -67,8 +74,6 @@
     {% endif %}
     {% endfor %}
 </div>
-<hr style="background: goldenrod; margin-top: -6rem"/>
-<div style="margin-top: 6rem"/>
 {% else %}
 <p>No containers are available.</p>
 {% endif %}

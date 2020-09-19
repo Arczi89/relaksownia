@@ -62,5 +62,13 @@ body {
 }
 
 .info-container, .video-container {
-    padding: 2rem;
+    width: 50%;
+    height: auto;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.info-img, .info-desc {
+    margin: 2rem;
 }
