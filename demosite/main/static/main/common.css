@@ -52,7 +52,7 @@ body {
     padding: 1rem;
 }
 
-/* info + blog post */
+/* info + video */
 .info {
     display: flex;
     flex-direction: row;
@@ -61,7 +61,7 @@ body {
     align-items: stretch;
 }
 
-.info-container, .blog-container {
+.info-container {
     border: gold 1px dotted;
     height: 100px;
     width: auto;
