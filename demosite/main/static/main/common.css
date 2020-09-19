@@ -46,8 +46,8 @@ body {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: stretch;
-    margin-top: 10rem;
 }
+
 .column-item {
     padding: 1rem;
 }
@@ -61,8 +61,6 @@ body {
     align-items: stretch;
 }
 
-.info-container {
-    border: gold 1px dotted;
-    height: 100px;
-    width: auto;
+.info-container, .video-container {
+    padding: 2rem;
 }

@@ -2,16 +2,17 @@
 {% load static %}
 
 {% block content %}
+
 {% if slider_items %}
 <div class="carousel carousel_container" id="carousel_container">
     <div id="carousel" class="carousel slide slide_container" data-ride="carousel">
         <div class="carousel-inner">
             {% for slider in slider_items %}
-                {% if slider.visible %}
-                <div class="carousel-item active" data-interval="10000">
-                    <img class="d-block w-100" alt="{{ slider.image_alternate_text }}" src="{{ slider.image.url }}"/>
-                </div>
-                {% endif %}
+            {% if slider.visible %}
+            <div class="carousel-item active" data-interval="10000">
+                <img class="d-block w-100" src="{{ slider.image.url }}" alt="{{ slider.image_alternate_text }}"/>
+            </div>
+            {% endif %}
             {% endfor %}
         </div>
         <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -25,15 +26,25 @@
     </div>
 </div>
 {% endif %}
+
+{% if info %}
 <div class="info">
     <div class="info-container" id="info-container">
-
+        <div class="info-img">
+            <img src="{{ info.photo.url }}" alt="{{ photo_alternate_text }}" height="400" width="350"/>
+        </div>
+        <div class="info-desc">
+            {{ info.description }}
+        </div>
     </div>
 
-    <div class="map-container" id="map-container">
-        <!--        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2548.521947560565!2d18.68873503336947!3d50.30085097159158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4711314a4981b81%3A0x497cea66083f4e7e!2sMobilne%20Centrum%20Masa%C5%BCu%20Relaksownia!5e0!3m2!1spl!2spl!4v1600370664114!5m2!1spl!2spl" width="800" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
+    <div class="video-container" id="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2OEL4P1Rz04" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
     </div>
 </div>
+{% endif %}
 
 {% if containers %}
 <div class="columns" id="container">
@@ -46,8 +57,7 @@
             </div>
             <div class="container-image">
                 <!-- TODO+ znalazłem poprawniejszy sposób zaciągania statików-->
-                <img width="100%" height="auto" alt="{{ container.image_alternate_text }}"
-                     src="{{ container.image.url }}"/>
+                <img width="100%" height="auto" alt="{{ container.image_alternate_text }}" src="{{ container.image.url }}"/>
             </div>
             <div class="container-description">
                 <p>{{ container.description }}</p>
@@ -57,10 +67,8 @@
     {% endif %}
     {% endfor %}
 </div>
-
 <hr style="background: goldenrod; margin-top: -6rem"/>
 <div style="margin-top: 6rem"/>
-
 {% else %}
 <p>No containers are available.</p>
 {% endif %}
