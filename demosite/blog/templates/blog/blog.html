@@ -1,0 +1,24 @@
+{% extends 'main\base.html' %}
+{% load static %}
+
+{% block content %}
+{% if blog_posts %}
+<div class="blog" id="blog_container">
+    {% for post in blog_posts %}
+    <div class="card">
+        <div class="card-body">
+            <div>{{ post.title }}</div>
+            <hr style="background: goldenrod"/>
+            <img src="{{ post.image.url  }}" alt="{{ post.image_alternate_text }}" width="100%"/>
+            <hr style="background: goldenrod"/>
+            <div>{{ post.description }}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="no-blog-post-yet">
+    Nie ma jeszcze żadnych postów dodanych.
+</div>
+{% endif %}
+{% endblock %}

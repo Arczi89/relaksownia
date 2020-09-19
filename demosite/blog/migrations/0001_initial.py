@@ -12,12 +12,16 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='FaqItem',
+            name='BlogPost',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('question_text', models.CharField(max_length=3000)),
-                ('answer_text', models.CharField(max_length=3000)),
+                ('title', models.CharField(default='', max_length=3000)),
+                ('image', models.ImageField(upload_to='')),
+                ('image_alternate_text', models.CharField(max_length=3000)),
+                ('description', models.CharField(max_length=3000)),
+                ('visible', models.BooleanField(default=False)),
                 ('pub_date', models.DateTimeField(verbose_name='date published')),
+                ('tags', models.CharField(default='ALL,', max_length=3000)),
             ],
         ),
     ]

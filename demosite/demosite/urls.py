@@ -21,5 +21,6 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     path('opinions/', include('opinions.urls')),
     path('faq/', include('faq.urls')),
+    path('blog/', include('blog.urls')),
 ]
 

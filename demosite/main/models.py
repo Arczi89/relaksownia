@@ -2,7 +2,7 @@ from django.db import models
 
 
 class SliderItem(models.Model):
-    image_url = models.CharField(max_length=3000)
+    image = models.ImageField(upload_to='images')
     image_alternate_text = models.CharField(max_length=3000)
     visible = models.BooleanField(default=False)
     pub_date = models.DateTimeField('date published')
@@ -15,7 +15,7 @@ class SliderItem(models.Model):
 
 class ContainerItem(models.Model):
     header_text = models.CharField(max_length=3000, default="Relaks")
-    image_url = models.CharField(max_length=3000)
+    image = models.ImageField(upload_to='images')
     image_alternate_text = models.CharField(max_length=3000)
     description = models.CharField(max_length=3000)
     visible = models.BooleanField(default=False)

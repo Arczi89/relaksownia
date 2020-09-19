@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Contact(models.Model):
-    contact_id = models.IntegerField()
     message = models.CharField(max_length=2000)
     email = models.EmailField(max_length=300)
     phone = models.CharField(max_length=20)
