@@ -36,7 +36,7 @@
 
 {% if info %}
 <div class="info">
-    <div class="info-container thin_gold_border" id="info-container">
+    <div class="info-container fancy-border" id="info-container">
         <div class="info-img">
             <img src="{{ info.photo.url }}" alt="{{ photo_alternate_text }}" height="400" width="380"/>
         </div>
@@ -45,8 +45,8 @@
         </div>
     </div>
 
-    <div class="video-container thin_gold_border" id="video-container">
-        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/2OEL4P1Rz04" frameborder="0"
+    <div class="video-container fancy-border" id="video-container">
+        <iframe width="95%" height="95%" class="align-self-center" src="https://www.youtube.com/embed/2OEL4P1Rz04" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
     </div>
@@ -57,7 +57,7 @@
 <div class="columns" id="container">
     {% for container in containers %}
     {% if container.visible %}
-    <div class="column-item card thin_gold_border">
+    <div class="column-item card">
         <div class="card-body">
             <div class="container-title">
                 <h3> {{ container.header_text }} </h3>
