@@ -3,4 +3,33 @@
 
 {% block content %}
 
+{% if configuration %}
+<div id="offer-container" class="offer-container">
+    <div class="offer-main">
+        <div class="offer-main-title">{{configuration.main_title}}</div>
+        <div class="offer-main-text">{{configuration.main_text}}</div>
+    </div>
+    {% for offer in offers %}
+    <div class="offer-item">
+        <div class="right-side {% if forloop.counter|divisibleby:2 == 0 %}offer-img {% else %}offer-text {% endif %}">
+            {% if forloop.counter|divisibleby:2 == 0 %}
+                <img src="{{offer.image.url}}" alt="{{offer.image.alt}}"/>
+            {% else %}
+                <div class="offer-title">{{offer.title}}</div>
+                <div class="offer-desc">{{offer.text}}</div>
+            {% endif %}
+        </div>
+        <div class="left-side {% if forloop.counter|divisibleby:2 == 1 %}offer-img {% else %}offer-text {% endif %}">
+            {% if forloop.counter|divisibleby:2 == 1 %}
+                <img src="{{offer.image.url}}" alt="{{offer.image.alt}}"/>
+            {% else %}
+                <div class="offer-title">{{offer.title}}</div>
+                <div class="offer-desc">{{offer.text}}</div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
 {% endblock %}

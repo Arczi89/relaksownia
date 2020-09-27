@@ -18,5 +18,5 @@ class OfferItem(models.Model):
     conf = models.ForeignKey('OfferConfiguration', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.main_title
+        return self.title
 
