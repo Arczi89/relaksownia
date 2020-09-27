@@ -24,6 +24,12 @@ body {
     border-image: url(../frame.png) 200 round;
 }
 
+.fancy-border > .thin_gold_border {
+    padding: 1rem;
+    border: goldenrod 2px solid;
+    border-radius: 2rem;
+}
+
 hr.fancy-border-line {
     border: 2rem solid goldenrod;
     border-image: url(../frame2.png) 200 round;
@@ -59,6 +65,10 @@ hr.fancy-border-line {
     color: #1DA1F2;
 }
 
+.social .fa-facebook-square {
+    color: blue;
+}
+
 /* carousel slider */
 
 .carousel-inner {
@@ -71,6 +81,27 @@ hr.fancy-border-line {
     background-repeat: no-repeat;
     background-size:100% auto;
     background-position: center center;
+}
+
+/* colorization */
+
+#container .container-image, #carousel_container .carousel-image {
+    filter: brightness(110%) sepia(40%) hue-rotate(5deg) saturate(200%);
+}
+#container img, #carousel_container img {
+    filter: brightness(70%);
+}
+
+a {
+    color: goldenrod;
+}
+
+a:hover {
+    color: gold;
+}
+
+.info-img img {
+    filter: sepia(40%) brightness(70%) saturate(200%) contrast(130%);
 }
 
 /* container */
@@ -103,6 +134,15 @@ hr.fancy-border-line {
     justify-content: center;
 }
 
+#info-container .thin_gold_border {
+    display: flex;
+}
+
+.video-container-inner {
+    height:100%;
+    width:100%;
+}
+
 .info-img, .info-desc {
-    margin: 2rem;
+    margin: 0.5rem;
 }
