@@ -9,4 +9,4 @@ class Contact(models.Model):
     name = models.CharField(max_length=400)
 
     def __str__(self):
-        return '%s %s' % (self.message, self.email_text)
+        return '%s %s' % (self.name, self.email)

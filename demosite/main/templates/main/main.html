@@ -17,7 +17,7 @@
             {% for slider in slider_items %}
             {% if slider.visible %}
             <div class="carousel-item {% if forloop.first %} active {% endif %} carousel-image" data-interval="10000">
-                <img class="d-block w-100 hidden" src="{{ slider.image.url }}" alt="{{ slider.image_alternate_text }}"/>
+                <img class="d-block w-100 hidden" src="{{ slider.image.url }}" alt="{{ slider.image_alt }}"/>
             </div>
             {% endif %}
             {% endfor %}
@@ -39,7 +39,7 @@
     <div class="info-container fancy-border" id="info-container">
         <div class="thin_gold_border">
             <div class="info-img">
-                <img src="{{ info.photo.url }}" alt="{{ photo_alternate_text }}" height="400" width="380"/>
+                <img src="{{ info.photo.url }}" alt="{{ photo_alt }}" height="400" width="380"/>
             </div>
             <div class="info-desc">
                 {{ info.description }}
@@ -66,7 +66,7 @@
             </div>
             <div class="container-image">
                 <!-- TODO+ znalazłem poprawniejszy sposób zaciągania statików-->
-                <img width="100%" height="auto" alt="{{ container.image_alternate_text }}" src="{{ container.image.url }}"/>
+                <img width="100%" height="auto" alt="{{ container.image_alt }}" src="{{ container.image.url }}"/>
             </div>
             <div class="container-description">
                 <p>{{ container.description }}</p>
