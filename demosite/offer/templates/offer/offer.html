@@ -7,7 +7,7 @@
 <div id="offer-container" class="offer-container">
     <div class="offer-main">
         <div class="offer-main-title">{{configuration.main_title}}</div>
-        <div class="offer-main-text">{{configuration.main_text}}</div>
+        <div class="offer-main-text">{{configuration.main_text|safe}}</div>
     </div>
     {% for offer in offers %}
     <div class="offer-item">
@@ -16,7 +16,7 @@
                 <img src="{{offer.image.url}}" alt="{{offer.image.alt}}"/>
             {% else %}
                 <div class="offer-title">{{offer.title}}</div>
-                <div class="offer-desc">{{offer.text}}</div>
+                <div class="offer-desc">{{offer.text|safe}}</div>
             {% endif %}
         </div>
         <div class="left-side {% if forloop.counter|divisibleby:2 == 1 %}offer-img {% else %}offer-text {% endif %}">
@@ -24,7 +24,7 @@
                 <img src="{{offer.image.url}}" alt="{{offer.image.alt}}"/>
             {% else %}
                 <div class="offer-title">{{offer.title}}</div>
-                <div class="offer-desc">{{offer.text}}</div>
+                <div class="offer-desc">{{offer.text|safe}}</div>
             {% endif %}
         </div>
     </div>

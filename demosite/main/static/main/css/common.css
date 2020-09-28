@@ -10,7 +10,7 @@ body {
     border-image: url(../frame.png) 200 round;
 }
 
-.fancy-border > .thin_gold_border {
+.thin-gold-border {
     padding: 1rem;
     border: goldenrod 2px solid;
     border-radius: 2rem;
@@ -38,10 +38,16 @@ hr.fancy-border-line {
 
 a {
     color: goldenrod;
+    cursor: pointer;
 }
 
 a:hover {
     color: gold;
+    cursor: pointer;
+}
+
+a.inline-block {
+   display: inline-block;
 }
 
 .info-img img {
@@ -58,6 +64,12 @@ a:hover {
 #navbarNavDropdown {
     padding-right: 2rem;
     flex-direction: row-reverse;
+}
+
+li.nav-item {
+    border-top: 1px gold solid;
+    border-bottom: 1px gold solid;
+    padding: 1rem;
 }
 
 /* main styles */
@@ -213,3 +225,5 @@ a:hover {
     padding: 2rem 2rem 0 2rem;
     font-size: 1.5rem;
 }
+
+/* faq */

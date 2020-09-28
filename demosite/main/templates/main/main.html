@@ -6,43 +6,28 @@
 {% if slider_items %}
 <div class="carousel carousel_container" id="carousel_container">
     <div id="carousel" class="carousel slide slide_container carousel-fade" data-ride="carousel">
-        <ol class="carousel-indicators">
-            {% for slider in slider_items %}
-            {% if slider.visible %}
-            <li data-target="#carousel_container" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %} active {% endif %}"></li>
-            {% endif %}
-            {% endfor %}
-        </ol>
         <div class="carousel-inner">
             {% for slider in slider_items %}
             {% if slider.visible %}
-            <div class="carousel-item {% if forloop.first %} active {% endif %} carousel-image" data-interval="10000">
+            <div class="carousel-item {% if forloop.first %} active {% endif %} carousel-image" data-interval="4000">
                 <img class="d-block w-100 hidden" src="{{ slider.image.url }}" alt="{{ slider.image_alt }}"/>
             </div>
             {% endif %}
             {% endfor %}
         </div>
     </div>
-    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
 </div>
 {% endif %}
 
 {% if info %}
 <div class="info">
     <div class="info-container fancy-border" id="info-container">
-        <div class="thin_gold_border">
+        <div class="thin-gold-border">
             <div class="info-img">
                 <img src="{{ info.photo.url }}" alt="{{ photo_alt }}" height="400" width="380"/>
             </div>
             <div class="info-desc">
-                {{ info.description }}
+                {{ info.description|safe }}
             </div>
         </div>
     </div>
@@ -59,17 +44,16 @@
 <div class="columns" id="container">
     {% for container in containers %}
     {% if container.visible %}
-    <div class="column-item card">
+    <div class="column-item card fancy-border2">
         <div class="card-body">
             <div class="container-title">
                 <h3> {{ container.header_text }} </h3>
             </div>
             <div class="container-image">
-                <!-- TODO+ znalazłem poprawniejszy sposób zaciągania statików-->
                 <img width="100%" height="auto" alt="{{ container.image_alt }}" src="{{ container.image.url }}"/>
             </div>
             <div class="container-description">
-                <p>{{ container.description }}</p>
+                <p>{{ container.description|safe }}</p>
             </div>
         </div>
     </div>
