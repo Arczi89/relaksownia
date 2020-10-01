@@ -10,4 +10,4 @@ def offer(request):
         'offers': offers,
         'configuration': configuration
     }
-    return render(request, 'offer/offer.html', context)
+    return render(request, 'offer.html', context)

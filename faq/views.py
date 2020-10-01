@@ -8,4 +8,4 @@ def faq(request):
     context = {
         'faqs': faqs
     }
-    return render(request, 'faq/faq.html', context)
+    return render(request, 'faq.html', context)

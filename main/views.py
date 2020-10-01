@@ -13,4 +13,4 @@ def main(request):
         'slider_items': slider_items,
         'info': info
     }
-    return render(request, 'main/main.html', context)
+    return render(request, 'main.html', context)

@@ -7,7 +7,7 @@ body {
 
 .fancy-border {
     border: 2rem solid goldenrod;
-    border-image: url(../frame.png) 200 round;
+    border-image: url(../img/frame.png) 200 round;
 }
 
 .thin-gold-border {
@@ -18,7 +18,7 @@ body {
 
 hr.fancy-border-line {
     border: 2rem solid goldenrod;
-    border-image: url(../frame2.png) 200 round;
+    border-image: url(../img/frame2.png) 200 round;
 }
 
 .card {

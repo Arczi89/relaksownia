@@ -249,5 +249,6 @@ modules.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/django,visualstudiocode,intellij+all
 
-
+/media
 venv
+/static
