@@ -1,0 +1,30 @@
+{% load static %}
+<hr class="fancy-border-line"/>
+<div class="menu-container">
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: black;">
+        <div class="navbar-brand">
+            <img class="logo" src="{% static 'img/LOGO.png' %}" alt="RELAKSOWNIA" height="200px" width="auto"/>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'main' %}">Strona główna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'offer' %}">Oferta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<hr class="fancy-border-line"/>

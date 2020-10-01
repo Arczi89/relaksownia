@@ -1,0 +1,36 @@
+{% load static %}
+<hr class="fancy-border-line"/>
+<div class="footer-container">
+    <div class="col-md-12 row">
+        <div class="col">
+            <div class="fancy-border-right"> MAPA STRONY: </div>
+            <ul>
+                <li>
+                    <a href="{% url 'main' %}">Strona główna</a>
+                </li>
+                <li>
+                    <a href="{% url 'offer' %}">Oferta</a>
+                </li>
+                <li>
+                    <a href="{% url 'contact' %}">Kontakt</a>
+                </li>
+                <li>
+                    <a href="{% url 'faq' %}">FAQ</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col social">
+            <a class="icon fab fa-facebook-square" href="https://www.facebook.com/relaksownia.masaz"></a>
+            <a class="icon fa fa-street-view" href="https://g.page/Relaksownia_Masaz_Gliwice?share"></a>
+            <a class="icon fab fa-twitter" href="#"></a>
+        </div>
+        <div class="col">
+            Telefon Kontaktowy: 123-456-789
+        </div>
+        <div class="col">
+            (C) 2020 Copyright Justyna Pietraszek <br/>
+            Stworzone i administrowane przez: Artur@Szwagrzak.pl
+        </div>
+    </div>
+</div>
+<hr class="fancy-border-line"/>

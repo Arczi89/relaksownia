@@ -1,1 +1,1 @@
-django pep8 pylint django-richtextfield pillow
+django pep8 pylint django-richtextfield pillow pyyaml
