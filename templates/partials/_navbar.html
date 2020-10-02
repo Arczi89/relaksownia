@@ -1,5 +1,5 @@
 {% load static %}
-<hr class="fancy-border-line"/>
+<hr class="line"/>
 <div class="menu-container">
     <nav class="navbar navbar-expand-lg sticky-top" style="background-color: black;">
         <div class="navbar-brand">
@@ -11,20 +11,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item {% if info %} active {% endif %}">
                     <a class="nav-link" href="{% url 'main' %}">Strona główna</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% if 'offer' in request.path %} active {% endif %}">
                     <a class="nav-link" href="{% url 'offer' %}">Oferta</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% if 'contact' in request.path %} active {% endif %}">
                     <a class="nav-link" href="{% url 'contact' %}">Kontakt</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% if 'faq' in request.path %} active {% endif %}">
                     <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
                 </li>
             </ul>
         </div>
     </nav>
 </div>
-<hr class="fancy-border-line"/>
+<hr class="line"/>
