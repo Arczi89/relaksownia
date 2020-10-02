@@ -126,10 +126,6 @@ li.nav-item {
     text-align: center;
 }
 
-.info-justyna {
-    font-size: 2rem;
-}
-
 .column-item {
     padding: 1rem;
     flex: 1 1 0px
@@ -142,6 +138,10 @@ li.nav-item {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: stretch;
+}
+
+.info-justyna {
+    font-size: 2rem;
 }
 
 .info-container, .video-container {
