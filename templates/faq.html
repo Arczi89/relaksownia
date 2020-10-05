@@ -3,12 +3,16 @@
 
 {% block content %}
     {% if faqs %}
+
+    <div class="main-image" id="offer-main-image">
+        <img class="d-block w-100" src="{{offers.2.image.url}}" alt="Image"/>
+    </div>
+
     <div class="accordion" id="faq-accordion">
         {% for faq in faqs %}
         <div class="card">
             <div class="card-header">
                 <h2>
-                    <span class="fa fa-question thin-gold-border"></span>
                     <a class="inline-block" aria-controls="collapseOne" href="#" aria-expanded="{% if forloop.counter == 1 %} true {% else %} false {% endif %}"
                        data-target="#faq-{{forloop.counter}}" data-toggle="collapse">
                         {{faq.question_text|safe}}

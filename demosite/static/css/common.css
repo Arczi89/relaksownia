@@ -1,14 +1,31 @@
 /* common styles */
-body {
-    margin-top: 1rem;
-    background-color: black;
-    color: white;
+
+/* #ebe286 */
+
+@font-face {
+    font-family: "league";
+    src: url('../webfonts/LeagueGothic-Regular.otf') format("opentype");
 }
 
-.thin-gold-border {
-    padding: 1rem;
-    border: goldenrod 2px solid;
-    border-radius: 2rem;
+@font-face {
+    font-family: "league-italic";
+    src: url('../webfonts/LeagueGothic-Italic.otf') format("opentype");
+}
+
+@font-face {
+    font-family: "league-condensed";
+    src: url('../webfonts/LeagueGothic-CondensedRegular.otf') format("opentype");
+}
+
+@font-face {
+    font-family: "league-condensed-italic";
+    src: url('../webfonts/LeagueGothic-CondensedRegularItalic.otf') format("opentype");
+}
+
+
+body {
+    background-color: black;
+    color: white;
 }
 
 .card {
@@ -25,13 +42,36 @@ body {
     filter: brightness(70%);
 }
 
+.container-image img {
+    height: 350px;
+}
+
 a {
-    color: goldenrod;
+    color: #ebe286;
     cursor: pointer;
+    font-family: league;
+    text-transform: uppercase;
+}
+
+.footer-container li a {
+    color: white;
+    font-family: unset;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: league;
+}
+
+.h3, h3 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
 }
 
 a:hover {
-    color: gold;
+    color: #ebe286;
     cursor: pointer;
 }
 
@@ -46,12 +86,16 @@ a.inline-block {
 /* menu styles */
 
 .nav-item a {
-    color: darkgoldenrod;
-    font-size: 2rem;
+    color: white;
+    font-size: 1.6rem;
+}
+
+.navbar-brand {
+    padding: 0;
 }
 
 .nav-item.active a {
-    color: gold;
+    color: #ebe286;
 }
 
 #navbarNavDropdown {
@@ -60,15 +104,25 @@ a.inline-block {
 }
 
 li.nav-item {
-    border-top: 1px gold solid;
-    border-bottom: 1px gold solid;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 /* main styles */
 .content-container {
-    margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+#mainpage-banner.banner {
+    height: 500px;
+    border-top: 1px solid gold;
+    border-bottom: 1px solid gold;
+}
+
+ .banner-text {
+    font-family: Sans;
+    font-size: 5rem;
+    text-align: center;
+    padding: auto;
 }
 
 /* footer */
@@ -116,13 +170,13 @@ li.nav-item {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: stretch;
+    margin-top: 4rem;
 }
 
 .container-title, .info-justyna {
-    border-top: 1px solid goldenrod;
-    border-bottom: 1px solid goldenrod;
+    border-bottom: 1px solid white;
     margin-bottom: 1rem;
-    color: gold;
+    color: white;
     text-align: center;
 }
 
@@ -138,6 +192,8 @@ li.nav-item {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: stretch;
+        margin-right: 4rem;
+    margin-left: 4rem;
 }
 
 .info-justyna {
@@ -145,15 +201,12 @@ li.nav-item {
 }
 
 .info-container, .video-container {
-    width: 50%;
+    width: 100%;
     height: auto;
     margin: 2rem;
     display: flex;
     justify-content: stretch;
 }
-
-#info-container .thin_gold_border {
-    display: flex;
 }
 
 .video-container-inner {
@@ -192,8 +245,8 @@ li.nav-item {
 }
 
 .offer-text .offer-title {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 2.5rem;
+    font-family: league;
 }
 
 .offer-main {
@@ -218,8 +271,6 @@ li.nav-item {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
-    border-top: 2px solid goldenrod;
-    border-bottom: 2px solid goldenrod;
 }
 
 .offer-main .offer-main-title {
@@ -234,4 +285,23 @@ li.nav-item {
     font-size: 1.5rem;
 }
 
+.main-image img {
+    width: 100%;
+    //max-height: 600px;
+    height: 600px;
+    margin-bottom: 2rem;
+}
+
 /* faq */
+
+.accordion a p {
+    font-family: league;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    color: white;
+}
+
+.accordion a:hover {
+    text-decoration: unset;
+    color: white;
+}

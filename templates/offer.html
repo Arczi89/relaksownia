@@ -4,11 +4,11 @@
 {% block content %}
 
 {% if configuration %}
+<div class="main-image" id="faq-main-image">
+    <img class="d-block w-100" src="{% static 'img/olive.jpg' %}" alt="Image"/>
+</div>
+
 <div id="offer-container" class="offer-container">
-    <div class="offer-main">
-        <div class="offer-main-title">{{configuration.main_title}}</div>
-        <div class="offer-main-text">{{configuration.main_text|safe}}</div>
-    </div>
     {% for offer in offers %}
     <div class="offer-item">
         <div class="right-side {% if forloop.counter|divisibleby:2 == 0 %}offer-img {% else %}offer-text {% endif %}">

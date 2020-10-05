@@ -41,24 +41,11 @@
 </div>
 {% endif %}
 
-{% if info %}
-<div class="info">
-    <div class="info-container" id="info-container">
-        <div class="info-img">
-            <img src="{{ info.photo.url }}" alt="{{ photo_alt }}" height="400" width="380"/>
-        </div>
-        <div class="info-desc">
-            <div class="info-justyna">Justyna</div>
-            {{ info.description|safe }}
-        </div>
-    </div>
-
-    <div class="video-container" id="video-container">
-        <iframe width="95%" height="95%" class="align-self-center" src="https://www.youtube.com/embed/2OEL4P1Rz04" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+<div class="banner" id="mainpage-banner">
+<!--    TODO modyfikowalny tekst-->
+    <div class="banner-text">
+        Naszym celem jest twój komfort.
     </div>
 </div>
-{% endif %}
 
 {% endblock %}
