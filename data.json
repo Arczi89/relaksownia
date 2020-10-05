@@ -14,9 +14,9 @@
       "pk":2,
       "fields":{
          "image":"images/masaz_e2n073o.jpg",
-         "image_alt":"masa�",
+         "image_alt":"masaz",
          "visible":true,
-         "update_date":"2020-10-03T00:35:15Z"
+         "update_date":"2020-10-05T15:56:45.229Z"
       }
    },
    {
@@ -61,8 +61,8 @@
       "fields":{
          "photo":"images/justyna.jpg",
          "photo_alt":"Justyna",
-         "description":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut metus nec nisi pulvinar congue. Curabitur consequat erat ut leo consectetur vestibulum. Nulla orci nisi, efficitur quis nulla et, condimentum lobortis orci. Nullam gravida facilisis pretium. Pellentesque maximus lobortis est. Vestibulum a eleifend leo. Proin sodales vehicula tincidunt. Aenean ut eleifend nisl, eget luctus est. Suspendisse scelerisque dignissim orci, vitae porta arcu pellentesque ac.</p>",
-         "update_date":"2020-10-02T22:17:21Z"
+         "description":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut metus nec nisi pulvinar congue. Curabitur consequat erat ut leo consectetur vestibulum. Nulla orci nisi, efficitur quis nulla et, condimentum lobortis orci. Nullam gravida facilisis pretium. Pellentesque maximus lobortis est. Vestibulum a eleifend leo. Proin sodales vehicula tincidunt. Aenean ut eleifend nisl, eget luctus est. Suspendisse scelerisque dignissim orci, vitae porta arcu pellentesque ac aaa.</p>",
+         "update_date":"2020-10-05T15:44:23.565Z"
       }
    },
    {
@@ -78,18 +78,18 @@
       "model":"faq.faqitem",
       "pk":2,
       "fields":{
-         "question_text":"<p>Do ilu kilometr&oacute;w doje�dzamy?</p>",
+         "question_text":"<p>Do ilu kilometrow dojezdzamy?</p>",
          "answer_text":"<p>Vestibulum pulvinar felis a pulvinar viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed sapien est, efficitur at neque id, pretium maximus arcu. Nulla eleifend tortor ante, nec lacinia erat elementum vitae. Nunc eu turpis ut mauris tempor varius vitae id ligula. Nulla facilisi. Mauris auctor, ex a mollis sodales, mauris ante rutrum mi, a commodo dolor urna quis ex. Integer hendrerit feugiat tortor, vel varius est egestas eget. Nulla eu nibh sapien. Nunc viverra tellus ex, ac maximus augue dictum finibus. Maecenas tempor nunc quam, et sagittis ligula ultrices lobortis. Aliquam ac erat eget erat aliquam consequat in laoreet erat. Proin interdum tincidunt egestas.</p>",
-         "update_date":"2020-10-02T23:14:36Z"
+         "update_date":"2020-10-05T15:59:46.212Z"
       }
    },
    {
       "model":"faq.faqitem",
       "pk":3,
       "fields":{
-         "question_text":"<p>Jaki masa�?</p>",
+         "question_text":"<p>Jaki masaz?</p>",
          "answer_text":"<p>In at iaculis tellus. In tempor, sem nec cursus eleifend, nisi mi sagittis arcu, id aliquet lorem velit vitae dui. Morbi commodo tortor sodales dui posuere tincidunt. Proin viverra ornare dui quis tempus. Mauris aliquet lacinia vulputate. Nulla facilisi. Fusce dapibus suscipit magna, sodales porta turpis condimentum a. Vestibulum egestas rhoncus ullamcorper.</p>",
-         "update_date":"2020-10-02T23:15:08Z"
+         "update_date":"2020-10-05T15:56:04.807Z"
       }
    },
    {
@@ -98,7 +98,7 @@
       "fields":{
          "question_text":"<p>Jakie mamy godziny otwarcia?</p>",
          "answer_text":"<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:300px\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td><strong>pn-czw</strong></td>\r\n\t\t\t<td><strong>&nbsp;</strong>6:30-22:00</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>pt-so</strong></td>\r\n\t\t\t<td>7:00-23:00</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
-         "update_date":"2020-10-02T23:16:15Z"
+         "update_date":"2020-10-05T15:55:55.199Z"
       }
    },
    {
@@ -107,16 +107,16 @@
       "fields":{
          "question_text":"<p>Lorem ipsum?</p>",
          "answer_text":"<p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong> Morbi tempus eu massa ut volutpat. Nulla facilisi. Aliquam eu neque pretium, facilisis erat at, ullamcorper odio. Nullam volutpat vel odio ac porttitor. Phasellus aliquet pulvinar nulla. Aliquam nec sem nec dui hendrerit ultricies. Ut porttitor magna id leo hendrerit, eu rhoncus justo malesuada. Donec ornare magna sit amet tellus ornare, ut suscipit metus porta. Suspendisse non neque ut dolor feugiat eleifend vitae sit amet arcu. Duis justo erat, scelerisque blandit diam ut, bibendum pharetra diam. Pellentesque a nisl nec risus maximus rutrum. Aenean lectus nibh, accumsan sit amet eros vel, rhoncus efficitur eros. Vivamus finibus turpis quam, vel pharetra elit elementum vel. Vivamus ultrices maximus lorem, ac fermentum elit malesuada non. Fusce enim erat, fringilla dictum libero efficitur, placerat malesuada metus.</p>",
-         "update_date":"2020-10-02T23:17:42Z"
+         "update_date":"2020-10-05T15:55:47.585Z"
       }
    },
    {
       "model":"faq.faqitem",
       "pk":6,
       "fields":{
-         "question_text":"<p>Jakie� kolejne pytanie?&nbsp;</p>",
+         "question_text":"<p>Jakie&nbsp;kolejne pytanie?&nbsp;</p>",
          "answer_text":"<p>Donec ornare magna sit amet tellus ornare, ut suscipit metus porta. Suspendisse non neque ut dolor feugiat eleifend vitae sit amet arcu. Duis justo erat, scelerisque blandit diam ut, bibendum pharetra diam. Pellentesque a nisl nec risus maximus rutrum. Aenean lectus nibh, accumsan sit amet eros vel, rhoncus efficitur eros. Vivamus finibus turpis quam, vel pharetra elit elementum vel. Vivamus ultrices maximus lorem, ac fermentum elit malesuada non. Fusce enim erat, fringilla dictum libero efficitur, placerat malesuada metus.&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus eu massa ut volutpat. Nulla facilisi. Aliquam eu neque pretium, facilisis erat at, ullamcorper odio. Nullam volutpat vel odio ac porttitor. Phasellus aliquet pulvinar nulla. Aliquam nec sem nec dui hendrerit ultricies. Ut porttitor magna id leo hendrerit, eu rhoncus justo malesuada. Donec ornare magna sit amet tellus ornare, ut suscipit metus porta.</p>\r\n\r\n<p><img alt=\"Obrazek rybka\" src=\"https://cdn.pixabay.com/photo/2018/10/26/09/47/fish-3774184_960_720.png\" style=\"height:400px; width:711px\" /></p>",
-         "update_date":"2020-10-02T23:18:12Z"
+         "update_date":"2020-10-05T15:55:41.171Z"
       }
    },
    {
@@ -144,232 +144,24 @@
       "model":"offer.offeritem",
       "pk":2,
       "fields":{
-         "title":"Masa� klasyczny",
+         "title":"Masaz klasyczny",
          "text":"<p>Pellentesque id finibus erat. Morbi luctus nisi vel sagittis pretium. Nam vel suscipit odio. Etiam sapien arcu, tempor at purus eget, tristique ultricies nisl. Sed dapibus ut ipsum dapibus hendrerit. Vestibulum aliquet velit non mauris luctus, eu finibus mi aliquet. Phasellus lacinia consequat nisl, vel congue diam tempor a. Mauris in dolor mi.Pellentesque id finibus erat. Morbi luctus nisi vel sagittis pretium. Nam vel suscipit odio. Etiam sapien arcu, tempor at purus eget, tristique ultricies nisl. Sed dapibus ut ipsum dapibus hendrerit. Vestibulum aliquet velit non mauris luctus, eu finibus mi aliquet. Phasellus lacinia consequat nisl, vel congue diam tempor a. Mauris in dolor mi.</p>",
          "image":"masaz.jpg",
-         "image_alt":"Masa�",
+         "image_alt":"Masaz",
          "conf":1,
-         "update_date":"2020-10-02T22:29:47Z"
+         "update_date":"2020-10-05T15:57:12.016Z"
       }
    },
    {
       "model":"offer.offeritem",
       "pk":3,
       "fields":{
-         "title":"Masa� specjalny",
+         "title":"Masaz specjalny",
          "text":"<p><strong>consequat nisl, vel congue diam tempor a</strong>. Mauris in dolor mi.Pellentesque id finibus erat. Morbi luctus nisi vel sagittis pretium. Nam vel suscipit odio. Etiam sapien arcu, tempor at purus eget, tristique ultricies nisl. Sed dapibus ut ipsum dapibus hendrerit. Vestibulum aliquet velit non mauris luctus, eu finibus mi aliquet. Phasellus lacinia consequat nisl, vel congue diam tempor a. Mauris in dolor mi.&nbsp;Pellentesque id finibus erat. Morbi luctus nisi vel sagittis pretium. Nam vel suscipit odio. Etiam sapien arcu, tempor at purus eget, tristique ultricies nisl. Sed dapibus ut ipsum dapibus hendrerit. Vestibulum aliquet velit non mauris luctus, eu finibus mi aliquet. Phasellus lacinia</p>",
          "image":"relax.jpg",
-         "image_alt":"Masa�",
+         "image_alt":"Masaz",
          "conf":1,
-         "update_date":"2020-10-02T22:29:47Z"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":1,
-      "fields":{
-         "action_time":"2020-10-02T20:19:31.565Z",
-         "user":1,
-         "content_type":2,
-         "object_id":"1",
-         "object_repr":"main info",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":2,
-      "fields":{
-         "action_time":"2020-10-02T20:23:26.606Z",
-         "user":1,
-         "content_type":1,
-         "object_id":"1",
-         "object_repr":"Profesjonalizm",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":3,
-      "fields":{
-         "action_time":"2020-10-02T20:24:57.410Z",
-         "user":1,
-         "content_type":1,
-         "object_id":"2",
-         "object_repr":"Dojazd do domu",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":4,
-      "fields":{
-         "action_time":"2020-10-02T20:28:21.396Z",
-         "user":1,
-         "content_type":1,
-         "object_id":"3",
-         "object_repr":"Dobra cena",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":5,
-      "fields":{
-         "action_time":"2020-10-02T20:29:15.743Z",
-         "user":1,
-         "content_type":6,
-         "object_id":"1",
-         "object_repr":"Moja oferta",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":6,
-      "fields":{
-         "action_time":"2020-10-02T20:29:47.583Z",
-         "user":1,
-         "content_type":7,
-         "object_id":"1",
-         "object_repr":"Dojazd do domu",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":7,
-      "fields":{
-         "action_time":"2020-10-02T20:30:46.998Z",
-         "user":1,
-         "content_type":7,
-         "object_id":"2",
-         "object_repr":"Masa� klasyczny",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":8,
-      "fields":{
-         "action_time":"2020-10-02T20:31:27.006Z",
-         "user":1,
-         "content_type":7,
-         "object_id":"3",
-         "object_repr":"Masa� specjalny",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":9,
-      "fields":{
-         "action_time":"2020-10-02T21:14:36.270Z",
-         "user":1,
-         "content_type":4,
-         "object_id":"1",
-         "object_repr":"<p>Jaki jest koszt?</p> <p>Proin aliquam, est eu bibendum mattis, tellus lacus tristique lectus, in faucibus erat lorem at magna. Etiam auctor placerat tristique. Pellentesque dictum libero tortor, vi",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":10,
-      "fields":{
-         "action_time":"2020-10-02T21:15:08.466Z",
-         "user":1,
-         "content_type":4,
-         "object_id":"2",
-         "object_repr":"<p>Do ilu kilometr&oacute;w doje�dzamy?</p> <p>Vestibulum pulvinar felis a pulvinar viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed sapien est, eff",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":11,
-      "fields":{
-         "action_time":"2020-10-02T21:16:14.608Z",
-         "user":1,
-         "content_type":4,
-         "object_id":"3",
-         "object_repr":"<p>Jaki masa�?</p> <p>In at iaculis tellus. In tempor, sem nec cursus eleifend, nisi mi sagittis arcu, id aliquet lorem velit vitae dui. Morbi commodo tortor sodales dui posuere tincidunt. Proin viver",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":12,
-      "fields":{
-         "action_time":"2020-10-02T21:17:42.300Z",
-         "user":1,
-         "content_type":4,
-         "object_id":"4",
-         "object_repr":"<p>Jakie mamy godziny otwarcia?</p> <table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:300px\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td><strong>pn-czw</strong></td>\r\n\t\t\t<td><strong>&nbsp;</strong>6:30-22",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":13,
-      "fields":{
-         "action_time":"2020-10-02T21:18:11.951Z",
-         "user":1,
-         "content_type":4,
-         "object_id":"5",
-         "object_repr":"<p>Lorem ipsum?</p> <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong> Morbi tempus eu massa ut volutpat. Nulla facilisi. Aliquam eu neque pretium, facilisis erat at, ullamco",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":14,
-      "fields":{
-         "action_time":"2020-10-02T21:19:42.796Z",
-         "user":1,
-         "content_type":4,
-         "object_id":"6",
-         "object_repr":"<p>Jakie� kolejne pytanie?&nbsp;</p> <p>Donec ornare magna sit amet tellus ornare, ut suscipit metus porta. Suspendisse non neque ut dolor feugiat eleifend vitae sit amet arcu. Duis justo erat, sceler",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":15,
-      "fields":{
-         "action_time":"2020-10-02T21:49:31.932Z",
-         "user":1,
-         "content_type":3,
-         "object_id":"1",
-         "object_repr":"kamienie",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
-      }
-   },
-   {
-      "model":"admin.logentry",
-      "pk":16,
-      "fields":{
-         "action_time":"2020-10-02T22:35:29.884Z",
-         "user":1,
-         "content_type":3,
-         "object_id":"2",
-         "object_repr":"masa�",
-         "action_flag":1,
-         "change_message":"[{\"added\": {}}]"
+         "update_date":"2020-10-05T15:58:18.925Z"
       }
    },
    {
@@ -841,11 +633,47 @@
       }
    },
    {
+      "model":"auth.permission",
+      "pk":53,
+      "fields":{
+         "name":"Can add slider configuration",
+         "content_type":14,
+         "codename":"add_sliderconfiguration"
+      }
+   },
+   {
+      "model":"auth.permission",
+      "pk":54,
+      "fields":{
+         "name":"Can change slider configuration",
+         "content_type":14,
+         "codename":"change_sliderconfiguration"
+      }
+   },
+   {
+      "model":"auth.permission",
+      "pk":55,
+      "fields":{
+         "name":"Can delete slider configuration",
+         "content_type":14,
+         "codename":"delete_sliderconfiguration"
+      }
+   },
+   {
+      "model":"auth.permission",
+      "pk":56,
+      "fields":{
+         "name":"Can view slider configuration",
+         "content_type":14,
+         "codename":"view_sliderconfiguration"
+      }
+   },
+   {
       "model":"auth.user",
       "pk":1,
       "fields":{
          "password":"pbkdf2_sha256$216000$3RZcBem0mSFK$J7XEAij8X8JX1JX5ScGivafXxUvFrFNPgSrFH4o7sLE=",
-         "last_login":"2020-10-02T20:16:42.631Z",
+         "last_login":"2020-10-05T15:21:41.580Z",
          "is_superuser":true,
          "username":"admin",
          "first_name":"",
@@ -967,11 +795,27 @@
       }
    },
    {
+      "model":"contenttypes.contenttype",
+      "pk":14,
+      "fields":{
+         "app_label":"main",
+         "model":"sliderconfiguration"
+      }
+   },
+   {
       "model":"sessions.session",
       "pk":"6e2oomvmf2485cm8lba4djf20dubvigh",
       "fields":{
          "session_data":".eJxVjDsOwjAQBe_iGln-fyjpOYO1Xq9xADlSnFSIu0OkFNC-mXkvlmBbW9oGLWkq7MwkO_1uGfBBfQflDv02c5z7ukyZ7wo_6ODXudDzcrh_Bw1G-9a-aAKvi8dKlDGAJRGEiEo5iCqjQQOOBDqDVkUXrNA1mKxkhqolAXt_AP6aOFQ:1kORTu:_RGrV_IfnBQGtYxBsogsBoJ9SdrSIjHE1fo1SX1Gtb0",
          "expire_date":"2020-10-16T20:16:42.695Z"
+      }
+   },
+   {
+      "model":"sessions.session",
+      "pk":"q3dtdru34ynkj8ptoqan0dm4ibktjr4e",
+      "fields":{
+         "session_data":".eJxVjDsOwjAQBe_iGln-fyjpOYO1Xq9xADlSnFSIu0OkFNC-mXkvlmBbW9oGLWkq7MwkO_1uGfBBfQflDv02c5z7ukyZ7wo_6ODXudDzcrh_Bw1G-9a-aAKvi8dKlDGAJRGEiEo5iCqjQQOOBDqDVkUXrNA1mKxkhqolAXt_AP6aOFQ:1kPSJ3:9HgPjqR4d-cebT2Y4ebprUucQh3NErte_8gcMMNkcU8",
+         "expire_date":"2020-10-19T15:21:41.585Z"
       }
    }
 ]

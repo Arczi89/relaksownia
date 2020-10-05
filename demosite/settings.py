@@ -63,6 +63,9 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
+DEFAULT_CHARSET='utf-8'
+
+
 DJRICHTEXTFIELD_CONFIG = {
     'js': ['//cdn.ckeditor.com/4.14.0/standard/ckeditor.js'],
     'init_template': 'djrichtextfield/init/ckeditor.js',
