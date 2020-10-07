@@ -13,13 +13,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Contact',
+            name='Blog',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('message', djrichtextfield.models.RichTextField()),
-                ('email', models.EmailField(max_length=300)),
-                ('phone', models.CharField(max_length=400)),
-                ('name', models.CharField(max_length=400)),
+                ('photo', models.ImageField(upload_to='images/')),
+                ('photo_alt', models.CharField(max_length=400)),
+                ('description', djrichtextfield.models.RichTextField()),
                 ('update_date', models.DateTimeField(auto_now=True, verbose_name='date published')),
             ],
         ),

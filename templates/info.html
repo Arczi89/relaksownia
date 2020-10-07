@@ -1,4 +1,9 @@
-{% if info %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if about_me %}
 <div class="info">
     <div class="info-container" id="info-container">
         <div class="info-img">
@@ -11,3 +16,5 @@
     </div>
 </div>
 {% endif %}
+
+{% endblock %}

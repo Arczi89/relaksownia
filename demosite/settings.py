@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'faq.apps.FaqConfig',
     'contact.apps.ContactConfig',
     'opinions.apps.OpinionsConfig',
+    'info.apps.InfoConfig',
+    'blog.apps.BlogConfig',
     'offer.apps.OfferConfig',
     'django.contrib.admin',
     'django.contrib.auth',

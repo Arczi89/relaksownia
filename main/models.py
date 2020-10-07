@@ -26,13 +26,3 @@ class ContainerItem(models.Model):
 
     def __str__(self):
         return self.header_text
-
-
-class Info(models.Model):
-    photo = models.ImageField(upload_to='images/')
-    photo_alt = models.CharField(max_length=400)
-    description = RichTextField()
-    update_date = models.DateTimeField('date published', auto_now=True)
-
-    def __str__(self):
-        return "main info"
