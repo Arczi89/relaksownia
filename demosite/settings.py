@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'phonenumber_field',
     'main.apps.MainConfig',
     'faq.apps.FaqConfig',
     'contact.apps.ContactConfig',

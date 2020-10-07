@@ -5,7 +5,10 @@ from .models import OfferItem, OfferConfiguration
 
 def offer(request):
     offers = OfferItem.objects.all()
-    configuration = OfferConfiguration.objects.all()[:1].get()
+    try:
+        configuration = OfferConfiguration.objects.all()[:1].get()
+    except OfferConfiguration.DoesNotExist:
+        configuration = None
     context = {
         'offers': offers,
         'configuration': configuration

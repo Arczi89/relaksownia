@@ -1,18 +1,25 @@
 from django.shortcuts import render
 
-from .models import ContainerItem, SliderItem, SliderConfiguration
+from .models import MainBoxItem, MainSliderItem, MainSliderConfiguration, MainConfiguration
 
 
 def main(request):
-    containers = ContainerItem.objects.all()
+    containers = MainBoxItem.objects.all()
     try:
-        slider_configuration = SliderConfiguration.objects.all()[:1].get()
-    except SliderConfiguration.DoesNotExist:
+        slider_configuration = MainSliderConfiguration.objects.all()[:1].get()
+    except MainSliderConfiguration.DoesNotExist:
         slider_configuration = None
-    slider_items = SliderItem.objects.all()
+
+    try:
+        configuration = MainConfiguration.objects.all()[:1].get()
+    except MainConfiguration.DoesNotExist:
+        configuration = None
+
+    slider_items = MainSliderItem.objects.all()
     context = {
         'containers': containers,
         'slider_items': slider_items,
-        'slider_configuration': slider_configuration
+        'slider_configuration': slider_configuration,
+        'configuration': configuration
     }
     return render(request, 'main.html', context)

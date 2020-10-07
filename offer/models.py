@@ -3,21 +3,21 @@ from djrichtextfield.models import RichTextField
 
 
 class OfferConfiguration(models.Model):
-    main_title = models.TextField()
-    main_text = RichTextField()
-    update_date = models.DateTimeField('date published', auto_now=True)
+    app_name = "Offers"
+    main_image = models.ImageField(upload_to='images/', help_text='Obrazek wyswietlany na gorze strony pod menu')
+    main_image_alt = models.CharField(max_length=400, help_text='Tekst wyświetlany w przypadku gdyby obrazek sie nie zaladowal')
+    update_date = models.DateTimeField('modification date', auto_now=True)
 
     def __str__(self):
-        return self.main_title
+        return self.app_name + " page configuration"
 
 
 class OfferItem(models.Model):
     title = models.TextField()
     text = RichTextField()
     image = models.ImageField()
-    image_alt = models.TextField()
-    conf = models.ForeignKey('OfferConfiguration', on_delete=models.CASCADE)
-    update_date = models.DateTimeField('date published', auto_now=True)
+    image_alt = models.TextField(help_text='Tekst wyświetlany w przypadku gdyby obrazek sie nie zaladowal')
+    update_date = models.DateTimeField('modification date', auto_now=True)
 
     def __str__(self):
         return self.title
