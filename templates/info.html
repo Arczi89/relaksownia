@@ -7,11 +7,12 @@
 <div class="info">
     <div class="info-container" id="info-container">
         <div class="info-img">
-            <img src="{{ info.photo.url }}" alt="{{ photo_alt }}" height="600" width="auto"/>
+            <img src="{{ about_me.photo.url }}" alt="{{ photo_alt }}" height="600" width="auto"/>
         </div>
         <div class="info-desc">
-            <div class="info-justyna">Justyna</div>
-            {{ info.description|safe }}
+            <div class="info-justyna">
+                {{ about_me.description|safe }}
+            </div>
         </div>
     </div>
 </div>

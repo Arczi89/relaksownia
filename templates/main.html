@@ -3,13 +3,16 @@
 
 {% block content %}
 
-{% if slider_items %}
+{% if slider_items and slider_configuration %}
 <div class="carousel carousel_container" id="carousel_container">
     <div id="carousel" class="carousel slide slide_container carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
             {% for slider in slider_items %}
             {% if slider.visible %}
-            <div class="carousel-item {% if forloop.first %} active {% endif %} carousel-image" data-interval="4000">
+            <div class="carousel-item {% if forloop.first %} active {% endif %} carousel-image"
+                 {% if slider_configuration.change_image_time_ms %}
+                 data-interval="{{slider_configuration.change_image_time_ms}}"
+                 {% endif %}>
                 <img class="d-block w-100 hidden" src="{{ slider.image.url }}" alt="{{ slider.image_alt }}"/>
             </div>
             {% endif %}
