@@ -1,0 +1,3 @@
+python manage.py sass demosite/static/scss demosite/static/css/
+
+source venv/Scripts/activate; python manage.py runserver

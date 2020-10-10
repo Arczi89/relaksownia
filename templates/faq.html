@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block content %}
-    {% if faqs %}
+    {% if faqs and configuration %}
 
     <div class="main-image" id="offer-main-image">
-        <img class="d-block w-100" src="{{offers.2.image.url}}" alt="Image"/>
+        <img class="d-block w-100" src="{{configuration.main_image.url}}" alt="Image"/>
     </div>
 
     <div class="accordion" id="faq-accordion">
