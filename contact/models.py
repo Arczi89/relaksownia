@@ -8,7 +8,8 @@ class ContactConfiguration(models.Model):
     map_url = models.CharField(max_length=400, help_text='Url (adres) do mapy google')
     phone_number = PhoneNumberField()
     email = models.EmailField()
-    on_site_client_info = RichTextField(help_text='Informacja o tym, ze dojezdzasz do klienta')
+    on_site_client_info = RichTextField(help_text='Informacja o tym, ze dojezdzasz do klienta', default='')
+    have_questions = RichTextField(help_text='Informacja nad formularzem "czy masz pytania?"', default='')
     working_hours = RichTextField(help_text='Godziny pracy')
     update_date = models.DateTimeField('modification date', auto_now=True)
 

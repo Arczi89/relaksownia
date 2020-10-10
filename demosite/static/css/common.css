@@ -198,7 +198,7 @@ li.nav-item {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: stretch;
-        margin-right: 4rem;
+    margin-right: 4rem;
     margin-left: 4rem;
 }
 
@@ -307,4 +307,52 @@ li.nav-item {
 .accordion a:hover {
     text-decoration: unset;
     color: white;
+}
+
+
+/* contact */
+#contact {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.contact-right, .contact-left {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-left-inner, .contact-right-inner {
+    margin: 1rem;
+    display: flex;
+}
+
+.contact-left-inner td {
+    //width: 40%;
+}
+
+.contact-left-inner .item-title {
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
+
+.main-title p {
+    font-size: 1.5rem;
+}
+
+.contact-left-inner {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#contact .fa {
+    font-size: 5rem;
+}
+
+.contact-block {
+    margin-left: 2rem;
 }
