@@ -3,7 +3,10 @@
 
 {% block content %}
 
-{% if blog %}
+{% if blog_posts and configuration %}
+<div class="main-image" id="blog-main-image">
+    <img class="d-block w-100" src="{{ configuration.main_image.url }}" alt="Image"/>
+</div>
 <div class="blog">
     <div class="blog-container" id="blog-container">
     </div>
