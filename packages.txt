@@ -1,1 +1,10 @@
-django pep8 pylint django-richtextfield pillow pyyaml psycopg2 psycopg2-binary django-phonenumber-field[phonenumberslite] django-sass
+django
+pep8
+pylint
+django-richtextfield
+pillow
+pyyaml
+psycopg2
+psycopg2-binary
+django-phonenumber-field[phonenumberslite]
+django-sass
