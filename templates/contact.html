@@ -41,15 +41,23 @@
                 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
                 <form action="{% url 'contact' %}" method="post">
                     {% csrf_token %}
-                    <div class="input">
-                        <textarea name="question_text" rows="4" columns="100">Type question..</textarea>
-                    </div>
-                    <div class="input">
-                        <input type="email" name="email" value=""/>
-                    </div>
-                    <div class="input">
-                        <input type="text" name="phone" value=""/>
-                    </div>
+                    {{ form }}
+<!--                    <div class="input">-->
+<!--                        <label for="question_text">Pytanie: </label>-->
+<!--                        <textarea id="question_text" name="question_text" rows="4" columns="100" required></textarea>-->
+<!--                    </div>-->
+<!--                    <div class="input">-->
+<!--                        <label for="phone">Numer telefonu: </label>-->
+<!--                        <input id="phone" type="phone" name="phone" value=""/>-->
+<!--                    </div>-->
+<!--                    <div class="input">-->
+<!--                        <label for="email">Email: </label>-->
+<!--                        <input id="email" type="email" name="email" value=""/>-->
+<!--                    </div>-->
+<!--                    <div class="input">-->
+<!--                        <label for="attachment">Załącznik: </label>-->
+<!--                        <input id="attachment" type="file" name="phone" value=""/>-->
+<!--                    </div>-->
                     <input type="submit" value="Send">
                 </form>
             </div>
