@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import OpinionsConfiguration, OpinionItem
+from .models import OpinionsConfiguration, OpinionItem, OpinionTreeItem
 
 
 def opinions(request):
@@ -9,9 +9,11 @@ def opinions(request):
     except OpinionsConfiguration.DoesNotExist:
         configuration = None
 
-    opinions = OpinionItem.objects.all()
+    opinion_list = OpinionItem.objects.all()
+    opinion_tree = OpinionTreeItem.objects.all()
     context = {
         'configuration': configuration,
-        'opinions': opinions
+        'opinions': opinion_list,
+        'opinion_tree': opinion_tree
     }
     return render(request, 'opinions.html', context)

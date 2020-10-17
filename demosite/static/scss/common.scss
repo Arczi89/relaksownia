@@ -330,13 +330,13 @@ li.nav-item {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: stretch;
-}
 
-.contact-right, .contact-left {
-  width: 50%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
+  .contact-right, .contact-left {
+      width: 50%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+    }
 }
 
 .contact-left-inner, .contact-right-inner {
@@ -345,11 +345,6 @@ li.nav-item {
 }
 
 .contact-left-inner {
-  td {
-    //width: 40%;
-
-  }
-
   .item-title {
     text-decoration: underline;
     font-size: 1.2rem;
@@ -372,4 +367,24 @@ li.nav-item {
 
 .contact-block {
   margin-left: 2rem;
+}
+
+/* opinion */
+
+.left-right {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+
+  .right, .left {
+      display: flex;
+      flex-direction: column;
+      &.contener {
+        width: 50%;
+      }
+    }
+
 }
