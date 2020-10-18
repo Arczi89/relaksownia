@@ -371,14 +371,37 @@ li.nav-item {
 }
 
 /* opinion */
-#opinion-tree .item {
+.main-message {
+  height: 6rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#opinions-container #customer-opinions {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 10rem;
+  min-height: none;
+  margin-bottom: 4rem;
+}
+
+#opinions-container #customer-opinions .single {
   margin: 1rem;
 }
 
-#opinion-tree .item img {
+#opinions-container #opinion-tree .lrc-inner.container {
+  justify-content: center;
+}
+
+#opinions-container #opinion-tree .item img {
   border-radius: 50%;
 }
 
-#opinion-tree .center-image {
+#opinions-container #opinion-tree .item .item-text, #opinions-container #opinion-tree .item img {
+  margin: 1rem;
+}
+
+#opinions-container #opinion-tree .center-image {
   margin: 1rem;
 }

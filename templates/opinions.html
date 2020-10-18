@@ -9,19 +9,21 @@
 </div>
 <div class="opinions">
     <div class="opinions-container" id="opinions-container">
-<!--        {% for opinion in opinions %}-->
-<!--            <div class="customer-opinions" id="customer-opinions">-->
-<!--                <div class="customer-opinions-item">-->
-<!--                    {{ opinion.opinion_text | safe }}-->
-<!--                </div>-->
-<!--                <div class="customer-opinions-item">-->
-<!--                    ~ {{ opinion.customer_name | safe }}-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        {% endfor %}-->
+        <div class="customer-opinions" id="customer-opinions">
+        {% for opinion in opinions %}
+            <div class="single">
+                <div class="customer-opinions-item">
+                    {{ opinion.opinion_text | safe }}
+                </div>
+                <div class="customer-opinions-item">
+                    ~ {{ opinion.customer_name | safe }}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
         {% if opinion_tree and opinion_tree|length >= 6 %}
+        <div class="main-message"> Dlaczego nasza oferta jest taka wyjątkowa?</div>
         <div id="opinion-tree" class="opinion-tree left-right-center">
-            <div class="main-message"></div>
             <div class="lrc-inner container">
                 <div class="item left-right">
                     <div class="item-text lr-inner"> {{ opinion_tree.0.text | safe }} </div>
@@ -38,7 +40,7 @@
             </div>
             {% if configuration.tree_img %}
                 <div class="lrc-inner container center-image">
-                    <img src="{{ configuration.tree_img.url }}" alt="Opinie" />
+                    <img height="500" src="{{ configuration.tree_img.url }}" alt="Opinie" />
                 </div>
             {% endif %}
             <div class="lrc-inner container">
