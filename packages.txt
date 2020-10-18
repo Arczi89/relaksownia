@@ -9,3 +9,4 @@ psycopg2-binary
 django-phonenumber-field[phonenumberslite]
 django-sass
 git-lint
+django-bootstrap-modal-forms
