@@ -375,12 +375,14 @@ li.nav-item {
   height: 6rem;
   text-align: center;
   font-size: 2rem;
+  margin-top: 8rem;
 }
 
 #opinions-container #customer-opinions {
   width: 75%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0;
   height: 10rem;
   min-height: none;
   margin-bottom: 4rem;
@@ -388,6 +390,22 @@ li.nav-item {
 
 #opinions-container #customer-opinions .single {
   margin: 1rem;
+}
+
+#opinions-container #customer-opinions .slick-dots {
+  position: relative;
+  bottom: 0;
+  top: 2rem;
+}
+
+#opinions-container #customer-opinions .slick-dots li {
+  border: solid 1px white;
+  border-radius: 50%;
+  bottom: 0;
+}
+
+#opinions-container #customer-opinions .slick-dots li.slick-active {
+  background-color: white;
 }
 
 #opinions-container #opinion-tree .lrc-inner.container {

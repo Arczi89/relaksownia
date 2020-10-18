@@ -1,10 +1,11 @@
 $(document).ready(function(){
 
   $('#customer-opinions').slick({
-      dots: true,
+      arrows: false,
       infinite: true,
       slidesToShow: 3,
       slidesToScroll: 3,
+      dots: true,
   });
   console.log('ready!');
 });

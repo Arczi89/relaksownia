@@ -396,6 +396,7 @@ li.nav-item {
     height: 6rem;
     text-align: center;
     font-size: 2rem;
+    margin-top: 8rem;
 }
 
 
@@ -404,11 +405,26 @@ li.nav-item {
         width: 75%;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 0;
         height: 10rem;
         min-height: none;
         margin-bottom: 4rem;
         .single {
             margin: 1rem;
+        }
+
+        .slick-dots {
+            position: relative;
+            bottom: 0;
+            top: 2rem;
+            li {
+                border: solid 1px white;
+                border-radius: 50%;
+                bottom: 0;
+                &.slick-active {
+                    background-color: white;
+                }
+            }
         }
     }
 
