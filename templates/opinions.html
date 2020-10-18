@@ -3,42 +3,56 @@
 
 {% block content %}
 
-{% if opinions and configuration %}
+{% if configuration %}
 <div class="main-image" id="blog-main-image">
     <img class="d-block w-100" src="{{ configuration.main_image.url }}" alt="Image"/>
 </div>
 <div class="opinions">
     <div class="opinions-container" id="opinions-container">
-
+<!--        {% for opinion in opinions %}-->
+<!--            <div class="customer-opinions" id="customer-opinions">-->
+<!--                <div class="customer-opinions-item">-->
+<!--                    {{ opinion.opinion_text | safe }}-->
+<!--                </div>-->
+<!--                <div class="customer-opinions-item">-->
+<!--                    ~ {{ opinion.customer_name | safe }}-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        {% endfor %}-->
         {% if opinion_tree and opinion_tree|length >= 6 %}
-        <div id="opinion-tree" class="opinion-tree left-right">
+        <div id="opinion-tree" class="opinion-tree left-right-center">
             <div class="main-message"></div>
-            <div class="left contener">
+            <div class="lrc-inner container">
                 <div class="item left-right">
-                    <div class="item-text left"> {{ opinion_tree.0.text | safe }} </div>
-                    <img height="100" width="100" src="{{ opinion_tree.0.img.url }}" alt="{{ opinion_tree.0.text }}" class="item-img right"/>
+                    <div class="item-text lr-inner"> {{ opinion_tree.0.text | safe }} </div>
+                    <img height="100" width="100" src="{{ opinion_tree.0.img.url }}" alt="{{ opinion_tree.0.text }}" class="item-img lr-inner"/>
                 </div>
                 <div class="item left-right">
-                    <div class="item-text"> {{ opinion_tree.1.text | safe }} </div>
-                    <img height="100" width="100" src="{{ opinion_tree.1.img.url }}" alt="{{ opinion_tree.1.text }}" class="item-img right"/>
+                    <div class="item-text lr-inner"> {{ opinion_tree.1.text | safe }} </div>
+                    <img height="100" width="100" src="{{ opinion_tree.1.img.url }}" alt="{{ opinion_tree.1.text }}" class="item-img lr-inner"/>
                 </div>
                 <div class="item left-right">
-                    <div class="item-text"> {{ opinion_tree.2.text | safe }} </div>
-                    <img height="100" width="100" src="{{ opinion_tree.2.img.url }}" alt="{{ opinion_tree.2.text }}" class="item-img right"/>
+                    <div class="item-text lr-inner"> {{ opinion_tree.2.text | safe }} </div>
+                    <img height="100" width="100" src="{{ opinion_tree.2.img.url }}" alt="{{ opinion_tree.2.text }}" class="item-img lr-inner"/>
                 </div>
             </div>
-            <div class="right contener">
+            {% if configuration.tree_img %}
+                <div class="lrc-inner container center-image">
+                    <img src="{{ configuration.tree_img.url }}" alt="Opinie" />
+                </div>
+            {% endif %}
+            <div class="lrc-inner container">
                 <div class="item left-right">
-                    <img height="100" width="100" src="{{ opinion_tree.3.img.url }}" alt="{{ opinion_tree.3.text }}" class="item-img left"/>
-                    <div class="item-text right"> {{ opinion_tree.3.text | safe }} </div>
+                    <img height="100" width="100" src="{{ opinion_tree.3.img.url }}" alt="{{ opinion_tree.3.text }}" class="item-img lr-inner"/>
+                    <div class="item-text lr-inner"> {{ opinion_tree.3.text | safe }} </div>
                 </div>
                 <div class="item left-right">
-                    <img height="100" width="100" src="{{ opinion_tree.4.img.url }}" alt="{{ opinion_tree.4.text }}" class="item-img left"/>
-                    <div class="item-text right"> {{ opinion_tree.4.text | safe }} </div>
+                    <img height="100" width="100" src="{{ opinion_tree.4.img.url }}" alt="{{ opinion_tree.4.text }}" class="item-img lr-inner"/>
+                    <div class="item-text lr-inner"> {{ opinion_tree.4.text | safe }} </div>
                 </div>
                 <div class="item left-right">
-                    <img height="100" width="100" src="{{ opinion_tree.5.img.url }}" alt="{{ opinion_tree.5.text }}" class="item-img left"/>
-                    <div class="item-text right"> {{ opinion_tree.5.text | safe }} </div>
+                    <img height="100" width="100" src="{{ opinion_tree.5.img.url }}" alt="{{ opinion_tree.5.text }}" class="item-img lr-inner"/>
+                    <div class="item-text lr-inner"> {{ opinion_tree.5.text | safe }} </div>
                 </div>
             </div>
         </div>

@@ -108,6 +108,28 @@ li.nav-item {
 }
 
 /* main styles */
+.left-right-center, .left-right {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.left-right-center .lrc-inner, .left-right-center .lr-inner, .left-right .lrc-inner, .left-right .lr-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-right-center .lrc-inner.container, .left-right .lrc-inner.container {
+  width: 33%;
+}
+
+.left-right-center .lr-inner.container, .left-right .lr-inner.container {
+  width: 50%;
+}
+
 .content-container {
   margin-bottom: 2rem;
 }
@@ -349,20 +371,14 @@ li.nav-item {
 }
 
 /* opinion */
-.left-right {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: stretch;
+#opinion-tree .item {
+  margin: 1rem;
 }
 
-.left-right .right, .left-right .left {
-  display: flex;
-  flex-direction: column;
+#opinion-tree .item img {
+  border-radius: 50%;
 }
 
-.left-right .right.contener, .left-right .left.contener {
-  width: 50%;
+#opinion-tree .center-image {
+  margin: 1rem;
 }
