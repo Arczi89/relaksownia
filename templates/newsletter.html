@@ -17,12 +17,14 @@
           </h3>
         {% for field in form %}
           <div id="form_{{ field.name }}" class="form-group{% if field.errors %} invalid{% endif %}">
-            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-            {{ field }}
-            {% for error in field.errors %}
-              <p class="help-block">{{ error }}</p>
-            {% endfor %}
+              {{ field }}
+              {% if field.name == 'permission' %}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+              {% endif %}
           </div>
+            {% for error in field.errors %}
+              <p class="help-block">{{ field_required | safe }}</p>
+            {% endfor %}
         {% endfor %}
       </div>
 
