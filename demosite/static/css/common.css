@@ -444,18 +444,18 @@ li.nav-item {
   width: 60%;
 }
 
-#newsletter-container #form_Permission {
+#newsletter-container #form_permission {
   display: flex;
 }
 
-#newsletter-container #form_Permission label {
-  margin-bottom: 0;
-  margin-left: 1rem;
-  order: 2;
-}
-
-#newsletter-container #form_Permission input {
+#newsletter-container #form_permission input {
   align-self: center;
   margin-bottom: 0;
   order: 1;
+}
+
+#newsletter-container #form_permission label {
+  margin-bottom: 0;
+  margin-left: 1rem;
+  order: 2;
 }

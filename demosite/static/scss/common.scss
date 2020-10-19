@@ -465,18 +465,19 @@ li.nav-item {
             width: 60%;
         }
     }
-    #form_Permission {
+    #form_permission {
         display:flex;
+
+        input {
+            align-self: center;
+            margin-bottom: 0;
+            order: 1;
+        }
 
         label {
             margin-bottom: 0;
             margin-left: 1rem;
             order: 2;
-        }
-        input {
-            align-self: center;
-            margin-bottom: 0;
-            order: 1;
         }
     }
 }
