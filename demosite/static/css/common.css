@@ -423,3 +423,39 @@ li.nav-item {
 #opinions-container #opinion-tree .center-image {
   margin: 1rem;
 }
+
+/* newsletter modal */
+.modal-content * {
+  background: black;
+  color: white;
+}
+
+#newsletter-container .form-group:not(#form_Permission) {
+  display: flex;
+}
+
+#newsletter-container .form-group:not(#form_Permission) label {
+  margin-bottom: 0;
+  width: 40%;
+}
+
+#newsletter-container .form-group:not(#form_Permission) input {
+  margin-bottom: 0;
+  width: 60%;
+}
+
+#newsletter-container #form_Permission {
+  display: flex;
+}
+
+#newsletter-container #form_Permission label {
+  margin-bottom: 0;
+  margin-left: 1rem;
+  order: 2;
+}
+
+#newsletter-container #form_Permission input {
+  align-self: center;
+  margin-bottom: 0;
+  order: 1;
+}

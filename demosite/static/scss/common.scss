@@ -446,3 +446,37 @@ li.nav-item {
         }
     }
 }
+
+/* newsletter modal */
+.modal-content * {
+    background: black;
+    color: white;
+}
+
+#newsletter-container {
+    .form-group:not(#form_Permission) {
+        display:flex;
+        label{
+            margin-bottom: 0;
+            width: 40%;
+        }
+        input {
+            margin-bottom: 0;
+            width: 60%;
+        }
+    }
+    #form_Permission {
+        display:flex;
+
+        label {
+            margin-bottom: 0;
+            margin-left: 1rem;
+            order: 2;
+        }
+        input {
+            align-self: center;
+            margin-bottom: 0;
+            order: 1;
+        }
+    }
+}

@@ -1,9 +1,20 @@
 from django.urls import reverse_lazy
+
+from main.models import MainConfiguration
 from .forms import NewsletterForm
 from bootstrap_modal_forms.generic import BSModalCreateView
+
 
 class NewsletterView(BSModalCreateView):
     template_name = 'newsletter.html'
     form_class = NewsletterForm
     success_message = 'Sukces!'
     success_url = reverse_lazy('main')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        try:
+            context['configuration'] = MainConfiguration.objects.all()[:1].get()
+        except MainConfiguration.DoesNotExist:
+            context['configuration'] = MainConfiguration
+        return context
