@@ -447,6 +447,7 @@ body input, body textarea {
 body .form-group input[type="text"], body .form-group input[type="email"], body .form-group textarea {
   border: 1px #2e2e2e solid;
   background-color: #2e2e2e;
+  min-height: 2.5rem;
 }
 
 body input[type="text"]:hover, body input[type="email"]:hover, body textarea:hover,

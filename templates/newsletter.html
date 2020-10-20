@@ -19,7 +19,9 @@
           <div id="form_{{ field.name }}" class="form-group{% if field.errors %} invalid{% endif %}">
               {{ field }}
               {% if field.name == 'permission' %}
-                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                <label for="{{ field.id_for_label }}">
+                    {{ field.label }}
+                </label>
               {% endif %}
           </div>
             {% for error in field.errors %}
