@@ -39,9 +39,8 @@
             <div class="help-info main-title contact-block"> {{configuration.have_questions|safe}}</div>
         </div>
         <div class="contact-right-inner contact-form">
-            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-
             <form action="{% url 'contact' %}" method="post">
+                {% csrf_token %}
                 {% for field in form %}
                 <div class="form-group{% if field.errors %} invalid{% endif %}" id="form_{{ field.name }}">
                     {% if field.name == 'attachment_img' %}

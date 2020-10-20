@@ -1,4 +1,5 @@
 from django.urls import reverse_lazy
+from django.urls import resolve
 
 from demosite.constants import field_required_and_invalid
 from main.models import MainConfiguration
@@ -10,7 +11,7 @@ class NewsletterView(BSModalCreateView):
     template_name = 'newsletter.html'
     form_class = NewsletterForm
     success_message = 'Sukces!'
-    success_url = reverse_lazy('main')
+    success_url = reverse_lazy("main")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
