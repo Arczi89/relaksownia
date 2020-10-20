@@ -43,24 +43,24 @@
 
             <form action="{% url 'contact' %}" method="post">
                 {% for field in form %}
-                    <div class="form-group{% if field.errors %} invalid{% endif %}" id="form_{{ field.name }}">
-                        {% if field.name == 'attachment_img' %}
-<!--                        TODO: czy ma być attachment?-->
-<!--                        <label class="custom-file-upload" for="id_attachment_img">-->
-<!--                            {{ field }}-->
-<!--                            Załącz plik-->
-<!--                        </label>-->
-                        {% else %}
-                        {{ field }}
-                        {% endif %}
-                    </div>
-                    {% for error in field.errors %}
-                        <p class="help-block">{{ field_required_and_invalid | safe }}</p>
-                    {% endfor %}
+                <div class="form-group{% if field.errors %} invalid{% endif %}" id="form_{{ field.name }}">
+                    {% if field.name == 'attachment_img' %}
+                    <!--                        TODO: czy ma być attachment?-->
+                    <!--                        <label class="custom-file-upload" for="id_attachment_img">-->
+                    <!--                            {{ field }}-->
+                    <!--                            Załącz plik-->
+                    <!--                        </label>-->
+                    {% else %}
+                    {{ field }}
+                    {% endif %}
+                </div>
+                {% for error in field.errors %}
+                <p class="help-block">{{ field_required_and_invalid | safe }}</p>
+                {% endfor %}
                 {% endfor %}
                 <label class="submit-contact-form" for="submit-contact-form">
                     WYŚLIJ
-                    <input type="submit" value="Send" id="submit-contact-form">
+                    <input id="submit-contact-form" type="submit" value="Send">
                 </label>
             </form>
         </div>

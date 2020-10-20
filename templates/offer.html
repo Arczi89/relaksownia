@@ -5,26 +5,26 @@
 
 {% if configuration %}
 <div class="main-image" id="faq-main-image">
-    <img class="d-block w-100" src="{{ configuration.main_image.url }}" alt="Image"/>
+    <img alt="Image" class="d-block w-100" src="{{ configuration.main_image.url }}"/>
 </div>
 
-<div id="offer-container" class="offer-container">
+<div class="offer-container" id="offer-container">
     {% for offer in offers %}
     <div class="offer-item">
         <div class="right-side {% if forloop.counter|divisibleby:2 == 0 %}offer-img {% else %}offer-text {% endif %}">
             {% if forloop.counter|divisibleby:2 == 0 %}
-                <img src="{{offer.image.url}}" alt="{{offer.image.alt}}"/>
+            <img alt="{{offer.image.alt}}" src="{{offer.image.url}}"/>
             {% else %}
-                <div class="offer-title">{{offer.title}}</div>
-                <div class="offer-desc">{{offer.text|safe}}</div>
+            <div class="offer-title">{{offer.title}}</div>
+            <div class="offer-desc">{{offer.text|safe}}</div>
             {% endif %}
         </div>
         <div class="left-side {% if forloop.counter|divisibleby:2 == 1 %}offer-img {% else %}offer-text {% endif %}">
             {% if forloop.counter|divisibleby:2 == 1 %}
-                <img src="{{offer.image.url}}" alt="{{offer.image.alt}}"/>
+            <img alt="{{offer.image.alt}}" src="{{offer.image.url}}"/>
             {% else %}
-                <div class="offer-title">{{offer.title}}</div>
-                <div class="offer-desc">{{offer.text|safe}}</div>
+            <div class="offer-title">{{offer.title}}</div>
+            <div class="offer-desc">{{offer.text|safe}}</div>
             {% endif %}
         </div>
     </div>

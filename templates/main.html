@@ -5,15 +5,15 @@
 
 {% if slider_items and slider_configuration %}
 <div class="carousel carousel_container" id="carousel_container">
-    <div id="carousel" class="carousel slide slide_container carousel-fade" data-ride="carousel">
+    <div class="carousel slide slide_container carousel-fade" data-ride="carousel" id="carousel">
         <div class="carousel-inner">
             {% for slider in slider_items %}
             {% if slider.visible %}
-            <div class="carousel-item {% if forloop.first %} active {% endif %} carousel-image"
-                 {% if slider_configuration.change_image_time_ms %}
-                 data-interval="{{slider_configuration.change_image_time_ms}}"
-                 {% endif %}>
-                <img class="d-block w-100 hidden" src="{{ slider.image.url }}" alt="{{ slider.image_alt }}"/>
+            <div %}
+                 %} class="carousel-item {% if forloop.first %} active {% endif %} carousel-image" data-interval="{{slider_configuration.change_image_time_ms}}" endif
+                 if
+                 slider_configuration.change_image_time_ms {% {%>
+                <img alt="{{ slider.image_alt }}" class="d-block w-100 hidden" src="{{ slider.image.url }}"/>
             </div>
             {% endif %}
             {% endfor %}
@@ -32,7 +32,7 @@
                 <h3> {{ container.header_text }} </h3>
             </div>
             <div class="container-image">
-                <img width="100%" height="auto" alt="{{ container.image_alt }}" src="{{ container.image.url }}"/>
+                <img alt="{{ container.image_alt }}" height="auto" src="{{ container.image.url }}" width="100%"/>
             </div>
             <div class="container-description">
                 <p>{{ container.description|safe }}</p>
@@ -45,7 +45,7 @@
 {% endif %}
 
 <div class="banner" id="mainpage-banner">
-<!--    TODO modyfikowalny tekst-->
+    <!--    TODO modyfikowalny tekst-->
     <div class="banner-text">
         Naszym celem jest twój komfort.
     </div>
