@@ -346,6 +346,7 @@ li.nav-item {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+  text-align: center;
 }
 
 .contact-left-inner, .contact-right-inner {
