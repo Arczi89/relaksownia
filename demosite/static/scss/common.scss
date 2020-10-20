@@ -362,12 +362,31 @@ li.nav-item {
     }
 }
 
+.submit-contact-form {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .contact-left-inner, .contact-right-inner {
   margin: 1rem;
   display: flex;
+
+  form, .form-group textarea, .form-group input {
+    width: 100%;
+  }
+
+  .form-group textarea {
+    resize: none;
+  }
 }
 
 .contact-left-inner {
+
+  flex-direction: row;
+  display: flex;
+  flex-wrap: nowrap;
+
   .item-title {
     text-decoration: underline;
     font-size: 1.2rem;
@@ -376,12 +395,6 @@ li.nav-item {
 
 .main-title p {
   font-size: 1.5rem;
-}
-
-.contact-left-inner {
-  flex-direction: row;
-  display: flex;
-  flex-wrap: nowrap;
 }
 
 #contact .fa {
@@ -451,15 +464,37 @@ li.nav-item {
 
 /* inputs */
 body {
-    input[type="text"], input[type="email"] {
+
+    input, textarea {
+        color: $borrowed-grey;
+    }
+    .form-group input[type="text"], .form-group input[type="email"], .form-group textarea {
         border: 1px $almost-black solid;
         background-color: $almost-black;
     }
 
-    input[type="text"]:hover, input[type="email"]:hover,
-    input[type="text"]:active, input[type="email"]:active,
-    input[type="text"]:focus, input[type="email"]:focus {
+    input[type="text"]:hover, input[type="email"]:hover, textarea:hover,
+    input[type="text"]:active, input[type="email"]:active, textarea:active,
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
         border: 1px $almost-black solid;
+    }
+
+    input[type="file"] {
+        position: absolute;
+        left: -99999rem;
+    }
+
+    input[type="submit"] {
+        position: absolute;
+        left: -99999rem;
+    }
+
+
+    button, .custom-file-upload, .submit-contact-form {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
     }
 
     ::placeholder {

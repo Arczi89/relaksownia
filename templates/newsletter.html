@@ -23,7 +23,7 @@
               {% endif %}
           </div>
             {% for error in field.errors %}
-              <p class="help-block">{{ field_required | safe }}</p>
+              <p class="help-block">{{ field_required_and_invalid | safe }}</p>
             {% endfor %}
         {% endfor %}
       </div>

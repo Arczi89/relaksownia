@@ -18,7 +18,7 @@ class ContactConfiguration(models.Model):
 
 
 class Contact(models.Model):
-    message = RichTextField()
+    message = models.TextField(max_length=2000, help_text='Wiadomość od klienta')
     email = models.EmailField(max_length=300, help_text='Email klienta')
     phone = models.CharField(max_length=400, help_text='Telefon klienta')
     name = models.CharField(max_length=400, help_text='Imie klienta')

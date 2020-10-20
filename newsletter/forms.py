@@ -8,6 +8,7 @@ from bootstrap_modal_forms.forms import BSModalModelForm
 class NewsletterForm(BSModalModelForm):
     class Meta:
         model = Newsletter
+        fields = "__all__"
         labels = {
             "permission": _('Wyrażam zgodę na przesyłanie mi ofert marketingowych i promocyjnych drogą elektroniczną'),
         }
@@ -15,4 +16,4 @@ class NewsletterForm(BSModalModelForm):
             'email': forms.TextInput(attrs={'placeholder': _('Adres e-mail')}),
             'name': forms.TextInput(attrs={'placeholder': _('Imię')}),
         }
-        fields = "__all__"
+

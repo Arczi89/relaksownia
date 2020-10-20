@@ -342,9 +342,29 @@ li.nav-item {
   flex-direction: column;
 }
 
+.submit-contact-form {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .contact-left-inner, .contact-right-inner {
   margin: 1rem;
   display: flex;
+}
+
+.contact-left-inner form, .contact-left-inner .form-group textarea, .contact-left-inner .form-group input, .contact-right-inner form, .contact-right-inner .form-group textarea, .contact-right-inner .form-group input {
+  width: 100%;
+}
+
+.contact-left-inner .form-group textarea, .contact-right-inner .form-group textarea {
+  resize: none;
+}
+
+.contact-left-inner {
+  flex-direction: row;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .contact-left-inner .item-title {
@@ -354,12 +374,6 @@ li.nav-item {
 
 .main-title p {
   font-size: 1.5rem;
-}
-
-.contact-left-inner {
-  flex-direction: row;
-  display: flex;
-  flex-wrap: nowrap;
 }
 
 #contact .fa {
@@ -425,15 +439,36 @@ li.nav-item {
 }
 
 /* inputs */
-body input[type="text"], body input[type="email"] {
+body input, body textarea {
+  color: #ccd0d3;
+}
+
+body .form-group input[type="text"], body .form-group input[type="email"], body .form-group textarea {
   border: 1px #2e2e2e solid;
   background-color: #2e2e2e;
 }
 
-body input[type="text"]:hover, body input[type="email"]:hover,
-body input[type="text"]:active, body input[type="email"]:active,
-body input[type="text"]:focus, body input[type="email"]:focus {
+body input[type="text"]:hover, body input[type="email"]:hover, body textarea:hover,
+body input[type="text"]:active, body input[type="email"]:active, body textarea:active,
+body input[type="text"]:focus, body input[type="email"]:focus, body textarea:focus {
   border: 1px #2e2e2e solid;
+}
+
+body input[type="file"] {
+  position: absolute;
+  left: -99999rem;
+}
+
+body input[type="submit"] {
+  position: absolute;
+  left: -99999rem;
+}
+
+body button, body .custom-file-upload, body .submit-contact-form {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
 }
 
 body ::placeholder {

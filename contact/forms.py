@@ -1,6 +1,5 @@
+from django.utils.translation import ugettext_lazy as _
 from django import forms
-from django.core.validators import FileExtensionValidator
-from djrichtextfield.widgets import RichTextWidget
 import re
 
 from demosite.constants import field_required, email_or_phone_required, incorrect_extension, incorrect_phone_format, \
@@ -16,14 +15,12 @@ class ContactForm(forms.ModelForm):
             'message': {'required': "To pole jest wymagane"},
             'name': {'required': "To pole jest wymagane"}
         }
-
-    message = forms.CharField(widget=RichTextWidget(), required=True)
-    email = forms.EmailField(max_length=100, label='Email', required=False)
-    phone = forms.CharField(max_length=9, label='Telefon', min_length=9, required=False)
-    name = forms.CharField(max_length=40, label='Twoje imię', required=True)
-    attachment_img = forms.ImageField(label='Opcjonalny załącznik', required=False, validators=[
-        FileExtensionValidator(allowed_extensions=['jpg', 'png', 'jpeg', 'pdf'])
-    ])
+        widgets = {
+            'email': forms.TextInput(attrs={'placeholder': _('Adres e-mail')}),
+            'name': forms.TextInput(attrs={'placeholder': _('Imię')}),
+            'phone': forms.TextInput(attrs={'placeholder': _('Numer telefonu')}),
+            'message': forms.Textarea(attrs={'placeholder': _('Wpisz swoją wiadomość')}),
+        }
 
     def clean(self):
         super().clean()

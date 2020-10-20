@@ -3,68 +3,70 @@
 {% block content %}
 
 {% if configuration %}
-    <iframe src="{{configuration.map_url}}" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    <div id="contact">
-        <div class="contact-left">
-            <div class="contact-left-inner main-title">
-                <div class="fa fa-car"></div>
-                <div class="on-site contact-block">{{configuration.on_site_client_info|safe}}</div>
-            </div>
-            <div class="contact-left-inner">
-                <div class="fa fa-phone"></div>
-                <div class="contact-block">
-                    <div class="item-title">Telefon:</div>
-                    <div class="item-desc">{{configuration.phone_number}}</div>
-                </div>
-            </div>
-            <div class="contact-left-inner">
-                <div class="fa fa-at"></div>
-                <div class="contact-block">
-                    <div class="item-title">Email:</div>
-                    <div class="item-desc">{{configuration.email}}</div>
-                </div>
-            </div>
-            <div class="contact-left-inner">
-                <div class="fa fa-clock"></div>
-                <div class="contact-block">
-                    <div class="item-title">Godziny pracy:</div>
-                    <div class="item-desc">{{configuration.working_hours|safe}}</div>
-                </div>
+<iframe allowfullscreen="" aria-hidden="false" frameborder="0" height="600" src="{{configuration.map_url}}"
+        style="border:0;" tabindex="0" width="100%"></iframe>
+<div id="contact">
+    <div class="contact-left">
+        <div class="contact-left-inner main-title">
+            <div class="fa fa-car"></div>
+            <div class="on-site contact-block">{{configuration.on_site_client_info|safe}}</div>
+        </div>
+        <div class="contact-left-inner">
+            <div class="fa fa-phone"></div>
+            <div class="contact-block">
+                <div class="item-title">Telefon:</div>
+                <div class="item-desc">{{configuration.phone_number}}</div>
             </div>
         </div>
-        <div class="contact-right">
-            <div class="contact-right-inner main-title">
-                <div class="fa fa-question"></div>
-                <div class="help-info main-title contact-block"> {{configuration.have_questions|safe}}</div>
+        <div class="contact-left-inner">
+            <div class="fa fa-at"></div>
+            <div class="contact-block">
+                <div class="item-title">Email:</div>
+                <div class="item-desc">{{configuration.email}}</div>
             </div>
-            <div class="contact-right-inner contact-form">
-                {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-                <form action="{% url 'contact' %}" method="post">
-                    {% csrf_token %}
-                    {{ form }}
-<!--                    <div class="input">-->
-<!--                        <label for="question_text">Pytanie: </label>-->
-<!--                        <textarea id="question_text" name="question_text" rows="4" columns="100" required></textarea>-->
-<!--                    </div>-->
-<!--                    <div class="input">-->
-<!--                        <label for="phone">Numer telefonu: </label>-->
-<!--                        <input id="phone" type="phone" name="phone" value=""/>-->
-<!--                    </div>-->
-<!--                    <div class="input">-->
-<!--                        <label for="email">Email: </label>-->
-<!--                        <input id="email" type="email" name="email" value=""/>-->
-<!--                    </div>-->
-<!--                    <div class="input">-->
-<!--                        <label for="attachment">Załącznik: </label>-->
-<!--                        <input id="attachment" type="file" name="phone" value=""/>-->
-<!--                    </div>-->
-                    <input type="submit" value="Send">
-                </form>
+        </div>
+        <div class="contact-left-inner">
+            <div class="fa fa-clock"></div>
+            <div class="contact-block">
+                <div class="item-title">Godziny pracy:</div>
+                <div class="item-desc">{{configuration.working_hours|safe}}</div>
             </div>
         </div>
     </div>
-{% endif %}
+    <div class="contact-right">
+        <div class="contact-right-inner main-title">
+            <div class="fa fa-question"></div>
+            <div class="help-info main-title contact-block"> {{configuration.have_questions|safe}}</div>
+        </div>
+        <div class="contact-right-inner contact-form">
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
+            <form action="{% url 'contact' %}" method="post">
+                {% for field in form %}
+                    <div class="form-group{% if field.errors %} invalid{% endif %}" id="form_{{ field.name }}">
+                        {% if field.name == 'attachment_img' %}
+<!--                        TODO: czy ma być attachment?-->
+<!--                        <label class="custom-file-upload" for="id_attachment_img">-->
+<!--                            {{ field }}-->
+<!--                            Załącz plik-->
+<!--                        </label>-->
+                        {% else %}
+                        {{ field }}
+                        {% endif %}
+                    </div>
+                    {% for error in field.errors %}
+                        <p class="help-block">{{ field_required_and_invalid | safe }}</p>
+                    {% endfor %}
+                {% endfor %}
+                <label class="submit-contact-form" for="submit-contact-form">
+                    Wyślij
+                    <input type="submit" value="Send" id="submit-contact-form">
+                </label>
+            </form>
+        </div>
+    </div>
+</div>
+{% endif %}
 
 
 {% endblock %}

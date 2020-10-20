@@ -1,6 +1,6 @@
 from django.urls import reverse_lazy
 
-from demosite.constants import field_required
+from demosite.constants import field_required_and_invalid
 from main.models import MainConfiguration
 from .forms import NewsletterForm
 from bootstrap_modal_forms.generic import BSModalCreateView
@@ -18,5 +18,5 @@ class NewsletterView(BSModalCreateView):
             context['configuration'] = MainConfiguration.objects.all()[:1].get()
         except MainConfiguration.DoesNotExist:
             context['configuration'] = MainConfiguration
-        context['field_required'] = field_required
+        context['field_required_and_invalid'] = field_required_and_invalid
         return context
