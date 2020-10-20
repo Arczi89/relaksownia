@@ -354,12 +354,36 @@ li.nav-item {
   display: flex;
 }
 
+.contact-left-inner table, .contact-left-inner th, .contact-left-inner td, .contact-right-inner table, .contact-right-inner th, .contact-right-inner td {
+  border: solid 1px #2e2e2e;
+  text-align: center;
+  vertical-align: middle;
+}
+
 .contact-left-inner form, .contact-left-inner .form-group textarea, .contact-left-inner .form-group input, .contact-right-inner form, .contact-right-inner .form-group textarea, .contact-right-inner .form-group input {
   width: 100%;
 }
 
 .contact-left-inner .form-group textarea, .contact-right-inner .form-group textarea {
   resize: none;
+}
+
+.contact-left-inner .contact-block table, .contact-right-inner .contact-block table {
+  width: 100%;
+  margin: 1rem;
+}
+
+.contact-left-inner .contact-block table th, .contact-right-inner .contact-block table th {
+  width: 45%;
+}
+
+.contact-left-inner .contact-block table tr, .contact-right-inner .contact-block table tr {
+  width: 55%;
+}
+
+.contact-block {
+  width: 75%;
+  margin-left: 2rem;
 }
 
 .contact-left-inner {
@@ -379,10 +403,6 @@ li.nav-item {
 
 #contact .fa {
   font-size: 4rem;
-}
-
-.contact-block {
-  margin-left: 2rem;
 }
 
 /* opinion */

@@ -373,6 +373,12 @@ li.nav-item {
   margin: 1rem;
   display: flex;
 
+  table, th, td {
+    border: solid 1px $almost-black;
+    text-align: center;
+    vertical-align: middle;
+  }
+
   form, .form-group textarea, .form-group input {
     width: 100%;
   }
@@ -380,6 +386,23 @@ li.nav-item {
   .form-group textarea {
     resize: none;
   }
+
+  .contact-block table {
+    width: 100%;
+    margin: 1rem;
+
+      th {
+        width: 45%;
+      }
+      tr {
+        width: 55%
+      }
+  }
+}
+
+.contact-block {
+    width: 75%;
+  margin-left: 2rem;
 }
 
 .contact-left-inner {
@@ -400,10 +423,6 @@ li.nav-item {
 
 #contact .fa {
   font-size: 4rem;
-}
-
-.contact-block {
-  margin-left: 2rem;
 }
 
 /* opinion */
