@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from .models import ContactConfiguration
 from .forms import ContactForm
 
+
 def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
@@ -15,7 +16,7 @@ def contact(request):
 
     context = {
         "configuration": get_configuration(),
-        'form': form
+        "form": form,
     }
 
     return render(request, 'contact.html', context)
@@ -31,5 +32,5 @@ def get_configuration():
 
 
 def store_contact_request(form):
-    print("zapisane")
+    form.save()
     pass
