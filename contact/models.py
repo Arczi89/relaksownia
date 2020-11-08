@@ -19,8 +19,8 @@ class ContactConfiguration(models.Model):
 
 class Contact(models.Model):
     message = models.TextField(max_length=2000, help_text='Wiadomość od klienta')
-    email = models.EmailField(max_length=300, help_text='Email klienta')
-    phone = models.CharField(max_length=400, help_text='Telefon klienta')
+    email = models.EmailField(max_length=300, help_text='Email klienta', blank=True)
+    phone = models.CharField(max_length=400, help_text='Telefon klienta', blank=True)
     name = models.CharField(max_length=400, help_text='Imie klienta')
     attachment_img = models.ImageField(max_length=400, help_text='Klient moze zalaczyc obrazek, screen', upload_to='images/', blank=True)
     update_date = models.DateTimeField('modification date', auto_now=True)

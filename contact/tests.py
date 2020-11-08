@@ -1,139 +1,123 @@
 from http import HTTPStatus
 
+from django.contrib.messages import get_messages
 from django.test import TestCase
-from django.core.files.uploadedfile import SimpleUploadedFile
 
-from demosite.constants import email_or_phone_required, field_required, incorrect_email_format, incorrect_phone_format, incorrect_extension
+from demosite.constants import email_or_phone_required, field_required, incorrect_email_format, incorrect_phone_format
+
 from .forms import ContactForm
 
-import tempfile
 
+# TODO+ django data driven test - taki sam kształt testu, zmieniają się tylko dane
+# TODO+ assertPy - biblioteka do asercji
+# TODO+ klasa bazowa z metodami setupowymi do tworzenia wspólnych obiektów
 
 class ContactRequestTests(TestCase):
-    baseUrl = "/contact/"
 
-    # contact page should be loaded
+    def setUp(self):
+        self.baseUrl = "/contact/"
+        self.valid_form_data = {
+            "email": "test@test.pl",
+            "message": "test message",
+            "name": "Jan Kowalski",
+            "phone": "123123123"
+        }
+
     def test_contact_page_loaded(self):
         response = self.client.get(self.baseUrl)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
-    # form should pass when all required fields are filled
-    def test_contact_all_required_fields(self):
-        # email variant
-        form_data1 = {
+    def test_should_contact_phone_not_required_when_email_provided(self):
+        form_data = {
             "email": "test@test.pl",
             "message": "test message",
             "name": "Jan Kowalski",
-            "attachment_img": tempfile.NamedTemporaryFile(suffix=".jpg").name,
             "phone": ""
         }
-        form1 = ContactForm(data=form_data1)
-        self.assertEqual(len(form1.errors), 0, "form should not have errors")
-        self.assertTrue(form1.is_valid(), "form should be valid with correct email, message and name provided")
+        form = ContactForm(data=form_data)
+        self.assertEqual(len(form.errors), 0, "form should not have errors")
+        self.assertTrue(form.is_valid(), "form should be valid with correct email, message and name provided")
 
-        # phone variant
-        form_data2 = {
+    def test_should_contact_email_not_required_when_phone_provided(self):
+        form_data = {
             "phone": "500400200",
             "message": "test message",
             "name": "Jan Kowalski",
-            "attachment_img": tempfile.NamedTemporaryFile(suffix=".jpg").name,
             "email": ""
         }
-        form2 = ContactForm(data=form_data2)
-        self.assertEqual(len(form2.errors), 0, "form should not have errors")
-        self.assertTrue(form2.is_valid(), "form should be valid with correct phone, message and name provided")
+        form = ContactForm(data=form_data)
+        self.assertTrue(form.is_valid(), "form should be valid with correct phone, message and name provided")
+        self.assertEqual(len(form.errors), 0, "form should not have error:")
 
     # form should not pass until required fields - input message textarea and name - are not filled
-    def test_contact_form_message_and_name_required_fields(self):
+    def test_should_message_and_name_be_required_fields(self):
         form_data = {
             "email": "test@test.pl",
-            "phone": "",
+            "phone": "512345678",
             "message": "",
-            "name": "",
-            "attachment_img": tempfile.NamedTemporaryFile(suffix=".jpg").name
+            "name": ""
         }
         form = ContactForm(data=form_data)
 
-        self.assertIn(field_required, form.errors['name'])
-        self.assertIn(field_required, form.errors['message'])
+        self.assertIn(field_required, form.errors['name'], "name should be required")
+        self.assertIn(field_required, form.errors['message'], "message should be required")
         self.assertFalse(form.is_valid(), "name and massage should be required")
 
-    # form should not pass until required fields - email OR phone - are not filled
-    def test_contact_form_email_or_message_required(self):
+    def test_should_email_or_message_be_required(self):
         form_data = {
             "email": "",
             "phone": "",
             "message": "test",
-            "name": "test",
-            "attachment_img": tempfile.NamedTemporaryFile(suffix=".jpg").name
+            "name": "test"
         }
         form = ContactForm(data=form_data)
-        self.assertIn(email_or_phone_required, form.errors['__all__'])
         self.assertFalse(form.is_valid(), "phone or email should be provided")
+        self.assertIn(email_or_phone_required, form.errors['__all__'], "'email_or_phone_required' error should be added")
 
-    # validation for email should work
-    def test_contact_form_email_format(self):
+    def test_should_email_has_correct_format(self):
         form_data = {
             "email": "TEST",
             "phone": "123456789",
             "message": "test",
-            "name": "test",
-            "attachment_img": tempfile.NamedTemporaryFile(suffix=".jpg").name
+            "name": "test"
         }
         form = ContactForm(data=form_data)
         self.assertIn(incorrect_email_format, form.errors['email'])
         self.assertFalse(form.is_valid(), "email format should be valid")
 
-    # validation for phone should work
-    def test_contact_form_phone_format(self):
-        form_data1 = {
+    def test_should_phone_has_correct_format(self):
+        form_data = {
             "email": "TEST@TEST.pl",
-            "phone": "x234w5629",
+            "phone": "x234w562",
             "message": "test",
-            "name": "test",
-            "attachment_img": tempfile.NamedTemporaryFile(suffix=".jpg").name
+            "name": "test"
         }
-        form1 = ContactForm(data=form_data1)
-        self.assertIn(incorrect_phone_format, form1.errors['__all__'])
-        self.assertFalse(form1.is_valid(), "phone format should have only digits")
+        form = ContactForm(data=form_data)
+        self.assertIn(incorrect_phone_format, form.errors['__all__'])
+        self.assertFalse(form.is_valid(), "phone format should have 9 digits")
 
-        form_data2 = {
-            "email": "TEST@TEST.pl",
-            "phone": "x234w5629",
-            "message": "test",
-            "name": "test",
-            "attachment_img": tempfile.NamedTemporaryFile(suffix=".jpg").name
-        }
-        form2 = ContactForm(data=form_data2)
-        self.assertIn(incorrect_phone_format, form2.errors['__all__'])
-        self.assertFalse(form2.is_valid(), "phone format should have 9 digits")
+    def test_should_display_contact_form(self):
+        # Arrange & Act
+        response = self.client.get(self.baseUrl)
+        # Assert
+        self.assertTrue('form' in response.context, "form should be included in response")
 
-    # TODO fix
-    # attachment should receive only image or pdf format
-    # def test_contact_form_attachment_format(self):
-    #     form_data1 = {
-    #         "email": "TEST@TEST.pl",
-    #         "phone": "500400200",
-    #         "message": "test",
-    #         "name": "test",
-    #         "attachment_img": tempfile.NamedTemporaryFile(suffix=".doc").name
-    #     }
-    #     form1 = ContactForm(data=form_data1)
-    #     self.assertIn(incorrect_extension, form1.errors['attachment_img'])
-    #     self.assertFalse(form1.is_valid(), "attachment img should not pass .doc")
-    #
-    #     form_data2 = {
-    #         "email": "TEST@TEST.pl",
-    #         "phone": "500400200",
-    #         "message": "test",
-    #         "name": "test",
-    #         "attachment_img": tempfile.NamedTemporaryFile(suffix=".png").name
-    #     }
-    #
-    #     form = ContactForm(data=form_data2)
-    #     self.assertEqual(len(form.errors), 0, "form should not have errors")
-    #     self.assertTrue(form.is_valid(), "attachment img should pass .png")
+    def test_should_return_success_message_on_valid_form_save(self):
+        # Arrange & Act
+        response = self.client.post(self.baseUrl, data=self.valid_form_data)
+        # Assert
+        self.assertEqual(response.status_code, 302, "page should be redirect/reload after save")
+        self.assertEqual(len(list(get_messages(response.wsgi_request))), 1, "success message should be displayed after successfully contact form sent")
 
-    # contact form request should be stored in database
-
-    # contact form should be styled correctly
+    def test_should_contact_data_be_saved_correctly_into_db(self):
+        # Arrange
+        form_data = self.valid_form_data
+        form = ContactForm(data=form_data)
+        # Act
+        result = form.save()
+        # Assert
+        self.assertIsNotNone(result.pk, "object is not created in db")
+        self.assertEqual(result.email, form.data['email'], "email is not saved correctly")
+        self.assertEqual(result.message, form.data['message'], "message is not saved correctly")
+        self.assertEqual(result.name, form.data['name'], "name is not saved correctly")
+        self.assertEqual(result.phone, form.data['phone'], "phone is not saved correctly")

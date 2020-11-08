@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
@@ -10,13 +11,14 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             store_contact_request(form)
+            messages.add_message(request, messages.SUCCESS, 'Twoja wiadomość została wysłana.')
             return HttpResponseRedirect('/contact/')
     else:
         form = ContactForm()
 
     context = {
         "configuration": get_configuration(),
-        "form": form,
+        "form": form
     }
 
     return render(request, 'contact.html', context)
