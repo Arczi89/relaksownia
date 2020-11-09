@@ -1,5 +1,4 @@
 from django.urls import reverse_lazy
-from django.urls import resolve
 
 from demosite.constants import field_required_and_invalid
 from main.models import MainConfiguration

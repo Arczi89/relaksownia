@@ -49,8 +49,5 @@ class ContactForm(forms.ModelForm):
             'max_length': incorrect_phone_format
         })
         self.fields['email'].error_messages.update({
-            'invalid': incorrect_email_format #TODO fix
-        })
-        self.fields['attachment_img'].error_messages.update({
-            'file_extension': incorrect_extension  #TODO fix
+            'invalid': incorrect_email_format
         })

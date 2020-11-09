@@ -1,6 +1,7 @@
 from http import HTTPStatus
 
 from django.contrib.messages import get_messages
+from django.template.loader import render_to_string
 from django.test import TestCase
 
 from demosite.constants import email_or_phone_required, field_required, incorrect_email_format, incorrect_phone_format
@@ -34,7 +35,9 @@ class ContactRequestTests(TestCase):
             "name": "Jan Kowalski",
             "phone": ""
         }
+
         form = ContactForm(data=form_data)
+
         self.assertEqual(len(form.errors), 0, "form should not have errors")
         self.assertTrue(form.is_valid(), "form should be valid with correct email, message and name provided")
 
@@ -45,11 +48,12 @@ class ContactRequestTests(TestCase):
             "name": "Jan Kowalski",
             "email": ""
         }
+
         form = ContactForm(data=form_data)
+
         self.assertTrue(form.is_valid(), "form should be valid with correct phone, message and name provided")
         self.assertEqual(len(form.errors), 0, "form should not have error:")
 
-    # form should not pass until required fields - input message textarea and name - are not filled
     def test_should_message_and_name_be_required_fields(self):
         form_data = {
             "email": "test@test.pl",
@@ -57,6 +61,7 @@ class ContactRequestTests(TestCase):
             "message": "",
             "name": ""
         }
+
         form = ContactForm(data=form_data)
 
         self.assertIn(field_required, form.errors['name'], "name should be required")
@@ -70,7 +75,9 @@ class ContactRequestTests(TestCase):
             "message": "test",
             "name": "test"
         }
+
         form = ContactForm(data=form_data)
+
         self.assertFalse(form.is_valid(), "phone or email should be provided")
         self.assertIn(email_or_phone_required, form.errors['__all__'], "'email_or_phone_required' error should be added")
 
@@ -81,7 +88,9 @@ class ContactRequestTests(TestCase):
             "message": "test",
             "name": "test"
         }
+
         form = ContactForm(data=form_data)
+
         self.assertIn(incorrect_email_format, form.errors['email'])
         self.assertFalse(form.is_valid(), "email format should be valid")
 
@@ -92,7 +101,9 @@ class ContactRequestTests(TestCase):
             "message": "test",
             "name": "test"
         }
+
         form = ContactForm(data=form_data)
+
         self.assertIn(incorrect_phone_format, form.errors['__all__'])
         self.assertFalse(form.is_valid(), "phone format should have 9 digits")
 
@@ -121,3 +132,16 @@ class ContactRequestTests(TestCase):
         self.assertEqual(result.message, form.data['message'], "message is not saved correctly")
         self.assertEqual(result.name, form.data['name'], "name is not saved correctly")
         self.assertEqual(result.phone, form.data['phone'], "phone is not saved correctly")
+
+    def test_should_all_section_be_visible_in_page(self):
+        # Arrange
+        template_name = "contact.html"
+        context = {
+            "configuration": "not empty"
+        }
+        # Act
+        result = render_to_string(template_name, context)
+        # Assert
+        self.assertTrue("iframe" in result, "there is map section on page")
+        self.assertTrue("contact-left" in result, "there is no left section on page")
+        self.assertTrue("contact-right" in result, "there is no right section on page")

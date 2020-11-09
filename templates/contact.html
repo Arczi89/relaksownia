@@ -44,11 +44,6 @@
                 {% for field in form %}
                     <div class="form-group{% if field.errors %} invalid{% endif %}" id="form_{{ field.name }}">
                         {% if field.name == 'attachment_img' %}
-<!--                        TODO: czy ma być attachment?-->
-<!--                        <label class="custom-file-upload" for="id_attachment_img">-->
-<!--                            {{ field }}-->
-<!--                            Załącz plik-->
-<!--                        </label>-->
                         {% else %}
                         {{ field }}
                         {% endif %}
