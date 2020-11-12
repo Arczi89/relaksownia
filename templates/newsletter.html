@@ -5,16 +5,16 @@
       {% csrf_token %}
 
      <div class="modal-header">
-        <h5 class="modal-title">Zapisz się na newsletter</h5>
+        <div class="modal-title">Zapisz się na newsletter</div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
 
       <div class="modal-body">
-          <h3>
+          <div>
               {{ configuration.newsletter_info | safe }}
-          </h3>
+          </div>
         {% for field in form %}
           <div id="form_{{ field.name }}" class="form-group{% if field.errors %} invalid{% endif %}">
               {{ field }}
@@ -31,8 +31,8 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
-        <button type="button" class="submit-btn btn btn-primary">Zapisz</button>
+        <button type="button" class="btn" data-dismiss="modal">Zamknij</button>
+        <button type="button" class="submit-btn btn">Zapisz</button>
       </div>
 
     </form>

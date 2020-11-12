@@ -498,13 +498,21 @@ body ::placeholder {
 }
 
 /* newsletter modal */
+.modal .modal-title {
+  font-weight: bold;
+}
+
+.modal .modal-content {
+  border: solid #2e2e2e 1px;
+}
+
 .modal .modal-content * {
   background: black;
   color: white;
 }
 
-.modal .modal-content {
-  border: solid #2e2e2e 1px;
+.modal .modal-footer button {
+  border: solid 1px white;
 }
 
 #newsletter-container .modal-header {
@@ -546,4 +554,24 @@ body ::placeholder {
 #newsletter-container #form_permission label {
   margin-bottom: 0;
   margin-left: 1rem;
+}
+
+/* cookielawe */
+#CookielawBanner .container {
+  max-width: 100%;
+}
+
+#CookielawBanner .cookie-text {
+  text-color: white;
+}
+
+#CookielawBanner .cookie-button {
+  height: 1.5rem;
+  border: solid white 1px;
+}
+
+#CookielawBanner .cookie-button a {
+  margin: 1rem;
+  color: white;
+  font-family: unset;
 }

@@ -1,0 +1,13 @@
+{% load i18n %}
+
+<div id="CookielawBanner">
+    <div class="container">
+        <div class="cookie-text">
+            {% trans "COOKIE_INFO_PARA" %}
+            <label class="cookie-button" for="submit-cookie">
+                <a href="javascript:Cookielaw.createCookielawCookie();" value="Send" id="submit-cookie">{% trans "COOKIE_INFO_OK" %}</a>
+            </label>
+        </div>
+    </div>
+</div>
+

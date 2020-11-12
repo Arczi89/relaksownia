@@ -1,4 +1,5 @@
 {% load static %}
+{% load cookielaw_tags %}
 <html>
 <head>
     <title>RELAKSOWNIA</title>
@@ -10,6 +11,8 @@
 </head>
 <body>
 
+{% include 'partials/_cookielaw.html' %}
+
 {% include 'partials/_header.html' %}
 
 <div class="modal fade" tabindex="-1" role="dialog" id="modal">
@@ -17,7 +20,7 @@
     <div class="modal-content"></div>
   </div>
 </div>
-<button id="newsletter">CLICK NEWSLETTER</button>
+<div id="newsletter"></div>
 
 <div class="content-container">
     <div class="col-md-12">
@@ -30,15 +33,20 @@
 
 <script src="{% static 'js/jquery-3.5.1.min.js' %}" ></script>
 <script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/cookielaw.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/slick.min.js' %}"></script>
 <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
 <script src="{% static 'js/common.js' %}"></script>
 <script type="text/javascript">
 $(function () {
-    $("#newsletter").modalForm({
-        formURL: "{% url 'newsletter' %}"
-    });
+    if (!document.cookie.split('; ').find(row => row.startsWith('newsletter'))) {
+        $("#newsletter").modalForm({
+            formURL: "{% url 'newsletter' %}"
+        });
+        $("#newsletter").click();
+        Cookielaw.createCookie('newsletter', 1, 30);
+    }
 });
 </script>
 </body>

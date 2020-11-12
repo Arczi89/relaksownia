@@ -525,13 +525,23 @@ body {
 
 
 /* newsletter modal */
-.modal .modal-content * {
-    background: black;
-    color: white;
-}
+.modal {
+    .modal-title {
+        font-weight: bold;
+    }
+    .modal-content {
+        border: solid $almost-black 1px;
+        * {
+            background: black;
+            color: white;
+        }
+    }
+    .modal-footer {
+        button {
+            border: solid 1px white
+        }
+    }
 
-.modal .modal-content {
-    border: solid $almost-black 1px;
 }
 
 #newsletter-container {
@@ -571,4 +581,24 @@ body {
         }
     }
 
+}
+
+/* cookielawe */
+
+#CookielawBanner {
+    .container {
+        max-width: 100%;
+    }
+    .cookie-text {
+        text-color: white;
+    }
+    .cookie-button {
+        height: 1.5rem;
+        border: solid white 1px;
+        a {
+            margin: 1rem;
+            color: white;
+            font-family: unset;
+        }
+    }
 }
