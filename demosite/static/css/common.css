@@ -50,8 +50,11 @@ body {
 a {
   color: #ebe286;
   cursor: pointer;
-  font-family: league;
   text-transform: uppercase;
+}
+
+a.nav-link {
+  font-family: league;
 }
 
 .footer-container li a {
@@ -80,7 +83,7 @@ a.inline-block {
   display: inline-block;
 }
 
-.info-img img {
+.info-img img, #carousel img, .main-image, .offer-item img {
   filter: sepia(40%) brightness(70%) saturate(200%) contrast(130%);
 }
 

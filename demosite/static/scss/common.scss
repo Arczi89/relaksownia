@@ -56,8 +56,10 @@ body {
 a {
   color: $base-color;
   cursor: pointer;
-  font-family: league;
   text-transform: uppercase;
+  &.nav-link {
+    font-family: league;
+  }
 }
 
 .footer-container li a {
@@ -88,7 +90,7 @@ a {
   }
 }
 
-.info-img img {
+.info-img img, #carousel img, .main-image, .offer-item img {
   filter: sepia(40%) brightness(70%) saturate(200%) contrast(130%);
 }
 
