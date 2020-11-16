@@ -265,10 +265,15 @@ li.nav-item {
 
 .offer-text .offer-desc {
   margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.offer-text .offer-desc p {
+  font-size: 1.5rem;
 }
 
 .offer-text .offer-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-family: league;
 }
 
