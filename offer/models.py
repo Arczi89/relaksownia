@@ -15,7 +15,7 @@ class OfferConfiguration(models.Model):
 class OfferItem(models.Model):
     title = models.TextField()
     text = RichTextField()
-    image = models.ImageField()
+    image = models.ImageField(upload_to='images/')
     image_alt = models.TextField(help_text='Tekst wyświetlany w przypadku gdyby obrazek sie nie zaladowal')
     update_date = models.DateTimeField('modification date', auto_now=True)
 

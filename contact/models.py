@@ -22,7 +22,6 @@ class Contact(models.Model):
     email = models.EmailField(max_length=300, help_text='Email klienta', blank=True)
     phone = models.CharField(max_length=400, help_text='Telefon klienta', blank=True)
     name = models.CharField(max_length=400, help_text='Imie klienta')
-    attachment_img = models.ImageField(max_length=400, help_text='Klient moze zalaczyc obrazek, screen', upload_to='images/', blank=True)
     update_date = models.DateTimeField('modification date', auto_now=True)
 
     def __str__(self):
