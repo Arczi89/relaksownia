@@ -28,7 +28,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+	'demosite.arturszwagrzak.atthost24.pl'
+]
 
 # Application definition
 
@@ -118,19 +120,19 @@ WSGI_APPLICATION = 'demosite.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'OPTIONS': {
-    #         'read_default_file': os.path.join(BASE_DIR, 'mysql.cnf'),
-    #     },
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'demosite',
-            'USER': 'postgres',
-            'PASSWORD': 'postgres',
-            'HOST': 'localhost'
-        }
-    # }
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'OPTIONS': {
+             'read_default_file': os.path.join(BASE_DIR, 'mysql.cnf'),
+         }
+    #    'default': {
+    #        'ENGINE': 'django.db.backends.postgresql',
+    #        'NAME': 'demosite',
+    #        'USER': 'postgres',
+    #        'PASSWORD': 'postgres',
+    #        'HOST': 'localhost'
+    #    }
+     }
 }
 
 
