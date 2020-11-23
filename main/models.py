@@ -7,6 +7,7 @@ class MainConfiguration(models.Model):
     app_name = "Main"
     is_modal_visible = models.BooleanField(default=False)
     newsletter_info = RichTextField()
+    main_text = RichTextField()
     update_date = models.DateTimeField('modification date', auto_now=True)
 
     def __str__(self):

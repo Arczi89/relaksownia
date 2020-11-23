@@ -22,6 +22,12 @@
 </div>
 {% endif %}
 
+<div class="box" id="mainpage-box">
+    <div class="box-text">
+        {{ configuration.main_text | safe }}
+    </div>
+</div>
+
 {% if containers %}
 <div class="columns" id="container">
     {% for container in containers %}
@@ -43,12 +49,4 @@
     {% endfor %}
 </div>
 {% endif %}
-
-<div class="banner" id="mainpage-banner">
-<!--    TODO modyfikowalny tekst-->
-    <div class="banner-text">
-        Naszym celem jest twój komfort.
-    </div>
-</div>
-
 {% endblock %}
