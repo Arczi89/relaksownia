@@ -374,6 +374,11 @@ li.nav-item {
   margin: 1rem;
   display: flex;
 
+  .fa, p {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   table, th, td {
     border: solid 1px $almost-black;
     text-align: center;

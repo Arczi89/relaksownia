@@ -357,6 +357,11 @@ li.nav-item {
   display: flex;
 }
 
+.contact-left-inner .fa, .contact-left-inner p, .contact-right-inner .fa, .contact-right-inner p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .contact-left-inner table, .contact-left-inner th, .contact-left-inner td, .contact-right-inner table, .contact-right-inner th, .contact-right-inner td {
   border: solid 1px #2e2e2e;
   text-align: center;
