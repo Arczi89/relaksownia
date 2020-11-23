@@ -32,6 +32,7 @@ $borrowed-grey: #ccd0d3;
 body {
   background-color: black;
   color: white;
+  font-family: league;
 }
 
 .card {
@@ -64,7 +65,7 @@ a {
 
 .footer-container li a {
   color: white;
-  font-family: unset;
+
 }
 
 h1, h2, h3, h4, h5 {
@@ -76,7 +77,7 @@ h1, h2, h3, h4, h5 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 a {
@@ -140,23 +141,8 @@ li.nav-item {
    }
 }
 
-
 .content-container {
   margin-bottom: 2rem;
-}
-
-#mainpage-banner.banner {
-  height: 500px;
-  border-top: 1px solid gold;
-  border-bottom: 1px solid gold;
-}
-
-.banner-text {
-  font-family: Lobster;
-  font-size: 5rem;
-  text-align: center;
-  padding: auto;
-  font-style: italic;
 }
 
 #main-text.main-text {
@@ -483,7 +469,6 @@ li.nav-item {
             justify-content: center;
         }
         .item {
-            //margin: 1rem;
             img {
                 border-radius: 50%;
             }
@@ -606,14 +591,14 @@ body {
     }
     .cookie-text {
         text-color: white;
+        font-size: 1.5rem;
     }
     .cookie-button {
-        height: 1.5rem;
+        height: 2rem;
         border: solid white 1px;
         a {
             margin: 1rem;
             color: white;
-            font-family: unset;
         }
     }
 }

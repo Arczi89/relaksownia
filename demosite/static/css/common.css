@@ -27,6 +27,7 @@
 body {
   background-color: black;
   color: white;
+  font-family: league;
 }
 
 .card {
@@ -59,7 +60,6 @@ a.nav-link {
 
 .footer-container li a {
   color: white;
-  font-family: unset;
 }
 
 h1, h2, h3, h4, h5 {
@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 a:hover {
@@ -135,20 +135,6 @@ li.nav-item {
 
 .content-container {
   margin-bottom: 2rem;
-}
-
-#mainpage-banner.banner {
-  height: 500px;
-  border-top: 1px solid gold;
-  border-bottom: 1px solid gold;
-}
-
-.banner-text {
-  font-family: Lobster;
-  font-size: 5rem;
-  text-align: center;
-  padding: auto;
-  font-style: italic;
 }
 
 #main-text.main-text {
@@ -580,15 +566,15 @@ body ::placeholder {
 
 #CookielawBanner .cookie-text {
   text-color: white;
+  font-size: 1.5rem;
 }
 
 #CookielawBanner .cookie-button {
-  height: 1.5rem;
+  height: 2rem;
   border: solid white 1px;
 }
 
 #CookielawBanner .cookie-button a {
   margin: 1rem;
   color: white;
-  font-family: unset;
 }
