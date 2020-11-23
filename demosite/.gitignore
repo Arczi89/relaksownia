@@ -117,3 +117,6 @@ media/
 # **/migrations/**
 # !**/migrations
 # !**/migrations/__init__.py
+
+demosite/settings.py.bak
+/demosite/settings.py.bak
