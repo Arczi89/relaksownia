@@ -91,7 +91,7 @@ a {
   }
 }
 
-.info-img img, #carousel img, .main-image, .offer-item img {
+.about-me-img img, #carousel img, .main-image, .offer-item img {
   filter: sepia(40%) brightness(70%) saturate(200%) contrast(130%);
 }
 
@@ -202,7 +202,7 @@ li.nav-item {
   margin-top: 4rem;
 }
 
-.container-title, .info-justyna {
+.container-title, .about-me-justyna {
   border-bottom: 1px solid white;
   margin-bottom: 1rem;
   color: white;
@@ -214,9 +214,9 @@ li.nav-item {
   flex: 1 1 0px;
 }
 
-/* info + video */
+/* about-me + video */
 
-.info {
+.about-me {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -226,11 +226,11 @@ li.nav-item {
   margin-left: 4rem;
 }
 
-.info-justyna {
+.about-me-justyna {
   font-size: 2rem;
 }
 
-.info-container, .video-container {
+.about-me-container, .video-container {
   width: 100%;
   height: auto;
   margin: 2rem;
@@ -243,7 +243,7 @@ li.nav-item {
   width: 100%;
 }
 
-.info-img, .info-desc {
+.about-me-img, .about-me-desc {
   margin: 0.5rem;
 }
 
