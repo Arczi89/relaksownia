@@ -3,11 +3,7 @@
 
 {% block content %}
 
-{% if configuration %}
-<div class="main-image" id="faq-main-image">
-    <img class="d-block w-100" src="{{ configuration.main_image.url }}" alt="Image"/>
-</div>
-
+{% if offers %}
 <div id="offer-container" class="offer-container">
     {% for offer in offers %}
     <div class="offer-item">

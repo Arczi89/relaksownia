@@ -1,16 +1,11 @@
 from django.shortcuts import render
 
-from .models import OfferItem, OfferConfiguration
+from .models import OfferItem
 
 
 def offer(request):
     offers = OfferItem.objects.all()
-    try:
-        configuration = OfferConfiguration.objects.all()[:1].get()
-    except OfferConfiguration.DoesNotExist:
-        configuration = None
     context = {
-        'offers': offers,
-        'configuration': configuration
+        'offers': offers
     }
     return render(request, 'offer.html', context)
