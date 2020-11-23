@@ -4,13 +4,13 @@
 {% block content %}
 
 {% if about_me %}
-<div class="info">
-    <div class="info-container" id="info-container">
-        <div class="info-img">
+<div class="about-me">
+    <div class="about-me-container" id="about-me-container">
+        <div class="about-me-img">
             <img src="{{ about_me.photo.url }}" alt="{{ photo_alt }}" height="600" width="auto"/>
         </div>
-        <div class="info-desc">
-            <div class="info-justyna">
+        <div class="about-me-desc">
+            <div class="about-me-text">
                 {{ about_me.description|safe }}
             </div>
         </div>
