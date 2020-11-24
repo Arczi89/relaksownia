@@ -30,6 +30,8 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = []
 
+FILE_UPLOAD_PERMISSIONS = 0o644
+
 # Application definition
 
 INSTALLED_APPS = [
