@@ -40,6 +40,9 @@
 <script src="{% static 'js/common.js' %}"></script>
 <script type="text/javascript">
 $(function () {
+    if (!document.cookie.split('; ').find(row => row.startsWith('cookielaw_accepted'))) {
+        document.getElementById('CookielawBanner').style.display = 'block';
+    }
     if (!document.cookie.split('; ').find(row => row.startsWith('newsletter'))) {
         $("#newsletter").modalForm({
             formURL: "{% url 'newsletter' %}"
@@ -47,6 +50,7 @@ $(function () {
         $("#newsletter").click();
         Cookielaw.createCookie('newsletter', 1, 30);
     }
+
 });
 </script>
 </body>
