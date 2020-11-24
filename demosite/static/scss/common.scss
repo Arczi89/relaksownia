@@ -238,6 +238,11 @@ li.nav-item {
   justify-content: stretch;
 }
 
+.about-me-container {
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
+}
+
 .video-container-inner {
   height: 100%;
   width: 100%;
@@ -245,6 +250,13 @@ li.nav-item {
 
 .about-me-img, .about-me-desc {
   margin: 0.5rem;
+}
+
+.about-me-desc {
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 3rem;
 }
 
 /* offer */
