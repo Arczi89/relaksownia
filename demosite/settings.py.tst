@@ -32,6 +32,8 @@ ALLOWED_HOSTS = [
 	'demosite.arturszwagrzak.atthost24.pl'
 ]
 
+FILE_UPLOAD_PERMISSIONS = 0o644
+
 # Application definition
 
 INSTALLED_APPS = [
