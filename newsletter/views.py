@@ -15,8 +15,8 @@ class NewsletterView(BSModalCreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         try:
-            context['configuration'] = MainConfiguration.objects.all()[:1].get()
+            context['newsletterConfiguration'] = MainConfiguration.objects.all()[:1].get()
         except MainConfiguration.DoesNotExist:
-            context['configuration'] = MainConfiguration
+            context['newsletterConfiguration'] = MainConfiguration
         context['field_required_and_invalid'] = field_required_and_invalid
         return context

@@ -5,8 +5,8 @@
 {% if configuration %}
 <iframe allowfullscreen="" aria-hidden="false" frameborder="0" height="600" src="{{configuration.map_url}}"
         style="border:0;" tabindex="0" width="100%"></iframe>
-<div id="contact">
-    <div class="contact-left">
+<div id="contact" class="main-content-2-columns">
+    <div class="contact-left column-left">
         <div class="contact-left-inner main-title">
             <div class="fa fa-car"></div>
             <div class="on-site contact-block">{{configuration.on_site_client_info|safe}}</div>
@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    <div class="contact-right">
+    <div class="contact-right column-right">
         <div class="contact-right-inner main-title">
             <div class="fa fa-question"></div>
             <div class="help-info main-title contact-block"> {{configuration.have_questions|safe}}</div>

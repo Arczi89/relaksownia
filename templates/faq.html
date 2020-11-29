@@ -8,25 +8,33 @@
         <img class="d-block w-100" src="{{configuration.main_image.url}}" alt="Image"/>
     </div>
 
-    <div class="accordion" id="faq-accordion">
-        {% for faq in faqs %}
-        <div class="card">
-            <div class="card-header">
-                <h2>
-                    <a class="inline-block" aria-controls="collapseOne" href="#" aria-expanded="{% if forloop.counter == 1 %} true {% else %} false {% endif %}"
-                       data-target="#faq-{{forloop.counter}}" data-toggle="collapse">
-                        {{faq.question_text|safe}}
-                    </a>
-                </h2>
-            </div>
+    <div class="faq-main-content main-content-2-columns">
+        <div class="accordion left-column column-75" id="faq-accordion">
+            {% for faq in faqs %}
+            <div class="card">
+                <div class="card-header">
+                    <h2>
+                        <a class="inline-block" aria-controls="collapseOne" href="#" aria-expanded="{% if forloop.counter == 1 %} true {% else %} false {% endif %}"
+                           data-target="#faq-{{forloop.counter}}" data-toggle="collapse">
+                            {{faq.question_text|safe}}
+                        </a>
+                    </h2>
+                </div>
 
-            <div aria-labelledby="headingOne" class="collapse {% if forloop.counter == 1 %} show {% endif %}" data-parent="#faq-accordion" id="faq-{{forloop.counter}}">
-                <div class="card-body">
-                    {{faq.answer_text|safe}}
+                <div aria-labelledby="headingOne" class="collapse {% if forloop.counter == 1 %} show {% endif %}" data-parent="#faq-accordion" id="faq-{{forloop.counter}}">
+                    <div class="card-body">
+                        {{faq.answer_text|safe}}
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+
+        <div id="faq-newsletter" class="right-column column-25">
+            {% include 'partials/_newsletter.html' %}
+        </div>
     </div>
     {% endif %}
+
+
 {% endblock %}
