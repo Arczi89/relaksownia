@@ -15,10 +15,9 @@ def faq(request):
     try:
         configuration = FaqConfiguration.objects.all()[:1].get()
         newsletter_configuration = MainConfiguration.objects.all()[:1].get()
-    except FaqConfiguration.DoesNotExist:
+    except (FaqConfiguration.DoesNotExist, MainConfiguration.DoesNotExist):
         configuration = None
-    except MainConfiguration.DoesNotExist:
-        configuration = None
+        newsletter_configuration = None
     context = {
         'faqs': faqs,
         'configuration': configuration,

@@ -12,8 +12,23 @@ from .forms import ContactForm
 # TODO+ django data driven test - taki sam kształt testu, zmieniają się tylko dane
 # TODO+ assertPy - biblioteka do asercji
 # TODO+ klasa bazowa z metodami setupowymi do tworzenia wspólnych obiektów
+from .models import ContactConfiguration
+
 
 class ContactRequestTests(TestCase):
+
+    def addBasicConfiguration(self):
+        configuration = ContactConfiguration(
+            phone_number="123456789",
+            email="test@test.pl"
+        )
+        configuration.save()
+        return configuration.pk
+
+    def removeBasicConfiguration(self):
+        obj = ContactConfiguration.objects.get(pk=self.configurationPk)
+        obj.delete()
+
 
     def setUp(self):
         self.baseUrl = "/contact/"
@@ -23,6 +38,7 @@ class ContactRequestTests(TestCase):
             "name": "Jan Kowalski",
             "phone": "123123123"
         }
+        self.configurationPk = self.addBasicConfiguration()
 
     def test_contact_page_loaded(self):
         response = self.client.get(self.baseUrl)

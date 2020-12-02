@@ -1,6 +1,7 @@
 # ERROR MESSAGES
 
 field_required = 'Pole jest wymagane'
+newsletter_permission_required = 'Musisz wyrazić zgodę aby zapisać się na newsletter'
 field_required_and_invalid = 'Niepoprawny format. Pole nie może być puste.'
 email_or_phone_required = 'Uzupełnij pole email albo telefon'
 incorrect_email_format = 'Niepoprawny email'

@@ -1,10 +1,10 @@
 from http import HTTPStatus
 
 from django.contrib.messages import get_messages
-from django.template.loader import render_to_string
 from django.test import TestCase
 
-from demosite.constants import email_or_phone_required, field_required, incorrect_email_format, incorrect_phone_format
+from demosite.constants import field_required, incorrect_email_format, newsletter_permission_required
+from main.models import MainConfiguration
 
 from .forms import NewsletterForm
 
@@ -15,30 +15,50 @@ from .forms import NewsletterForm
 from .models import Newsletter
 
 
-class ContactRequestTests(TestCase):
+class NewsletterTests(TestCase):
+
+    def addBasicConfiguration(self):
+        configuration = MainConfiguration(
+            newsletter_info="Newsletter info",
+            main_text="Main text"
+        )
+        configuration.save()
+        return configuration.pk
+
+    def removeBasicConfiguration(self):
+        obj = MainConfiguration.objects.get(pk=self.configurationPk)
+        obj.delete()
 
     def setUp(self):
         self.baseUrl = "/newsletter/"
         self.valid_form_data = {
             "email": "test@test.pl",
-            "name": "Jan Kowalski"
+            "name": "Jan Kowalski",
+            "permission": True
         }
+        self.configurationPk = self.addBasicConfiguration()
 
-    def test_contact_page_loaded(self):
+    def test_newsletter_modal_loaded_without_configuration(self):
+        self.removeBasicConfiguration()
         response = self.client.get(self.baseUrl)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
-    def test_should_message_and_name_be_required_fields(self):
+    def test_newsletter_modal_loaded_with_configuration(self):
+        response = self.client.get(self.baseUrl)
+        self.assertEqual(response.status_code, HTTPStatus.OK)
+
+    def test_should_message_and_name_and_permission_be_required_fields(self):
         form_data = {
             "email": "",
-            "name": ""
+            "name": "",
+            "permission": False
         }
         form = NewsletterForm(data=form_data)
 
         self.assertIn(field_required, form.errors['name'], "name should be required")
         self.assertIn(field_required, form.errors['email'], "email should be required")
-        self.assertFalse(form.is_valid(), "name and email should be required")
-
+        self.assertIn(newsletter_permission_required, form.errors['permission'], "permission should be accepted")
+        self.assertFalse(form.is_valid(), "name and email should be required, permision should be accepted")
 
     def test_should_email_has_correct_format(self):
         form_data = {
