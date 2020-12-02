@@ -1,7 +1,7 @@
 {% load static %}
 
 <div id="newsletter-container">
-    <form method="post" action="">
+    <form method="post" action="{{ action }}">
       {% csrf_token %}
 
      <div class="modal-header">
@@ -32,7 +32,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn close-modal" data-dismiss="modal">Zamknij</button>
-        <button type="button" class="submit-btn btn save-data">Zapisz</button>
+        <button type="submit" class="submit-btn btn save-data">Zapisz</button>
       </div>
 
     </form>
