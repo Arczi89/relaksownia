@@ -47,7 +47,6 @@ class FaqTests(TestCase):
         response = self.client.get(self.baseUrl)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
-
     def test_should_message_and_name_and_permission_be_required_fields(self):
         form_data = {
             "email": "",
@@ -60,7 +59,6 @@ class FaqTests(TestCase):
         self.assertIn(field_required, form.errors['email'], "email should be required")
         self.assertIn(newsletter_permission_required, form.errors['permission'], "permission should be accepted")
         self.assertFalse(form.is_valid(), "name and email should be required, permision should be accepted")
-
 
     def test_should_email_has_correct_format(self):
         form_data = {
@@ -92,4 +90,4 @@ class FaqTests(TestCase):
         self.assertIsNotNone(saved_obj.pk, "object is not created in db")
         self.assertEqual(saved_obj.email, saved_obj.email, "email is not saved correctly")
         self.assertEqual(saved_obj.name, saved_obj.name, "name is not saved correctly")
-    #
+
