@@ -84,7 +84,7 @@ class FaqTests(TestCase):
 
     def test_should_contact_data_be_saved_correctly_into_db(self):
         # Arrange & Act
-        self.client.post(self.baseUrl, data=self.valid_form_data)
+        self.client.post("/blog", data=self.valid_form_data)
         # Assert
         saved_obj = Newsletter.objects.get(name=self.valid_form_data['name'])
         self.assertIsNotNone(saved_obj.pk, "object is not created in db")

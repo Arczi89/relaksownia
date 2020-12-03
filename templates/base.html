@@ -43,14 +43,13 @@ $(function () {
     if (!document.cookie.split('; ').find(row => row.startsWith('cookielaw_accepted'))) {
         document.getElementById('CookielawBanner').style.display = 'block';
     }
-    if (!document.cookie.split('; ').find(row => row.startsWith('newsletter'))) {
+    if (!document.cookie.split('; ').find(row => row.startsWith('newsletter')) && location.href.includes('/blog') ) {
         $("#newsletter").modalForm({
             formURL: "{% url 'newsletter' %}"
         });
         $("#newsletter").click();
         Cookielaw.createCookie('newsletter', 1, 30);
     }
-
 });
 </script>
 </body>

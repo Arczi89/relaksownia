@@ -31,6 +31,7 @@ class NewsletterTests(TestCase):
 
     def setUp(self):
         self.baseUrl = "/newsletter/"
+        self.newsletterEmbedPlaceUrl = "/blog"
         self.valid_form_data = {
             "email": "test@test.pl",
             "name": "Jan Kowalski",
