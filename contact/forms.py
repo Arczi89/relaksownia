@@ -2,8 +2,8 @@ from django.utils.translation import ugettext_lazy as _
 from django import forms
 import re
 
-from demosite.constants import field_required, email_or_phone_required, incorrect_extension, incorrect_phone_format, \
-    incorrect_email_format
+from demosite.constants import email_or_phone_required, incorrect_phone_format, \
+    incorrect_email_format, field_name_required, field_message_required
 from .models import Contact
 
 
@@ -40,10 +40,10 @@ class ContactForm(forms.ModelForm):
         super(ContactForm, self).__init__(*args, **kwargs)
 
         self.fields['name'].error_messages.update({
-            'required': field_required
+            'required': field_name_required
         })
         self.fields['message'].error_messages.update({
-            'required': field_required
+            'required': field_message_required
         })
         self.fields['phone'].error_messages.update({
             'max_length': incorrect_phone_format

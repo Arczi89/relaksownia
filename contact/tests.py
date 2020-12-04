@@ -4,7 +4,8 @@ from django.contrib.messages import get_messages
 from django.template.loader import render_to_string
 from django.test import TestCase
 
-from demosite.constants import email_or_phone_required, field_required, incorrect_email_format, incorrect_phone_format
+from demosite.constants import email_or_phone_required, field_required, incorrect_email_format, incorrect_phone_format, \
+    field_name_required, field_message_required
 
 from .forms import ContactForm
 
@@ -80,8 +81,8 @@ class ContactRequestTests(TestCase):
 
         form = ContactForm(data=form_data)
 
-        self.assertIn(field_required, form.errors['name'], "name should be required")
-        self.assertIn(field_required, form.errors['message'], "message should be required")
+        self.assertIn(field_name_required, form.errors['name'], "name should be required")
+        self.assertIn(field_message_required, form.errors['message'], "message should be required")
         self.assertFalse(form.is_valid(), "name and massage should be required")
 
     def test_should_email_or_message_be_required(self):
