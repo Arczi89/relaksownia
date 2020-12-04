@@ -128,6 +128,10 @@ a {
   filter: sepia(40%) brightness(70%) saturate(200%) contrast(130%);
 }
 
+#content form .help-block.error, #modal form .help-block.error {
+    color: red;
+}
+
 /* menu styles */
 
 .nav-item a {
@@ -394,8 +398,14 @@ li.nav-item {
 /* faq - newsletter */
 
 #faq-newsletter {
-    .close, .close-modal  {
+    .close, .close-modal, .modal-header  {
       display: none;
+    }
+
+    #newsletter-container {
+        button.submit-btn.btn.save-data {
+            width: 100%;
+        }
     }
 }
 
@@ -604,9 +614,6 @@ body {
         border-top: 1px $almost-black solid;
     }
 
-    .help-block {
-        color: red;
-    }
     .form-group:not(#form_Permission) {
         display:flex;
         label{

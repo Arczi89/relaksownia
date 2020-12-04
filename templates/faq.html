@@ -9,7 +9,7 @@
     </div>
 
     <div class="faq-main-content main-content-2-columns">
-        <div class="accordion left-column column-75" id="faq-accordion">
+        <div class="accordion column-left column-75" id="faq-accordion">
             {% for faq in faqs %}
             <div class="card">
                 <div class="card-header">
@@ -30,7 +30,7 @@
             {% endfor %}
         </div>
 
-        <div id="faq-newsletter" class="right-column column-25">
+        <div id="faq-newsletter" class="column-right column-25">
             {% include 'partials/_newsletter.html' %}
         </div>
     </div>

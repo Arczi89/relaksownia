@@ -119,6 +119,10 @@ a.inline-block {
   filter: sepia(40%) brightness(70%) saturate(200%) contrast(130%);
 }
 
+#content form .help-block.error, #modal form .help-block.error {
+  color: red;
+}
+
 /* menu styles */
 .nav-item a {
   color: white;
@@ -374,8 +378,12 @@ li.nav-item {
 }
 
 /* faq - newsletter */
-#faq-newsletter .close, #faq-newsletter .close-modal {
+#faq-newsletter .close, #faq-newsletter .close-modal, #faq-newsletter .modal-header {
   display: none;
+}
+
+#faq-newsletter #newsletter-container button.submit-btn.btn.save-data {
+  width: 100%;
 }
 
 /* contact */
@@ -572,10 +580,6 @@ body ::placeholder {
 
 #newsletter-container .modal-footer {
   border-top: 1px #2e2e2e solid;
-}
-
-#newsletter-container .help-block {
-  color: red;
 }
 
 #newsletter-container .form-group:not(#form_Permission) {

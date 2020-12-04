@@ -49,7 +49,7 @@
                         {% endif %}
                     </div>
                     {% for error in field.errors %}
-                        <p class="help-block">{{ error | safe }}</p>
+                        <p class="help-block error">{{ error | safe }}</p>
                     {% endfor %}
                 {% endfor %}
                 <label class="submit-contact-form" for="submit-contact-form">
