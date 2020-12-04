@@ -92,3 +92,15 @@ class NewsletterTests(TestCase):
         self.assertEqual(saved_obj.email, saved_obj.email, "email is not saved correctly")
         self.assertEqual(saved_obj.name, saved_obj.name, "name is not saved correctly")
 
+    def test_should_validation_message_be_in_DOM_after_form_submitted(self):
+        invalid_form_data = {
+            "email": "",
+            "name": "",
+            "permission": False
+        }
+
+        response = self.client.post(self.baseUrl, data=invalid_form_data)
+
+        self.assertTemplateUsed(response, 'partials/_newsletter.html')
+        self.assertContains(response, field_required, 2)
+        self.assertContains(response, newsletter_permission_required, 1)

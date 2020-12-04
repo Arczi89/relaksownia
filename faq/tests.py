@@ -1,3 +1,4 @@
+import tempfile
 from http import HTTPStatus
 
 from django.contrib.messages import get_messages
@@ -13,20 +14,35 @@ from .forms import NewsletterFaqForm
 # TODO+ django data driven test - taki sam kształt testu, zmieniają się tylko dane
 # TODO+ assertPy - biblioteka do asercji
 # TODO+ klasa bazowa z metodami setupowymi do tworzenia wspólnych obiektów
+from .models import FaqItem, FaqConfiguration
 
 
 class FaqTests(TestCase):
 
-    def addBasicConfiguration(self):
-        configuration = MainConfiguration(
+    def addBasicConfigurations(self):
+        main_configuration = MainConfiguration(
             newsletter_info="Newsletter info",
             main_text="Main text"
         )
-        configuration.save()
-        return configuration.pk
+        main_configuration.save()
 
-    def removeBasicConfiguration(self):
-        obj = MainConfiguration.objects.get(pk=self.configurationPk)
+        faq_configuration = FaqConfiguration(
+            main_image=tempfile.NamedTemporaryFile(suffix=".jpg").name,
+            main_image_alt="main_image_alt"
+        )
+        faq_configuration.save()
+
+        return main_configuration.pk
+
+    def addFaqItem(self, question, answer):
+        faq_item = FaqItem(
+            question_text=question,
+            answer_text=answer
+        )
+        faq_item.save()
+
+    def removeMainConfiguration(self):
+        obj = MainConfiguration.objects.get(pk=self.mainConfigurationPk)
         obj.delete()
 
     def setUp(self):
@@ -36,14 +52,14 @@ class FaqTests(TestCase):
             "name": "Jan Kowalski",
             "permission": True
         }
-        self.configurationPk = self.addBasicConfiguration()
+        self.mainConfigurationPk = self.addBasicConfigurations()
 
     def test_faq_page_with_configuration_loaded(self):
         response = self.client.get(self.baseUrl)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_faq_page_without_configuration_loaded(self):
-        self.removeBasicConfiguration()
+        self.removeMainConfiguration()
         response = self.client.get(self.baseUrl)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
@@ -60,6 +76,21 @@ class FaqTests(TestCase):
         self.assertIn(newsletter_permission_required, form.errors['permission'], "permission should be accepted")
         self.assertFalse(form.is_valid(), "name and email should be required, permision should be accepted")
 
+    def test_should_validation_message_be_in_DOM_after_form_submitted(self):
+        invalid_form_data = {
+            "email": "",
+            "name": "",
+            "permission": False
+        }
+        self.addFaqItem("question?", "answer!")
+
+        response = self.client.post(self.baseUrl, data=invalid_form_data)
+
+        self.assertTemplateUsed(response, 'faq.html')
+        self.assertTemplateUsed(response, 'partials/_newsletter.html')
+        self.assertContains(response, field_required, 2)
+        self.assertContains(response, newsletter_permission_required, 1)
+
     def test_should_email_has_correct_format(self):
         form_data = {
             "email": "TEST",
@@ -74,6 +105,16 @@ class FaqTests(TestCase):
         response = self.client.get(self.baseUrl)
         # Assert
         self.assertTrue('form' in response.context, "form should be included in response")
+
+    def test_should_display_faq_items(self):
+        question = "question?"
+        answer = "answer!"
+        self.addFaqItem(question, answer)
+
+        response = self.client.get(self.baseUrl)
+
+        self.assertContains(response, question, 1)
+        self.assertContains(response, answer, 1)
 
     def test_should_return_success_message_on_valid_form_save(self):
         # Arrange & Act

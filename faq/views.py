@@ -10,19 +10,22 @@ from .models import FaqItem, FaqConfiguration
 
 def faq(request):
     faqs = FaqItem.objects.all()
-    if request.method == "POST":
-        saveForm(request)
     try:
         configuration = FaqConfiguration.objects.all()[:1].get()
         newsletter_configuration = MainConfiguration.objects.all()[:1].get()
     except (FaqConfiguration.DoesNotExist, MainConfiguration.DoesNotExist):
         configuration = None
         newsletter_configuration = None
+    if request.method == "POST":
+        saveForm(request)
+        form = NewsletterFaqForm(request.POST)
+    else:
+        form = NewsletterFaqForm()
     context = {
         'faqs': faqs,
         'configuration': configuration,
         'newsletterConfiguration': newsletter_configuration,
-        'form': NewsletterFaqForm(),
+        'form': form,
         'action': '/faq/'
     }
     return render(request, 'faq.html', context)
