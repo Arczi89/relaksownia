@@ -259,7 +259,7 @@ mysqlclient-1.4.6-cp38-cp38-win32.whl
 demosite/settings.py.bak
 /demosite/settings.py.bak
 
-e2e/
+e2e/node_modules
 node_modules/
 *.iml
 
