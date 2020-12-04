@@ -41,6 +41,11 @@
         <div class="contact-right-inner contact-form">
             <form action="{% url 'contact' %}" method="post" novalidate>
                 {% csrf_token %}
+                  {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                        <p class="help-block error">{{ error | safe }}</p>
+                    {% endfor %}
+                  {% endif %}
                 {% for field in form %}
                     <div class="form-group{% if field.errors %} invalid{% endif %}" id="form_{{ field.name }}">
                         {% if field.name == 'attachment_img' %}
