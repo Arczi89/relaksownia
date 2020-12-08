@@ -68,14 +68,6 @@ select:-webkit-autofill:focus {
 }
 
 /* colorization */
-#container .container-image, #carousel_container .carousel-image {
-  filter: brightness(110%) sepia(40%) hue-rotate(5deg) saturate(200%);
-}
-
-#container img, #carousel_container img {
-  filter: brightness(70%);
-}
-
 .container-image img {
   height: 350px;
 }
