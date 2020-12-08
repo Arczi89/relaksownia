@@ -178,6 +178,10 @@ li.nav-item {
   margin-top: 2rem;
 }
 
+.container-title {
+  text-transform: uppercase;
+}
+
 /* footer */
 .footer-container {
   margin: 2rem;
