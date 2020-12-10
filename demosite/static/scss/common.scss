@@ -486,15 +486,23 @@ li.nav-item {
 
 #opinions-container {
     #customer-opinions {
-        width: 75%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 0;
-        height: 10rem;
-        min-height: none;
-        margin-bottom: 4rem;
+        height: auto;
+        width: 80%;
+        margin: auto;
         .single {
-            margin: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            height: auto;
+            outline: none;
+            .opinion-text {
+                bottom: 1rem;
+            }
+            .opinion-customer-name {
+                position: relative;
+                bottom: 0;
+                font-size: 2rem;
+                text-transform: uppercase;
+            }
         }
 
         .slick-dots {
