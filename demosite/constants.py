@@ -9,3 +9,4 @@ incorrect_phone_format = 'Niepoprawny numer telefonu, numer powinien mieć 9 cyf
 incorrect_extension = 'Nieprawidłowe rozszerzenie pliku'
 field_name_required = 'Pole Imię jest wymagane'
 field_message_required = 'Pole Wiadomość jest wymagane'
+default_contact_phone = 60855761
