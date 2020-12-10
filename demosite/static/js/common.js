@@ -6,6 +6,7 @@ $(document).ready(function() {
         slidesToShow: 3,
         slidesToScroll: 3,
         dots: true,
+        adaptiveHeight: false,
     });
 
     console.log('ready!');

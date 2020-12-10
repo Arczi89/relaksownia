@@ -11,16 +11,13 @@
     <div class="opinions-container" id="opinions-container">
         <div class="customer-opinions" id="customer-opinions">
         {% for opinion in opinions %}
-            <div class="single">
-                <div class="customer-opinions-item">
-                    {{ opinion.opinion_text | safe }}
-                </div>
-                <div class="customer-opinions-item">
-                    ~ {{ opinion.customer_name | safe }}
-                </div>
+            <div class="single customer-opinions-item">
+                <span class="opinion-customer-name">{{ opinion.customer_name | safe }}</span>
+                <span class="opinion-text">{{ opinion.opinion_text | safe }}</span>
             </div>
         {% endfor %}
         </div>
+
         {% if opinion_tree and opinion_tree|length >= 6 %}
         <div class="main-message"> Dlaczego nasza oferta jest taka wyjątkowa?</div>
         <div id="opinion-tree" class="opinion-tree left-right-center">
