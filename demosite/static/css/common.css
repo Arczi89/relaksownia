@@ -107,10 +107,6 @@ a.inline-block {
   display: inline-block;
 }
 
-.about-me-img img, #carousel img, .main-image, .offer-item img {
-  filter: sepia(40%) brightness(70%) saturate(200%) contrast(130%);
-}
-
 #content form .help-block.error, #modal form .help-block.error {
   color: red;
 }
@@ -439,7 +435,11 @@ li.nav-item {
 
 .contact-left-inner .item-title {
   text-decoration: underline;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+}
+
+.contact-left-inner .item-desc {
+  font-size: 1.5rem;
 }
 
 .main-title p {
