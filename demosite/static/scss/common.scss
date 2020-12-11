@@ -116,10 +116,6 @@ a {
   }
 }
 
-.about-me-img img, #carousel img, .main-image, .offer-item img {
-  filter: sepia(40%) brightness(70%) saturate(200%) contrast(130%);
-}
-
 #content form .help-block.error, #modal form .help-block.error {
     color: red;
 }
