@@ -5,19 +5,19 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class ContactConfiguration(models.Model):
     app_name = "Contact"
-    map_url = models.CharField(max_length=400, help_text='Url (adres) do mapy google')
+    map_url = models.CharField(max_length=200, help_text='Url (adres) do mapy google')
     phone_number = PhoneNumberField()
     email = models.EmailField()
     on_site_client_info = RichTextField(help_text='Informacja o tym, ze dojezdzasz do klienta', default='')
     have_questions = RichTextField(help_text='Informacja nad formularzem "czy masz pytania?"', default='')
     working_hours = RichTextField(help_text='Godziny pracy')
-    facebook = models.CharField(max_length=400, help_text='Url (adres) do facebooka', default='')
-    twitter = models.CharField(max_length=400, help_text='Url (adres) do twittera', default='')
-    linkedin = models.CharField(max_length=400, help_text='Url (adres) do LinkedIn', default='')
-    instagram = models.CharField(max_length=400, help_text='Url (adres) do Instagrama', default='')
-    snapchat = models.CharField(max_length=400, help_text='Url (adres) do Snapchat', default='')
-    youtube = models.CharField(max_length=400, help_text='Url (adres) do YouTube', default='')
-    google_plus = models.CharField(max_length=400, help_text='Url (adres) do Google+', default='')
+    facebook = models.CharField(max_length=200, help_text='Url (adres) do facebooka', default='')
+    twitter = models.CharField(max_length=200, help_text='Url (adres) do twittera', default='')
+    linkedin = models.CharField(max_length=200, help_text='Url (adres) do LinkedIn', default='')
+    instagram = models.CharField(max_length=200, help_text='Url (adres) do Instagrama', default='')
+    snapchat = models.CharField(max_length=200, help_text='Url (adres) do Snapchat', default='')
+    youtube = models.CharField(max_length=200, help_text='Url (adres) do YouTube', default='')
+    google_plus = models.CharField(max_length=200, help_text='Url (adres) do Google+', default='')
     update_date = models.DateTimeField('modification date', auto_now=True)
 
     def __str__(self):

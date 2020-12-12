@@ -13,36 +13,36 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='contactconfiguration',
             name='facebook',
-            field=models.CharField(default='', help_text='Url (adres) do facebooka', max_length=400),
+            field=models.CharField(default='', help_text='Url (adres) do facebooka', max_length=200),
         ),
         migrations.AddField(
             model_name='contactconfiguration',
             name='google_plus',
-            field=models.CharField(default='', help_text='Url (adres) do Google+', max_length=400),
+            field=models.CharField(default='', help_text='Url (adres) do Google+', max_length=200),
         ),
         migrations.AddField(
             model_name='contactconfiguration',
             name='instagram',
-            field=models.CharField(default='', help_text='Url (adres) do Instagrama', max_length=400),
+            field=models.CharField(default='', help_text='Url (adres) do Instagrama', max_length=200),
         ),
         migrations.AddField(
             model_name='contactconfiguration',
             name='linkedin',
-            field=models.CharField(default='', help_text='Url (adres) do LinkedIn', max_length=400),
+            field=models.CharField(default='', help_text='Url (adres) do LinkedIn', max_length=200),
         ),
         migrations.AddField(
             model_name='contactconfiguration',
             name='snapchat',
-            field=models.CharField(default='', help_text='Url (adres) do Snapchat', max_length=400),
+            field=models.CharField(default='', help_text='Url (adres) do Snapchat', max_length=200),
         ),
         migrations.AddField(
             model_name='contactconfiguration',
             name='twitter',
-            field=models.CharField(default='', help_text='Url (adres) do twittera', max_length=400),
+            field=models.CharField(default='', help_text='Url (adres) do twittera', max_length=200),
         ),
         migrations.AddField(
             model_name='contactconfiguration',
             name='youtube',
-            field=models.CharField(default='', help_text='Url (adres) do YouTube', max_length=400),
+            field=models.CharField(default='', help_text='Url (adres) do YouTube', max_length=200),
         ),
     ]
