@@ -617,11 +617,6 @@ body ::placeholder {
 }
 
 /* cookielawe */
-
-#CookielawBanner {
-    display: none;
-}
-
 #CookielawBanner .container {
   max-width: 100%;
 }
