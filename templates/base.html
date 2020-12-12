@@ -42,6 +42,8 @@
 $(function () {
     if (!document.cookie.split('; ').find(row => row.startsWith('cookielaw_accepted'))) {
         document.getElementById('CookielawBanner').style.display = 'block';
+    } else {
+        document.getElementById('CookielawBanner').style.display = 'none';
     }
     if (!document.cookie.split('; ').find(row => row.startsWith('newsletter')) && location.href.includes('/blog') ) {
         $("#newsletter").modalForm({
