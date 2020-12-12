@@ -84,9 +84,9 @@ DJRICHTEXTFIELD_CONFIG = {
     'init_template': 'djrichtextfield/init/ckeditor.js',
     'settings': {  # CKEditor
         'toolbar': [
-            {'items': ['Format', '-', 'Bold', 'Italic', '-',
-                       'RemoveFormat']},
-            {'items': ['Link', 'Unlink', 'Image', 'Table']},
+            {'items': ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo']},
+            {'items': ['Link', 'Unlink', 'Image', 'Table', 'TextColor', 'BGColor', 'Indent', 'Outdent']},
+            {'items': ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', 'NumberedList', 'BulletedList']},
             {'items': ['Source']}
         ],
         'format_tags': 'p;h1;h2;h3',
