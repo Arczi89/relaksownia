@@ -34,9 +34,27 @@
             </ul>
         </div>
         <div class="col social">
-            <a class="icon fab fa-facebook-square" href="https://www.facebook.com/relaksownia.masaz"></a>
-            <a class="icon fa fa-street-view" href="https://g.page/Relaksownia_Masaz_Gliwice?share"></a>
-            <a class="icon fab fa-twitter" href="#"></a>
+            {% if facebook %}
+                <a class="icon fab fa-facebook-square" href="{{ facebook }}"></a>
+            {% endif %}
+            {% if twitter %}
+                <a class="icon fab fa-twitter" href="{{ twitter }}"></a>
+            {% endif %}
+            {% if linkedin %}
+                <a class="icon fab fa-linkedin" href="{{ linkedin }}"></a>
+            {% endif %}
+            {% if instagram %}
+                <a class="icon fab fa-instagram" href="{{ instagram }}"></a>
+            {% endif %}
+            {% if snapchat %}
+                <a class="icon fab fa-snapchat" href="{{ snapchat }}"></a>
+            {% endif %}
+            {% if youtube %}
+                <a class="icon fab fa-twitter" href="{{ youtube }}"></a>
+            {% endif %}
+            {% if google_plus %}
+                <a class="icon fa fa-street-view" href="{{ google_plus }}"></a>
+            {% endif %}
         </div>
         <div class="col phone-contact">
             Telefon Kontaktowy: {{ contact_phone }}
