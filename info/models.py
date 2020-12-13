@@ -4,7 +4,7 @@ from djrichtextfield.models import RichTextField
 # TODO+ zmienilem nazwę (na infoConfiguration) po zmianie modelu
 class Info(models.Model):
     photo = models.ImageField(upload_to='images/')
-    photo_alt = models.CharField(max_length=400)
+    photo_alt = models.CharField(max_length=200)
     description = RichTextField()
     update_date = models.DateTimeField('modification date', auto_now=True)
 

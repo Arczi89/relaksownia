@@ -24,7 +24,7 @@ class MainSliderConfiguration(models.Model):
 
 class MainSliderItem(models.Model):
     image = models.ImageField(upload_to='images/')
-    image_alt = models.CharField(max_length=400, help_text='Tekst wyświetlany w przypadku gdyby obrazek sie nie zaladowal')
+    image_alt = models.CharField(max_length=200, help_text='Tekst wyświetlany w przypadku gdyby obrazek sie nie zaladowal')
     visible = models.BooleanField(default=False, help_text='Gdy False to dany obrazek jest niewidoczny i pomijany w sliderze')
     update_date = models.DateTimeField('modification date', auto_now=True)
 
@@ -35,7 +35,7 @@ class MainSliderItem(models.Model):
 class MainBoxItem(models.Model):
     header_text = models.CharField(max_length=400)
     image = models.ImageField(upload_to='images/')
-    image_alt = models.CharField(max_length=400, help_text='Tekst wyświetlany w przypadku gdyby obrazek sie nie zaladowal')
+    image_alt = models.CharField(max_length=200, help_text='Tekst wyświetlany w przypadku gdyby obrazek sie nie zaladowal')
     description = RichTextField()
     visible = models.BooleanField(default=False, help_text='Gdy False to dany obrazek jest niewidoczny i pomijany')
     update_date = models.DateTimeField('modification date', auto_now=True)
