@@ -1,24 +1,20 @@
 from django.db import models
 from djrichtextfield.models import RichTextField
-
-
-class OfferConfiguration(models.Model):
-    app_name = "Offers"
-    main_image = models.ImageField(upload_to='images/', help_text='Obrazek wyswietlany na gorze strony pod menu')
-    main_image_alt = models.CharField(max_length=200, help_text='Tekst wyświetlany w przypadku gdyby obrazek sie nie zaladowal')
-    update_date = models.DateTimeField('modification date', auto_now=True)
-
-    def __str__(self):
-        return self.app_name + " page configuration"
+from django.utils.translation import ugettext_lazy as _
 
 
 class OfferItem(models.Model):
-    title = models.TextField()
-    text = RichTextField()
-    image = models.ImageField(upload_to='images/')
-    image_alt = models.TextField(help_text='Tekst wyświetlany w przypadku gdyby obrazek sie nie zaladowal')
-    update_date = models.DateTimeField('modification date', auto_now=True)
+    title = models.TextField(verbose_name=_('Tytul'))
+    text = RichTextField(verbose_name=_('Tresc'))
+    image = models.ImageField(upload_to='images/', verbose_name=_('Obrazek'))
+    image_alt = models.TextField(verbose_name=_('Nazwa'))
+    update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
+    order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
 
     def __str__(self):
-        return self.title
+        return self.title + "(" + self.order .__str__() + ")"
+
+    class Meta:
+        verbose_name = _('Oferta')
+        verbose_name_plural = _('Lista ofert')
 

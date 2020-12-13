@@ -1,30 +1,46 @@
 from django.db import models
 from djrichtextfield.models import RichTextField
+from django.utils.translation import ugettext_lazy as _
 
 
 class OpinionsConfiguration(models.Model):
-    app_name = "Opinions"
-    main_image = models.ImageField(upload_to='images/', help_text='Obrazek wyswietlany na gorze strony pod menu')
-    main_image_alt = models.CharField(max_length=200, help_text='Tekst wyswietlany w przypadku gdyby obrazek sie nie zaladowal')
-    update_date = models.DateTimeField('modification date', auto_now=True)
-    tree_img = models.ImageField(upload_to='images/', help_text='Obrazek wyswietlany jako głowny w drzewku')
+    app_name = "Strona opinii"
+    main_image = models.ImageField(upload_to='images/', verbose_name=_('Obrazek wyswietlany na gorze strony pod menu'))
+    main_image_alt = models.CharField(max_length=200, verbose_name=_('Nazwa'))
+    update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
+    tree_img = models.ImageField(upload_to='images/', verbose_name=_('Obrazek wyswietlany jako glowny w drzewku'))
 
     def __str__(self):
-        return self.app_name + " page configuration"
+        return self.app_name + " konfiguracja"
+
+    class Meta:
+        verbose_name = _('Konfiguracja opinii')
+        verbose_name_plural = _('Konfiguracja opinii')
 
 
 class OpinionItem(models.Model):
-    opinion_text = RichTextField(help_text='Tekst rekomendacji')
-    customer_name = models.CharField(max_length=400, help_text='Imie osoby polecajacej')
-    update_date = models.DateTimeField('modification date', auto_now=True)
+    opinion_text = RichTextField(verbose_name=_('Tekst rekomendacji'))
+    customer_name = models.CharField(max_length=400, verbose_name=_('Imie osoby polecajacej'))
+    update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
+    order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
 
     def __str__(self):
-        return self.customer_name
+        return self.customer_name + "(" + self.order .__str__() + ")"
+
+    class Meta:
+        verbose_name = _('Opinia')
+        verbose_name_plural = _('Opinie')
 
 
 class OpinionTreeItem(models.Model):
-    text = RichTextField(help_text='Tekst wyswietlany w drzewku na podstronie opinii')
-    img = models.ImageField(upload_to='images/', help_text='Ilustracja wyswietlana w drzewku na podstronie opinii')
+    text = RichTextField(verbose_name=_('Tekst wyswietlany w drzewku na podstronie opinii'))
+    img = models.ImageField(upload_to='images/', verbose_name=_('Ilustracja wyswietlana w drzewku na podstronie opinii'))
+    order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
 
     def __str__(self):
-        return self.text
+        return self.text + "(" + self.order .__str__() + ")"
+
+    class Meta:
+        verbose_name = _('Element drzewka na stronie opinii')
+        verbose_name_plural = _('Elementy drzewka na stronie opinie')
+
