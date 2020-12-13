@@ -5,7 +5,7 @@ from djrichtextfield.models import RichTextField
 class OpinionsConfiguration(models.Model):
     app_name = "Opinions"
     main_image = models.ImageField(upload_to='images/', help_text='Obrazek wyswietlany na gorze strony pod menu')
-    main_image_alt = models.CharField(max_length=400, help_text='Tekst wyswietlany w przypadku gdyby obrazek sie nie zaladowal')
+    main_image_alt = models.CharField(max_length=200, help_text='Tekst wyswietlany w przypadku gdyby obrazek sie nie zaladowal')
     update_date = models.DateTimeField('modification date', auto_now=True)
     tree_img = models.ImageField(upload_to='images/', help_text='Obrazek wyswietlany jako głowny w drzewku')
 
