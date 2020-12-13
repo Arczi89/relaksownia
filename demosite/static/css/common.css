@@ -162,7 +162,9 @@ li.nav-item {
 }
 
 #main-text.main-text {
-  margin: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
 }
 
 .container-title {
