@@ -28,7 +28,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+	'demosite.arturszwagrzak.atthost24.pl'
+]
 
 FILE_UPLOAD_PERMISSIONS = 0o644
 
@@ -82,9 +84,9 @@ DJRICHTEXTFIELD_CONFIG = {
     'init_template': 'djrichtextfield/init/ckeditor.js',
     'settings': {  # CKEditor
         'toolbar': [
-            {'items': ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo']},
-            {'items': ['Link', 'Unlink', 'Image', 'Table', 'TextColor', 'BGColor', 'Indent', 'Outdent']},
-            {'items': ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', 'NumberedList', 'BulletedList']},
+            {'items': ['Format', '-', 'Bold', 'Italic', '-',
+                       'RemoveFormat']},
+            {'items': ['Link', 'Unlink', 'Image', 'Table']},
             {'items': ['Source']}
         ],
         'format_tags': 'p;h1;h2;h3',
@@ -108,8 +110,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'demosite.context_processor.contact_phone_processor',
-                'demosite.context_processor.social_media_processor'
             ],
         },
     },
@@ -122,19 +122,19 @@ WSGI_APPLICATION = 'demosite.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'OPTIONS': {
-    #         'read_default_file': os.path.join(BASE_DIR, 'mysql.cnf'),
-    #     },
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'demosite',
-            'USER': 'postgres',
-            'PASSWORD': 'postgres',
-            'HOST': 'localhost'
-        }
-    # }
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'OPTIONS': {
+             'read_default_file': os.path.join(BASE_DIR, 'mysql.cnf'),
+         }
+    #    'default': {
+    #        'ENGINE': 'django.db.backends.postgresql',
+    #        'NAME': 'demosite',
+    #        'USER': 'postgres',
+    #        'PASSWORD': 'postgres',
+    #        'HOST': 'localhost'
+    #    }
+     }
 }
 
 
