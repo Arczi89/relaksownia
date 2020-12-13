@@ -9,7 +9,7 @@ class OfferItem(models.Model):
     image = models.ImageField(upload_to='images/', verbose_name=_('Obrazek'))
     image_alt = models.TextField(verbose_name=_('Nazwa'))
     update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
-    order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
+    element_order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
 
     def __str__(self):
         return self.title + "(" + self.order .__str__() + ")"

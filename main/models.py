@@ -36,7 +36,7 @@ class MainSliderItem(models.Model):
     image_alt = models.CharField(max_length=200, verbose_name=_('Nazwa'))
     visible = models.BooleanField(default=False, verbose_name=_('Zaznacz jesli element ma byc widoczny i nie pomijany'))
     update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
-    order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
+    element_order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
 
     def __str__(self):
         return self.image_alt + "(" + self.order .__str__() + ")"
@@ -53,7 +53,7 @@ class MainBoxItem(models.Model):
     description = RichTextField(verbose_name=_('Opis'))
     visible = models.BooleanField(default=False, verbose_name=_('Zaznacz jesli element ma byc widoczny i nie pomijany'))
     update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
-    order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
+    element_order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
 
     def __str__(self):
         return self.header_text + "(" + self.order .__str__() + ")"

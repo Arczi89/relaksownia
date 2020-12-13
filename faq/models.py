@@ -20,7 +20,7 @@ class FaqItem(models.Model):
     question_text = RichTextField(verbose_name=_('Tresc pytania'))
     answer_text = RichTextField(verbose_name=_('Tresc odpowiedzi'))
     update_date = models.DateTimeField('Data aktualizacji', auto_now=True)
-    order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
+    element_order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
 
     def __str__(self):
         return '%s %s ( %i )' % (self.question_text, self.answer_text, self.order)
