@@ -1,20 +1,30 @@
 from django.db import models
 from djrichtextfield.models import RichTextField
+from django.utils.translation import ugettext_lazy as _
 
 
 class FaqConfiguration(models.Model):
-    main_image = models.ImageField(upload_to='images/', help_text='Obrazek wyswietlany na gorze strony pod menu')
-    main_image_alt = models.CharField(max_length=200, help_text='Tekst wyświetlany w przypadku gdyby obrazek sie nie zaladowal')
-    update_date = models.DateTimeField('modification date', auto_now=True)
+    main_image = models.ImageField(upload_to='images/', verbose_name=_('Glowny obrazek'))
+    main_image_alt = models.CharField(max_length=200, verbose_name=_('Nazwa'))
+    update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
 
     def __str__(self):
-        return "Faq page configuration"
+        return "Konfiguracja pytan"
+
+    class Meta:
+        verbose_name = _('Konfiguracja pytan')
+        verbose_name_plural = _('Konfiguracja pytan')
 
 
 class FaqItem(models.Model):
-    question_text = RichTextField()
-    answer_text = RichTextField()
-    update_date = models.DateTimeField('modification date', auto_now=True)
+    question_text = RichTextField(verbose_name=_('Tresc pytania'))
+    answer_text = RichTextField(verbose_name=_('Tresc odpowiedzi'))
+    update_date = models.DateTimeField('Data aktualizacji', auto_now=True)
+    order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
 
     def __str__(self):
-        return '%s %s' % (self.question_text, self.answer_text)
+        return '%s %s ( %i )' % (self.question_text, self.answer_text, self.order)
+
+    class Meta:
+        verbose_name = _('Pytanie i odpowiedz (faq)')
+        verbose_name_plural = _('Pytania i odpowiedzi (faqs)')
