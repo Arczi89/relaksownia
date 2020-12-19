@@ -25,7 +25,7 @@ class OpinionItem(models.Model):
     element_order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
 
     def __str__(self):
-        return self.customer_name + "(" + self.element_order .__str__() + ")"
+        return self.customer_name + "(" + self.element_order.__str__() + ")"
 
     class Meta:
         verbose_name = _('Opinia')
@@ -38,7 +38,7 @@ class OpinionTreeItem(models.Model):
     element_order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
 
     def __str__(self):
-        return self.text + "(" + self.element_order .__str__() + ")"
+        return self.text + "(" + self.element_order.__str__() + ")"
 
     class Meta:
         verbose_name = _('Element drzewka na stronie opinii')

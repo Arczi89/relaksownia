@@ -39,7 +39,7 @@ class MainSliderItem(models.Model):
     element_order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
 
     def __str__(self):
-        return self.image_alt + "(" + self.element_order .__str__() + ")"
+        return self.image_alt + "(" + self.element_order.__str__() + ")"
 
     class Meta:
         verbose_name = _('Element slidera')
@@ -56,7 +56,7 @@ class MainBoxItem(models.Model):
     element_order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
 
     def __str__(self):
-        return self.header_text + "(" + self.element_order .__str__() + ")"
+        return self.header_text + "(" + self.element_order.__str__() + ")"
 
     class Meta:
         verbose_name = _('Box / karta')
