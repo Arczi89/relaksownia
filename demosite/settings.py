@@ -126,19 +126,19 @@ WSGI_APPLICATION = 'demosite.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'OPTIONS': {
-    #         'read_default_file': os.path.join(BASE_DIR, 'mysql.cnf'),
-    #     },
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'demosite',
-            'USER': 'postgres',
-            'PASSWORD': 'postgres',
-            'HOST': 'localhost'
-        }
-    # }
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'OPTIONS': {
+             'read_default_file': os.path.join(BASE_DIR, 'mysql.cnf'),
+         }
+    #    'default': {
+    #        'ENGINE': 'django.db.backends.postgresql',
+    #        'NAME': 'demosite',
+    #        'USER': 'postgres',
+    #        'PASSWORD': 'postgres',
+    #        'HOST': 'localhost'
+    #    }
+     }
 }
 
 
