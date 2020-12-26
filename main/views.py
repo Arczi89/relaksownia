@@ -4,7 +4,7 @@ from .models import MainBoxItem, MainSliderItem, MainSliderConfiguration, MainCo
 
 
 def main(request):
-    containers = MainBoxItem.objects.all()
+    containers = MainBoxItem.objects.order_by("element_order")
     try:
         slider_configuration = MainSliderConfiguration.objects.all()[:1].get()
     except MainSliderConfiguration.DoesNotExist:
@@ -15,7 +15,7 @@ def main(request):
     except MainConfiguration.DoesNotExist:
         configuration = None
 
-    slider_items = MainSliderItem.objects.all()
+    slider_items = MainSliderItem.objects.order_by("element_order")
     context = {
         'containers': containers,
         'slider_items': slider_items,
