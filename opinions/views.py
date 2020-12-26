@@ -9,8 +9,8 @@ def opinions(request):
     except OpinionsConfiguration.DoesNotExist:
         configuration = None
 
-    opinion_list = OpinionItem.objects.all()
-    opinion_tree = OpinionTreeItem.objects.all()
+    opinion_list = OpinionItem.objects.order_by("element_order")
+    opinion_tree = OpinionTreeItem.objects.order_by("element_order")
     context = {
         'configuration': configuration,
         'opinions': opinion_list,
