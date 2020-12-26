@@ -9,7 +9,7 @@ class Newsletter(models.Model):
     update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
 
     def __str__(self):
-        return self.name + " - " + self.email + "; zapisany: " + self.update_date.__str__()
+        return '%s - %s; zapisany: ( %s )' % (self.name, self.email, self.update_date.__str__())
 
     class Meta:
         verbose_name = _('Klient')
