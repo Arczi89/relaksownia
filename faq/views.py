@@ -9,7 +9,7 @@ from .models import FaqItem, FaqConfiguration
 
 
 def faq(request):
-    faqs = FaqItem.objects.all()
+    faqs = FaqItem.objects.order_by('element_order')
     try:
         configuration = FaqConfiguration.objects.all()[:1].get()
         newsletter_configuration = MainConfiguration.objects.all()[:1].get()

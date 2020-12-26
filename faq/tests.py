@@ -34,10 +34,11 @@ class FaqTests(TestCase):
 
         return main_configuration.pk
 
-    def addFaqItem(self, question, answer):
+    def addFaqItem(self, question, answer, order=0):
         faq_item = FaqItem(
             question_text=question,
-            answer_text=answer
+            answer_text=answer,
+            element_order=order
         )
         faq_item.save()
 
@@ -132,3 +133,24 @@ class FaqTests(TestCase):
         self.assertEqual(saved_obj.email, saved_obj.email, "email is not saved correctly")
         self.assertEqual(saved_obj.name, saved_obj.name, "name is not saved correctly")
 
+    def test_elements_are_in_correct_order(self):
+        # Arrange
+        self.addFaqItem("question1", "answer1", 0)
+        self.addFaqItem("question2", "answer2", 2)
+        self.addFaqItem("question3", "answer3", 1)
+        # Act
+        response = self.client.get(self.baseUrl)
+        # Assert
+        self.assertLessEqual(response.context['faqs'][0].element_order, response.context['faqs'][1].element_order, "There is wrong order of elements")
+        self.assertLessEqual(response.context['faqs'][1].element_order, response.context['faqs'][2].element_order, "There is wrong order of elements")
+
+    def test_elements_with_the_same_order_number_are_correct_ordered(self):
+        # Arrange
+        self.addFaqItem("question1", "answer1", 3)
+        self.addFaqItem("question2", "answer2", 3)
+        self.addFaqItem("question3", "answer3", 2)
+        # Act
+        response = self.client.get(self.baseUrl)
+        # Assert
+        self.assertLessEqual(response.context['faqs'][0].element_order, response.context['faqs'][1].element_order, "There is wrong order of elements")
+        self.assertLessEqual(response.context['faqs'][1].element_order, response.context['faqs'][2].element_order, "There is wrong order of elements")
