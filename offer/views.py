@@ -4,7 +4,7 @@ from .models import OfferItem
 
 
 def offer(request):
-    offers = OfferItem.objects.all()
+    offers = OfferItem.objects.order_by("element_order")
     context = {
         'offers': offers
     }
