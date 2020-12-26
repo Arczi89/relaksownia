@@ -28,7 +28,10 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'relaksownia.wizytoowka.pl',
+    'demosite.arturszwagrzak.atthost24.pl'
+]
 
 FILE_UPLOAD_PERMISSIONS = 0o644
 
