@@ -4,8 +4,7 @@ from django.contrib.messages import get_messages
 from django.template.loader import render_to_string
 from django.test import TestCase
 
-from demosite.constants import email_or_phone_required, field_required, incorrect_email_format, incorrect_phone_format, \
-    field_name_required, field_message_required
+from demosite.constants import incorrect_email_format, field_name_required, field_message_required, field_email_required
 
 from .forms import ContactForm
 
@@ -30,14 +29,12 @@ class ContactRequestTests(TestCase):
         obj = ContactConfiguration.objects.get(pk=self.configurationPk)
         obj.delete()
 
-
     def setUp(self):
         self.baseUrl = "/contact/"
         self.valid_form_data = {
             "email": "test@test.pl",
             "message": "test message",
-            "name": "Jan Kowalski",
-            "phone": "123123123"
+            "name": "Jan Kowalski"
         }
         self.configurationPk = self.addBasicConfiguration()
 
@@ -45,36 +42,9 @@ class ContactRequestTests(TestCase):
         response = self.client.get(self.baseUrl)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
-    def test_should_contact_phone_not_required_when_email_provided(self):
+    def test_should_message_and_name_and_email_be_required_fields(self):
         form_data = {
-            "email": "test@test.pl",
-            "message": "test message",
-            "name": "Jan Kowalski",
-            "phone": ""
-        }
-
-        form = ContactForm(data=form_data)
-
-        self.assertEqual(len(form.errors), 0, "form should not have errors")
-        self.assertTrue(form.is_valid(), "form should be valid with correct email, message and name provided")
-
-    def test_should_contact_email_not_required_when_phone_provided(self):
-        form_data = {
-            "phone": "500400200",
-            "message": "test message",
-            "name": "Jan Kowalski",
-            "email": ""
-        }
-
-        form = ContactForm(data=form_data)
-
-        self.assertTrue(form.is_valid(), "form should be valid with correct phone, message and name provided")
-        self.assertEqual(len(form.errors), 0, "form should not have error:")
-
-    def test_should_message_and_name_be_required_fields(self):
-        form_data = {
-            "email": "test@test.pl",
-            "phone": "512345678",
+            "email": "",
             "message": "",
             "name": ""
         }
@@ -83,20 +53,8 @@ class ContactRequestTests(TestCase):
 
         self.assertIn(field_name_required, form.errors['name'], "name should be required")
         self.assertIn(field_message_required, form.errors['message'], "message should be required")
-        self.assertFalse(form.is_valid(), "name and massage should be required")
-
-    def test_should_email_or_message_be_required(self):
-        form_data = {
-            "email": "",
-            "phone": "",
-            "message": "test",
-            "name": "test"
-        }
-
-        form = ContactForm(data=form_data)
-
-        self.assertFalse(form.is_valid(), "phone or email should be provided")
-        self.assertIn(email_or_phone_required, form.errors['__all__'], "'email_or_phone_required' error should be added")
+        self.assertIn(field_email_required, form.errors['email'], "email should be required")
+        self.assertFalse(form.is_valid(), "name and massage and email should be required")
 
     def test_should_email_has_correct_format(self):
         form_data = {
@@ -110,19 +68,6 @@ class ContactRequestTests(TestCase):
 
         self.assertIn(incorrect_email_format, form.errors['email'])
         self.assertFalse(form.is_valid(), "email format should be valid")
-
-    def test_should_phone_has_correct_format(self):
-        form_data = {
-            "email": "TEST@TEST.pl",
-            "phone": "x234w562",
-            "message": "test",
-            "name": "test"
-        }
-
-        form = ContactForm(data=form_data)
-
-        self.assertIn(incorrect_phone_format, form.errors['__all__'])
-        self.assertFalse(form.is_valid(), "phone format should have 9 digits")
 
     def test_should_display_contact_form(self):
         # Arrange & Act
@@ -148,7 +93,6 @@ class ContactRequestTests(TestCase):
         self.assertEqual(result.email, form.data['email'], "email is not saved correctly")
         self.assertEqual(result.message, form.data['message'], "message is not saved correctly")
         self.assertEqual(result.name, form.data['name'], "name is not saved correctly")
-        self.assertEqual(result.phone, form.data['phone'], "phone is not saved correctly")
 
     def test_should_all_section_be_visible_in_page(self):
         # Arrange

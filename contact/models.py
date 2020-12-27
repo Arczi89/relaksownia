@@ -31,13 +31,12 @@ class ContactConfiguration(models.Model):
 
 class Contact(models.Model):
     message = models.TextField(max_length=2000, verbose_name=_('Wiadomosc od klienta'))
-    email = models.EmailField(max_length=300, verbose_name=_('Email klienta'), blank=True)
-    phone = models.CharField(max_length=400, verbose_name=_('Telefon klienta'), blank=True)
+    email = models.EmailField(max_length=300, verbose_name=_('Email klienta'))
     name = models.CharField(max_length=400, verbose_name=_('Imie klienta'))
     update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
 
     def __str__(self):
-        return '%s | %s | %s' % (self.name, self.email, self.phone)
+        return '%s | %s | %s' % (self.name, self.email)
 
     class Meta:
         verbose_name = _('Zapisany kontakt do klienta')
