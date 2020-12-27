@@ -4,7 +4,8 @@ from django.contrib.messages import get_messages
 from django.template.loader import render_to_string
 from django.test import TestCase
 
-from demosite.constants import incorrect_email_format, field_name_required, field_message_required, field_email_required
+from demosite.constants import incorrect_email_format, field_name_required, field_message_required, \
+    field_email_required, field_permission_required
 
 from .forms import ContactForm
 
@@ -34,7 +35,8 @@ class ContactRequestTests(TestCase):
         self.valid_form_data = {
             "email": "test@test.pl",
             "message": "test message",
-            "name": "Jan Kowalski"
+            "name": "Jan Kowalski",
+            "permission": True
         }
         self.configurationPk = self.addBasicConfiguration()
 
@@ -42,11 +44,12 @@ class ContactRequestTests(TestCase):
         response = self.client.get(self.baseUrl)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
-    def test_should_message_and_name_and_email_be_required_fields(self):
+    def test_should_message_name_email_and_permission_be_required_fields(self):
         form_data = {
             "email": "",
             "message": "",
-            "name": ""
+            "name": "",
+            "permission": False
         }
 
         form = ContactForm(data=form_data)
@@ -54,6 +57,7 @@ class ContactRequestTests(TestCase):
         self.assertIn(field_name_required, form.errors['name'], "name should be required")
         self.assertIn(field_message_required, form.errors['message'], "message should be required")
         self.assertIn(field_email_required, form.errors['email'], "email should be required")
+        self.assertIn(field_permission_required, form.errors['permission'], "permission should be required")
         self.assertFalse(form.is_valid(), "name and massage and email should be required")
 
     def test_should_email_has_correct_format(self):
@@ -61,7 +65,8 @@ class ContactRequestTests(TestCase):
             "email": "TEST",
             "phone": "123456789",
             "message": "test",
-            "name": "test"
+            "name": "test",
+            "permission": True
         }
 
         form = ContactForm(data=form_data)

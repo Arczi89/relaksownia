@@ -33,6 +33,7 @@ class Contact(models.Model):
     message = models.TextField(max_length=2000, verbose_name=_('Wiadomosc od klienta'))
     email = models.EmailField(max_length=300, verbose_name=_('Email klienta'))
     name = models.CharField(max_length=400, verbose_name=_('Imie klienta'))
+    permission = models.BooleanField(verbose_name=_('Zgoda na kontakt'))
     update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
 
     def __str__(self):
