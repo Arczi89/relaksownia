@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
@@ -8,18 +9,18 @@
 <div id="contact" class="main-content-2-columns">
     <div class="contact-left column-left">
         <div class="contact-left-inner main-title">
-            <div class="fa fa-car"></div>
+            <img class="contact-icon" src="{% static 'img/car.png' %}" alt="email"/>
             <div class="on-site contact-block">{{configuration.on_site_client_info|safe}}</div>
         </div>
         <div class="contact-left-inner">
-            <div class="fa fa-phone"></div>
+            <img class="contact-icon" src="{% static 'img/phone.png' %}" alt="telefon"/>
             <div class="contact-block">
                 <div class="item-title">Telefon:</div>
                 <div class="item-desc">{{configuration.phone_number}}</div>
             </div>
         </div>
         <div class="contact-left-inner">
-            <div class="fa fa-at"></div>
+            <img class="contact-icon" src="{% static 'img/email.png' %}" alt="email"/>
             <div class="contact-block">
                 <div class="item-title">Email:</div>
                 <div class="item-desc">{{configuration.email}}</div>
