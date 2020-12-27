@@ -10,6 +10,11 @@ $borrowed-grey: #ccd0d3;
 }
 
 @font-face {
+  font-family: "Oswald";
+  src: url('../webfonts/Oswald-Regular.ttf') format("truetype");
+}
+
+@font-face {
   font-family: "league";
   src: url('../webfonts/LeagueGothic-Regular.otf') format("opentype");
 }
@@ -32,7 +37,7 @@ $borrowed-grey: #ccd0d3;
 body {
   background-color: black;
   color: white;
-  font-family: league;
+  font-family: Oswald;
 }
 
 .card {
@@ -285,7 +290,7 @@ li.nav-item {
     text-align: left;
     margin-top: auto;
     margin-bottom: auto;
-    line-height: 3rem;
+    line-height: 2rem;
 }
 
 /* offer */
