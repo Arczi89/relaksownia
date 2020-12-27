@@ -9,7 +9,7 @@
 <div id="contact" class="main-content-2-columns">
     <div class="contact-left column-left">
         <div class="contact-left-inner main-title">
-            <img class="contact-icon" src="{% static 'img/car.png' %}" alt="email"/>
+            <img class="contact-icon" src="{% static 'img/car.png' %}" alt="dojazd"/>
             <div class="on-site contact-block">{{configuration.on_site_client_info|safe}}</div>
         </div>
         <div class="contact-left-inner">
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="contact-left-inner">
-            <div class="fa fa-clock"></div>
+            <img class="contact-icon" src="{% static 'img/schedule.png' %}" alt="godziny"/>
             <div class="contact-block">
                 <div class="item-title">Godziny pracy:</div>
                 <div class="item-desc">{{configuration.working_hours|safe}}</div>
@@ -36,7 +36,7 @@
     </div>
     <div class="contact-right column-right">
         <div class="contact-right-inner main-title">
-            <div class="fa fa-question"></div>
+            <img class="contact-icon" src="{% static 'img/question.png' %}" alt="pytanie"/>
             <div class="help-info main-title contact-block"> {{configuration.have_questions|safe}}</div>
         </div>
         <div class="contact-right-inner contact-form">
