@@ -30,8 +30,7 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = [
     'relaksownia.wizytoowka.pl',
-    'demosite.arturszwagrzak.atthost24.pl',
-    '127.0.0.1'
+    'demosite.arturszwagrzak.atthost24.pl'
 ]
 
 FILE_UPLOAD_PERMISSIONS = 0o644
