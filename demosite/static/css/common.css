@@ -466,6 +466,21 @@ li.nav-item {
   font-size: 2.5rem;
 }
 
+#contact #form_permission {
+  display: flex;
+}
+
+#contact #form_permission input {
+  align-self: center;
+  margin-bottom: 0;
+  width: 2rem;
+}
+
+#contact #form_permission label {
+  margin-bottom: 0;
+  margin-left: 1rem;
+}
+
 /* opinion */
 .main-message {
   height: 6rem;

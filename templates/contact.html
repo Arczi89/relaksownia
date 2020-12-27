@@ -49,9 +49,11 @@
                   {% endif %}
                 {% for field in form %}
                     <div class="form-group{% if field.errors %} invalid{% endif %}" id="form_{{ field.name }}">
-                        {% if field.name == 'attachment_img' %}
-                        {% else %}
                         {{ field }}
+                        {% if field.name == 'permission' %}
+                        <label for="{{ field.id_for_label }}">
+                            {{ field.label }}
+                        </label>
                         {% endif %}
                     </div>
                     {% for error in field.errors %}

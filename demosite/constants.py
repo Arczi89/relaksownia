@@ -8,4 +8,5 @@ incorrect_extension = 'Nieprawidłowe rozszerzenie pliku'
 field_name_required = 'Pole Imię jest wymagane'
 field_message_required = 'Pole Wiadomość jest wymagane'
 field_email_required = 'Pole Email jest wymagane'
+field_permission_required = 'Zaznaczenie zgody jest wymagane'
 default_contact_phone = 60855761
