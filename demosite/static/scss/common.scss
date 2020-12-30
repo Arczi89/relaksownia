@@ -707,9 +707,6 @@ $tiny-phone-width: 300px;
 
 
 @media only screen and (max-width: $tiny-phone-width) {
-    body {
-        color: yellow;
-    }
 
     img, #content img.main-image {
         display: none;
@@ -837,10 +834,6 @@ $tiny-phone-width: 300px;
 }
 
 @media only screen and (min-width: $tiny-phone-width) and (max-width: $phone-width) {
-
-    body {
-        color: red;
-    }
 
     #container.columns {
         flex-wrap: wrap;
@@ -970,10 +963,6 @@ $tiny-phone-width: 300px;
 
 @media only screen and (min-width: $phone-width) and (max-width: $tablet-width) {
 
-    body {
-        color: blue;
-    }
-
     .h3, h3 {
       font-size: 1.5rem;
     }
@@ -1082,10 +1071,6 @@ $tiny-phone-width: 300px;
 
 @media only screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
 
-    body {
-        color: green;
-    }
-
     #container.columns {
         flex-wrap: wrap;
 
@@ -1135,9 +1120,6 @@ $tiny-phone-width: 300px;
 }
 
 @media only screen and (min-width: $desktop-width) {
-    body {
-        color: grey;
-    }
     .about-me-container {
         .about-me-img {
             width: 50%;
