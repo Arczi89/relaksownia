@@ -128,6 +128,11 @@ img.contact-icon {
   font-size: 1.6rem;
 }
 
+i.fa-bars {
+  color: white;
+  font-size: 2rem;
+}
+
 .navbar-brand {
   padding: 0;
 }
@@ -160,11 +165,11 @@ li.nav-item {
   flex-direction: column;
 }
 
-.left-right-center .lrc-inner.container, .left-right .lrc-inner.container {
+.left-right-center .lrc-inner.op-container, .left-right .lrc-inner.op-container {
   width: 33%;
 }
 
-.left-right-center .lr-inner.container, .left-right .lr-inner.container {
+.left-right-center .lr-inner.op-container, .left-right .lr-inner.op-container {
   width: 50%;
 }
 
@@ -529,7 +534,7 @@ li.nav-item {
   background-color: white;
 }
 
-#opinions-container #opinion-tree .lrc-inner.container {
+#opinions-container #opinion-tree .lrc-inner.op-container {
   justify-content: center;
 }
 
@@ -647,7 +652,7 @@ body ::placeholder {
   margin-left: 1rem;
 }
 
-/* cookielawe */
+/* cookielaw */
 #CookielawBanner .container {
   max-width: 100%;
 }
@@ -665,4 +670,320 @@ body ::placeholder {
 #CookielawBanner .cookie-button a {
   margin: 1rem;
   color: white;
+}
+
+/* responsive design */
+@media only screen and (max-width: 300px) {
+  body {
+    color: yellow;
+  }
+  img, #content img.main-image {
+    display: none;
+  }
+  .navbar-brand::after {
+    content: 'Relaksownia';
+    color: white;
+  }
+  .h3, h3 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  #container.columns {
+    flex-wrap: wrap;
+  }
+  #container.columns .column-item {
+    flex: auto;
+    margin: 0;
+  }
+  .carousel-inner {
+    height: auto;
+  }
+  .right-side, .left-side {
+    width: 100%;
+    border: none;
+  }
+  .offer-item {
+    flex-wrap: wrap;
+  }
+  .offer-item .offer-desc {
+    font-size: 1rem;
+  }
+  .offer-item .offer-title {
+    font-size: 1rem;
+  }
+  .offer-item:nth-of-type(odd) .right-side {
+    order: 2;
+  }
+  .offer-item:nth-of-type(odd) .left-side {
+    order: 1;
+  }
+  .offer-text .offer-desc p {
+    font-size: 1rem;
+  }
+  .about-me {
+    margin: 1rem;
+  }
+  .about-me-container {
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  .about-me-container .about-me-img {
+    width: 100%;
+    flex: auto;
+  }
+  .about-me-container .about-me-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .about-me-container .about-me-desc {
+    width: 100%;
+    flex: auto;
+  }
+  .main-message {
+    height: auto;
+  }
+  #opinion-tree {
+    flex-wrap: wrap;
+  }
+  #opinion-tree img {
+    display: none;
+  }
+  #opinion-tree .op-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+  body {
+    color: red;
+  }
+  #container.columns {
+    flex-wrap: wrap;
+  }
+  #container.columns .column-item {
+    flex: auto;
+  }
+  .h3, h3 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .carousel-inner {
+    height: auto;
+  }
+  .offer-item {
+    flex-wrap: wrap;
+  }
+  .offer-item .offer-desc {
+    font-size: 1.5rem;
+  }
+  .offer-item .offer-title {
+    font-size: 2rem;
+  }
+  .right-side, .left-side {
+    width: 100%;
+    border: none;
+  }
+  .offer-item:nth-of-type(odd) .right-side {
+    order: 2;
+  }
+  .offer-item:nth-of-type(odd) .left-side {
+    order: 1;
+  }
+  .about-me {
+    margin: 1rem;
+  }
+  .about-me-container {
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  .about-me-container .about-me-img {
+    width: 100%;
+    flex: auto;
+  }
+  .about-me-container .about-me-img img {
+    width: 100%;
+    height: auto;
+  }
+  .about-me-container .about-me-desc {
+    width: 100%;
+    flex: auto;
+  }
+  .main-message {
+    height: auto;
+  }
+  .main-image img {
+    height: auto;
+    width: 100%;
+  }
+  #opinion-tree {
+    flex-wrap: wrap;
+  }
+  #opinion-tree img {
+    display: block;
+  }
+  #opinion-tree .center-image img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
+  #opinion-tree .op-container {
+    width: 100%;
+    margin: auto;
+  }
+  .navbar {
+    padding: 0;
+  }
+  .navbar-toggler {
+    margin: 2px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  body {
+    color: blue;
+  }
+  .h3, h3 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  #container.columns {
+    flex-wrap: wrap;
+  }
+  #container.columns .column-item {
+    flex: auto;
+  }
+  .carousel-inner {
+    height: auto;
+  }
+  .right-side, .left-side {
+    width: 100%;
+    border: none;
+  }
+  .offer-item {
+    flex-wrap: wrap;
+  }
+  .offer-item .offer-desc {
+    font-size: 1.5rem;
+  }
+  .offer-item .offer-title {
+    font-size: 2rem;
+  }
+  .offer-item:nth-of-type(odd) .right-side {
+    order: 2;
+  }
+  .offer-item:nth-of-type(odd) .left-side {
+    order: 1;
+  }
+  .about-me {
+    margin: 1rem;
+  }
+  .about-me-container {
+    flex-wrap: wrap;
+  }
+  .about-me-container .about-me-img {
+    width: 100%;
+    flex: auto;
+  }
+  .about-me-container .about-me-img img {
+    width: 100%;
+    height: auto;
+  }
+  .about-me-container .about-me-desc {
+    width: 100%;
+    flex: auto;
+  }
+  .main-image img {
+    height: auto;
+    width: 100%;
+  }
+  #opinions-container #opinion-tree {
+    flex-wrap: wrap;
+  }
+  #opinions-container #opinion-tree img {
+    display: block;
+  }
+  #opinions-container #opinion-tree .center-image img {
+    width: 100%;
+    height: auto;
+  }
+  #opinions-container #opinion-tree .op-container {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
+  body {
+    color: green;
+  }
+  #container.columns {
+    flex-wrap: wrap;
+  }
+  #container.columns .column-item {
+    flex: auto;
+  }
+  .carousel-inner {
+    height: auto;
+  }
+  .about-me-container {
+    flex-wrap: wrap;
+  }
+  .about-me-container .about-me-img {
+    width: 100%;
+    flex: auto;
+  }
+  .about-me-container .about-me-img img {
+    width: 100%;
+    height: auto;
+  }
+  .about-me-container .about-me-img .center-image img {
+    width: 100%;
+    height: auto;
+  }
+  .about-me-container .about-me-desc {
+    width: 100%;
+    flex: auto;
+  }
+  #opinion-tree {
+    flex-wrap: wrap;
+  }
+  #opinion-tree img {
+    display: block;
+    margin: auto;
+  }
+  #opinion-tree .center-image img {
+    width: 100%;
+    height: auto;
+  }
+  #opinion-tree .op-container {
+    width: 100%;
+  }
+  #opinion-tree .op-container.center-image {
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  body {
+    color: grey;
+  }
+  .about-me-container .about-me-img {
+    width: 50%;
+    flex: auto;
+  }
+  .about-me-container .about-me-img img {
+    width: 100%;
+    height: auto;
+  }
+  .about-me-container .about-me-desc {
+    width: 50%;
+    flex: auto;
+  }
 }

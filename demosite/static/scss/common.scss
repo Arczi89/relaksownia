@@ -138,6 +138,11 @@ img.contact-icon {
   font-size: 1.6rem;
 }
 
+i.fa-bars {
+    color: white;
+    font-size: 2rem;
+}
+
 .navbar-brand {
   padding: 0;
 }
@@ -169,10 +174,10 @@ li.nav-item {
       display: flex;
       flex-direction: column;
     }
-   .lrc-inner.container {
+   .lrc-inner.op-container {
     width: 33%
    }
-   .lr-inner.container {
+   .lr-inner.op-container {
     width: 50%
    }
 }
@@ -550,7 +555,7 @@ li.nav-item {
     }
 
     #opinion-tree {
-        .lrc-inner.container {
+        .lrc-inner.op-container {
             justify-content: center;
         }
         .item {
@@ -673,7 +678,7 @@ body {
     }
 }
 
-/* cookielawe */
+/* cookielaw */
 
 #CookielawBanner {
     .container {
@@ -689,6 +694,372 @@ body {
         a {
             margin: 1rem;
             color: white;
+        }
+    }
+}
+
+/* responsive design */
+
+$desktop-width: 1100px;
+$tablet-width: 768px;
+$phone-width: 600px;
+$tiny-phone-width: 300px;
+
+
+@media only screen and (max-width: $tiny-phone-width) {
+    body {
+        color: yellow;
+    }
+
+    img, #content img.main-image {
+        display: none;
+    }
+
+    .navbar-brand::after {
+        content: 'Relaksownia';
+        color: white;
+    }
+
+    .h3, h3 {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    #container.columns {
+        flex-wrap: wrap;
+
+        .column-item {
+            flex: auto;
+            margin: 0;
+        }
+    }
+    .carousel-inner {
+        height: auto;
+    }
+
+    .right-side, .left-side {
+        width: 100%;
+        border: none;
+    }
+
+    .offer-item {
+        flex-wrap: wrap;
+        .offer-desc {
+            font-size: 1rem;
+        }
+        .offer-title {
+            font-size: 1rem;
+        }
+    }
+
+    .offer-item:nth-of-type(odd) {
+        .right-side {
+            order: 2;
+        }
+        .left-side {
+            order: 1;
+        }
+    }
+    .offer-text .offer-desc p {
+        font-size: 1rem;
+    }
+    .about-me {
+        margin: 1rem;
+    }
+    .about-me-container {
+        margin: 0;
+        flex-wrap: wrap;
+        .about-me-img {
+            width: 100%;
+            flex: auto;
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+        .about-me-desc {
+            width: 100%;
+            flex: auto;
+        }
+    }
+
+    .main-message {
+        height: auto;
+    }
+    #opinion-tree {
+        flex-wrap: wrap;
+        img {
+            display: none;
+        }
+        .op-container {
+            width: 100%;
+        }
+    }
+
+}
+
+@media only screen and (min-width: $tiny-phone-width) and (max-width: $phone-width) {
+
+    body {
+        color: red;
+    }
+
+    #container.columns {
+        flex-wrap: wrap;
+
+        .column-item {
+            flex: auto;
+        }
+    }
+
+    .h3, h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .carousel-inner {
+        height: auto;
+    }
+
+    .offer-item {
+        flex-wrap: wrap;
+        .offer-desc {
+            font-size: 1.5rem;
+        }
+        .offer-title {
+            font-size: 2rem;
+        }
+    }
+
+    .right-side, .left-side {
+        width: 100%;
+        border: none;
+    }
+
+    .offer-item:nth-of-type(odd) {
+        .right-side {
+            order: 2;
+        }
+        .left-side {
+            order: 1;
+        }
+    }
+    .about-me {
+        margin: 1rem;
+    }
+    .about-me-container {
+        margin: 0;
+        flex-wrap: wrap;
+        .about-me-img {
+            width: 100%;
+            flex: auto;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .about-me-desc {
+            width: 100%;
+            flex: auto;
+        }
+    }
+
+    .main-message {
+        height: auto;
+    }
+    .main-image img {
+        height: auto;
+        width: 100%;
+    }
+    #opinion-tree {
+        flex-wrap: wrap;
+        img {
+            display: block;
+        }
+        .center-image img {
+            width: 100%;
+            height: auto;
+            margin: auto;
+        }
+        .op-container {
+            width: 100%;
+            margin: auto;
+        }
+    }
+
+    .navbar {
+        padding: 0;
+    }
+    .navbar-toggler {
+        margin: 2px;
+    }
+}
+
+@media only screen and (min-width: $phone-width) and (max-width: $tablet-width) {
+
+    body {
+        color: blue;
+    }
+
+    .h3, h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    #container.columns {
+        flex-wrap: wrap;
+
+        .column-item {
+            flex: auto;
+        }
+    }
+    .carousel-inner {
+        height: auto;
+    }
+
+    .right-side, .left-side {
+        width: 100%;
+        border: none;
+    }
+
+    .offer-item {
+        flex-wrap: wrap;
+        .offer-desc {
+            font-size: 1.5rem;
+        }
+        .offer-title {
+            font-size: 2rem;
+        }
+    }
+
+    .offer-item:nth-of-type(odd) {
+        .right-side {
+            order: 2;
+        }
+        .left-side {
+            order: 1;
+        }
+    }
+    .about-me {
+        margin: 1rem;
+    }
+    .about-me-container {
+        flex-wrap: wrap;
+        .about-me-img {
+            width: 100%;
+            flex: auto;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .about-me-desc {
+            width: 100%;
+            flex: auto;
+        }
+    }
+    .main-image img {
+        height: auto;
+        width: 100%;
+    }
+    #opinions-container {
+        #opinion-tree {
+            flex-wrap: wrap;
+            img {
+                display: block;
+            }
+            .center-image img {
+                width: 100%;
+                height: auto;
+            }
+            .op-container {
+                width: 100%;
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
+
+    body {
+        color: green;
+    }
+
+    #container.columns {
+        flex-wrap: wrap;
+
+        .column-item {
+            flex: auto;
+        }
+    }
+    .carousel-inner {
+        height: auto;
+    }
+    .about-me-container {
+        flex-wrap: wrap;
+        .about-me-img {
+            width: 100%;
+            flex: auto;
+            img {
+                width: 100%;
+                height: auto;
+            }
+            .center-image img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .about-me-desc {
+            width: 100%;
+            flex: auto;
+        }
+    }
+    #opinion-tree {
+        flex-wrap: wrap;
+        img {
+            display: block;
+            margin: auto;
+        }
+        .center-image img {
+            width: 100%;
+            height: auto;
+        }
+        .op-container {
+            width: 100%;
+        }
+        .op-container.center-image {
+            margin: auto;
+        }
+    }
+}
+
+@media only screen and (min-width: $desktop-width) {
+    body {
+        color: grey;
+    }
+    .about-me-container {
+        .about-me-img {
+            width: 50%;
+            flex: auto;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .about-me-desc {
+            width: 50%;
+            flex: auto;
         }
     }
 }
