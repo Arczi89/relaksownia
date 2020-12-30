@@ -800,6 +800,40 @@ $tiny-phone-width: 300px;
         }
     }
 
+    iframe {
+        height: 300px;
+    }
+
+    #contact {
+        flex-wrap: wrap;
+        .column-left, .column-right {
+            width: 100%;
+        }
+        .contact-left-inner, .contact-right-inner {
+            margin: 0;
+            .contact-block {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid white;
+            }
+        }
+
+        #form_permission input {
+            width: auto;
+        }
+    }
+
+    .faq-main-content {
+        flex-wrap: wrap;
+        .column-left, .column-right {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
 }
 
 @media only screen and (min-width: $tiny-phone-width) and (max-width: $phone-width) {
@@ -900,6 +934,38 @@ $tiny-phone-width: 300px;
     .navbar-toggler {
         margin: 2px;
     }
+
+    #contact {
+        img {
+            margin: auto;
+        }
+        flex-wrap: wrap;
+        .column-left, .column-right {
+            width: 100%;
+        }
+        .contact-left-inner, .contact-right-inner {
+            margin: 0;
+            .contact-block {
+                width: 100%;
+                margin-left: 1rem;;
+                margin-right: 0;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid white;
+            }
+        }
+
+        #form_permission input {
+            width: auto;
+        }
+    }
+    .faq-main-content {
+        flex-wrap: wrap;
+        .column-left, .column-right {
+            width: 100%;
+            margin: 0;
+        }
+    }
 }
 
 @media only screen and (min-width: $phone-width) and (max-width: $tablet-width) {
@@ -986,6 +1052,30 @@ $tiny-phone-width: 300px;
                 width: 100%;
                 margin: auto;
             }
+        }
+    }
+    #contact {
+        img {
+            margin: auto;
+        }
+        flex-wrap: wrap;
+        .column-left, .column-right {
+            width: 100%;
+        }
+        .contact-left-inner, .contact-right-inner {
+            margin: 0;
+            .contact-block {
+                width: 100%;
+                margin-left: 1rem;;
+                margin-right: 0;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid white;
+            }
+        }
+
+        #form_permission input {
+            width: auto;
         }
     }
 }

@@ -754,6 +754,36 @@ body ::placeholder {
   #opinion-tree .op-container {
     width: 100%;
   }
+  iframe {
+    height: 300px;
+  }
+  #contact {
+    flex-wrap: wrap;
+  }
+  #contact .column-left, #contact .column-right {
+    width: 100%;
+  }
+  #contact .contact-left-inner, #contact .contact-right-inner {
+    margin: 0;
+  }
+  #contact .contact-left-inner .contact-block, #contact .contact-right-inner .contact-block {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid white;
+  }
+  #contact #form_permission input {
+    width: auto;
+  }
+  .faq-main-content {
+    flex-wrap: wrap;
+  }
+  .faq-main-content .column-left, .faq-main-content .column-right {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 @media only screen and (min-width: 300px) and (max-width: 600px) {
@@ -841,6 +871,36 @@ body ::placeholder {
   .navbar-toggler {
     margin: 2px;
   }
+  #contact {
+    flex-wrap: wrap;
+  }
+  #contact img {
+    margin: auto;
+  }
+  #contact .column-left, #contact .column-right {
+    width: 100%;
+  }
+  #contact .contact-left-inner, #contact .contact-right-inner {
+    margin: 0;
+  }
+  #contact .contact-left-inner .contact-block, #contact .contact-right-inner .contact-block {
+    width: 100%;
+    margin-left: 1rem;
+    margin-right: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid white;
+  }
+  #contact #form_permission input {
+    width: auto;
+  }
+  .faq-main-content {
+    flex-wrap: wrap;
+  }
+  .faq-main-content .column-left, .faq-main-content .column-right {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
@@ -916,6 +976,29 @@ body ::placeholder {
   #opinions-container #opinion-tree .op-container {
     width: 100%;
     margin: auto;
+  }
+  #contact {
+    flex-wrap: wrap;
+  }
+  #contact img {
+    margin: auto;
+  }
+  #contact .column-left, #contact .column-right {
+    width: 100%;
+  }
+  #contact .contact-left-inner, #contact .contact-right-inner {
+    margin: 0;
+  }
+  #contact .contact-left-inner .contact-block, #contact .contact-right-inner .contact-block {
+    width: 100%;
+    margin-left: 1rem;
+    margin-right: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid white;
+  }
+  #contact #form_permission input {
+    width: auto;
   }
 }
 
