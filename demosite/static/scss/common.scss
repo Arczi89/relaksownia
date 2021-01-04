@@ -860,6 +860,27 @@ $tiny-phone-width: 300px;
         }
     }
 
+    .certs {
+        margin: auto;
+        #certs-container {
+            margin: 0;
+            .cert-img {
+                max-width: initial;
+            }
+            img.cert-img-inner {
+                display: block;
+                width: 100%;
+            }
+        }
+        .cert-info-zoom, .cert-info {
+            margin: 0;
+            font-size: 1rem;
+            .fa-search {
+                font-size: 1rem;
+                margin: 2px;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: $tiny-phone-width) and (max-width: $phone-width) {
@@ -988,6 +1009,29 @@ $tiny-phone-width: 300px;
             margin: 0;
         }
     }
+
+    .certs {
+        margin: auto;
+        #certs-container {
+            margin: 0;
+            .cert-img {
+                max-width: initial;
+                margin: 1rem;
+            }
+            img.cert-img-inner {
+                display: block;
+                width: 100%;
+            }
+        }
+        .cert-info-zoom, .cert-info {
+            margin: 0;
+            font-size: 1.2rem;
+            .fa-search {
+                font-size: 1.2rem;
+                margin: 2px;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: $phone-width) and (max-width: $tablet-width) {
@@ -1096,6 +1140,24 @@ $tiny-phone-width: 300px;
             width: auto;
         }
     }
+    .certs {
+        margin: auto;
+        #certs-container {
+            margin: 0;
+            .cert-img {
+                max-width: initial;
+                margin: 1rem;
+            }
+        }
+        .cert-info-zoom, .cert-info {
+            margin: 0;
+            font-size: 1.2rem;
+            .fa-search {
+                font-size: 1.2rem;
+                margin: 2px;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
@@ -1144,6 +1206,15 @@ $tiny-phone-width: 300px;
         }
         .op-container.center-image {
             margin: auto;
+        }
+    }
+    .certs {
+        margin: auto;
+        #certs-container {
+            margin: 0;
+            .cert-img {
+                margin: 1rem;
+            }
         }
     }
 }
