@@ -22,7 +22,7 @@ class BlogPost(models.Model):
     photo = models.ImageField(upload_to='images/', verbose_name=_('Glowny obrazek'))
     photo_alt = models.CharField(max_length=200, verbose_name=_('Nazwa'))
     description = RichTextField(verbose_name=_('Glowny tekst posta'))
-    publication_date = models.DateTimeField(default=datetime.now(), verbose_name=_('Data publikacji posta'))
+    publication_date = models.DateTimeField(auto_now=True, verbose_name=_('Data publikacji posta'))
     update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
     element_order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
 
