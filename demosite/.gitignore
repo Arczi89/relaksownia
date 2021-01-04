@@ -120,3 +120,6 @@ media/
 
 demosite/settings.py.bak
 /demosite/settings.py.bak
+
+/other/
+/other/*

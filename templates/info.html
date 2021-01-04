@@ -19,10 +19,14 @@
 {% endif %}
 {% if certs %}
 <div class="certs">
+    <div class="cert-info">MOJE DYPLOMY I CERTYFIKATY</div>
+    <div class="cert-info-zoom"><span class="fa fa-search"></span>Kliknij w zdjęcie aby powiększyć</div>
     <div class="certs-container" id="certs-container">
         {% for cert in certs %}
         <div class="cert-img">
-            <img src="{{ about_me.photo.url }}" alt="{{ photo_alt }}" height="600" width="auto"/>
+            <a href="{{ cert.image.url }}" target="_blank">
+                <img class="cert-img-inner" src="{{ cert.image.url }}" alt="{{ cert.image_alt }}" width="100%"/>
+            </a>
         </div>
         {% endfor %}
     </div>
