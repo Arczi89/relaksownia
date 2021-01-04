@@ -17,5 +17,16 @@
     </div>
 </div>
 {% endif %}
+{% if certs %}
+<div class="certs">
+    <div class="certs-container" id="certs-container">
+        {% for cert in certs %}
+        <div class="cert-img">
+            <img src="{{ about_me.photo.url }}" alt="{{ photo_alt }}" height="600" width="auto"/>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
 
 {% endblock %}

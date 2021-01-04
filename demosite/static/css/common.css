@@ -674,9 +674,6 @@ body ::placeholder {
 
 /* responsive design */
 @media only screen and (max-width: 300px) {
-  body {
-    color: yellow;
-  }
   img, #content img.main-image {
     display: none;
   }
@@ -787,9 +784,6 @@ body ::placeholder {
 }
 
 @media only screen and (min-width: 300px) and (max-width: 600px) {
-  body {
-    color: red;
-  }
   #container.columns {
     flex-wrap: wrap;
   }
@@ -904,9 +898,6 @@ body ::placeholder {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
-  body {
-    color: blue;
-  }
   .h3, h3 {
     font-size: 1.5rem;
   }
@@ -1003,9 +994,6 @@ body ::placeholder {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1100px) {
-  body {
-    color: green;
-  }
   #container.columns {
     flex-wrap: wrap;
   }
@@ -1054,9 +1042,6 @@ body ::placeholder {
 }
 
 @media only screen and (min-width: 1100px) {
-  body {
-    color: grey;
-  }
   .about-me-container .about-me-img {
     width: 50%;
     flex: auto;
