@@ -45,6 +45,10 @@ body {
   margin: 1rem;
 }
 
+.card-header h2 p {
+    font-size: 2rem;
+}
+
 .main-content-2-columns {
   display: flex;
   flex-direction: row;
@@ -78,11 +82,11 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-/* colorization */
-
 .container-image img {
-  height: 350px;
+  height: auto;
 }
+
+/* colorization */
 
 a {
   color: $base-color;
@@ -106,7 +110,7 @@ h1, h2, h3, h4, h5 {
   font-size: 2rem;
 }
 
-p {
+p, li {
   font-size: 1.5rem;
 }
 
@@ -247,6 +251,10 @@ li.nav-item {
   margin-top: 4rem;
 }
 
+.container-description * {
+    font-size: 1.5rem;
+}
+
 .container-title, .about-me-justyna {
   border-bottom: 1px solid white;
   margin-bottom: 1rem;
@@ -364,13 +372,13 @@ li.nav-item {
   .offer-desc {
     margin-top: 2rem;
     font-size: 1.5rem;
-    p {
+    * {
         font-size: 1.5rem;
     }
   }
 
   .offer-title {
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: league;
   }
 }
@@ -425,7 +433,7 @@ li.nav-item {
   p {
     font-family: league;
     text-transform: uppercase;
-    font-size: 1.7rem;
+    font-size: 2rem;
     color: white;
   }
 
@@ -433,6 +441,11 @@ li.nav-item {
     text-decoration: unset;
     color: white;
   }
+
+}
+
+.accordion .card-body {
+    font-size: 1.5rem;
 }
 
 /* faq - newsletter */
@@ -558,6 +571,9 @@ li.nav-item {
             height: auto;
             outline: none;
             .opinion-text {
+                * {
+                    font-size: 1.5rem;
+                }
                 bottom: 1rem;
             }
             .opinion-customer-name {
