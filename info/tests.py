@@ -5,9 +5,8 @@ from django.template.loader import render_to_string
 from django.test import TestCase
 
 
-# TODO+ django data driven test - taki sam kształt testu, zmieniają się tylko dane
-# TODO+ assertPy - biblioteka do asercji
-# TODO+ klasa bazowa z metodami setupowymi do tworzenia wspólnych obiektów
+
+from demosite.tests import SortAssert
 from .models import Info, CertItem
 
 
@@ -56,8 +55,7 @@ class InfoTests(TestCase):
         # Act
         response = self.client.get(self.baseUrl)
         # Assert
-        self.assertLessEqual(response.context['certs'][0].element_order, response.context['certs'][1].element_order, "There is wrong order of elements")
-        self.assertLessEqual(response.context['certs'][1].element_order, response.context['certs'][2].element_order, "There is wrong order of elements")
+        SortAssert(response, 'certs').checkOrderOfElements()
 
     def test_elements_with_the_same_order_number_are_correct_ordered(self):
         # Arrange
@@ -67,8 +65,7 @@ class InfoTests(TestCase):
         # Act
         response = self.client.get(self.baseUrl)
         # Assert
-        self.assertLessEqual(response.context['certs'][0].element_order, response.context['certs'][1].element_order, "There is wrong order of elements")
-        self.assertLessEqual(response.context['certs'][1].element_order, response.context['certs'][2].element_order, "There is wrong order of elements")
+        SortAssert(response, 'certs').checkOrderOfElements()
 
     def test_should_all_section_be_visible_in_page(self):
         # Arrange

@@ -1,7 +1,7 @@
 import tempfile
 from http import HTTPStatus
-
 from django.test import TestCase
+from demosite.tests import SortAssert
 from offer.models import OfferItem
 
 
@@ -32,8 +32,7 @@ class OfferTests(TestCase):
         # Act
         response = self.client.get(self.baseUrl)
         # Assert
-        self.assertLessEqual(response.context['offers'][0].element_order, response.context['offers'][1].element_order, "There is wrong order of elements")
-        self.assertLessEqual(response.context['offers'][1].element_order, response.context['offers'][2].element_order, "There is wrong order of elements")
+        SortAssert(response, 'offers').checkOrderOfElements()
 
     def test_offer_elements_with_the_same_order_number_are_correct_ordered(self):
         # Arrange
@@ -43,5 +42,4 @@ class OfferTests(TestCase):
         # Act
         response = self.client.get(self.baseUrl)
         # Assert
-        self.assertLessEqual(response.context['offers'][0].element_order, response.context['offers'][1].element_order, "There is wrong order of elements")
-        self.assertLessEqual(response.context['offers'][1].element_order, response.context['offers'][2].element_order, "There is wrong order of elements")
+        SortAssert(response, 'offers').checkOrderOfElements()

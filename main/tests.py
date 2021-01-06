@@ -2,6 +2,8 @@ import tempfile
 from http import HTTPStatus
 
 from django.test import TestCase
+
+from demosite.tests import SortAssert
 from main.models import MainConfiguration, MainSliderConfiguration, MainSliderItem, MainBoxItem
 
 
@@ -66,8 +68,7 @@ class MainPageTests(TestCase):
         # Act
         response = self.client.get(self.baseUrl)
         # Assert
-        self.assertLessEqual(response.context['slider_items'][0].element_order, response.context['slider_items'][1].element_order, "There is wrong order of elements")
-        self.assertLessEqual(response.context['slider_items'][1].element_order, response.context['slider_items'][2].element_order, "There is wrong order of elements")
+        SortAssert(response, 'slider_items').checkOrderOfElements()
 
     def test_slider_elements_with_the_same_order_number_are_correct_ordered(self):
         # Arrange
@@ -77,8 +78,7 @@ class MainPageTests(TestCase):
         # Act
         response = self.client.get(self.baseUrl)
         # Assert
-        self.assertLessEqual(response.context['slider_items'][0].element_order, response.context['slider_items'][1].element_order, "There is wrong order of elements")
-        self.assertLessEqual(response.context['slider_items'][1].element_order, response.context['slider_items'][2].element_order, "There is wrong order of elements")
+        SortAssert(response, 'slider_items').checkOrderOfElements()
 
     def test_main_box_elements_are_in_correct_order(self):
         # Arrange
@@ -88,8 +88,7 @@ class MainPageTests(TestCase):
         # Act
         response = self.client.get(self.baseUrl)
         # Assert
-        self.assertLessEqual(response.context['containers'][0].element_order, response.context['containers'][1].element_order, "There is wrong order of elements")
-        self.assertLessEqual(response.context['containers'][1].element_order, response.context['containers'][2].element_order, "There is wrong order of elements")
+        SortAssert(response, 'containers').checkOrderOfElements()
 
     def test_main_box_elements_with_the_same_order_number_are_correct_ordered(self):
         # Arrange
@@ -99,5 +98,4 @@ class MainPageTests(TestCase):
         # Act
         response = self.client.get(self.baseUrl)
         # Assert
-        self.assertLessEqual(response.context['containers'][0].element_order, response.context['containers'][1].element_order, "There is wrong order of elements")
-        self.assertLessEqual(response.context['containers'][1].element_order, response.context['containers'][2].element_order, "There is wrong order of elements")
+        SortAssert(response, 'containers').checkOrderOfElements()

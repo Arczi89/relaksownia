@@ -3,16 +3,9 @@ from http import HTTPStatus
 from django.contrib.messages import get_messages
 from django.template.loader import render_to_string
 from django.test import TestCase
-
 from demosite.constants import incorrect_email_format, field_name_required, field_message_required, \
     field_email_required, field_permission_required
-
 from .forms import ContactForm
-
-
-# TODO+ django data driven test - taki sam kształt testu, zmieniają się tylko dane
-# TODO+ assertPy - biblioteka do asercji
-# TODO+ klasa bazowa z metodami setupowymi do tworzenia wspólnych obiektów
 from .models import ContactConfiguration
 
 

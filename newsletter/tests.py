@@ -1,17 +1,9 @@
 from http import HTTPStatus
-
 from django.contrib.messages import get_messages
 from django.test import TestCase
-
 from demosite.constants import field_required, incorrect_email_format, newsletter_permission_required
 from main.models import MainConfiguration
-
 from .forms import NewsletterForm
-
-
-# TODO+ django data driven test - taki sam kształt testu, zmieniają się tylko dane
-# TODO+ assertPy - biblioteka do asercji
-# TODO+ klasa bazowa z metodami setupowymi do tworzenia wspólnych obiektów
 from .models import Newsletter
 
 
