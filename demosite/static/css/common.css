@@ -1,10 +1,5 @@
 /* common styles */
 @font-face {
-  font-family: "Lobster";
-  src: url("../webfonts/LobsterTwo-Regular.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "Oswald";
   src: url("../webfonts/Oswald-Regular.ttf") format("truetype");
 }
@@ -93,6 +88,7 @@ a.nav-link {
 
 .footer-container li a {
   color: white;
+  font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5 {
