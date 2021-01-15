@@ -742,6 +742,24 @@ body {
     }
 }
 
+#container404 {
+    position: relative;
+    .main-photo {
+        display: block;
+        margin: auto;
+        position: relative;
+    }
+    a.home-icon img {
+        margin: auto;
+        width: 10rem;
+        height: 10rem;
+        position: absolute;
+        top: 13rem;
+        right: 30rem;
+    }
+}
+
+/* ================================================================================================================ */
 /* responsive design */
 
 $desktop-width: 1100px;

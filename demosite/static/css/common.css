@@ -719,6 +719,26 @@ body ::placeholder {
   color: white;
 }
 
+#container404 {
+  position: relative;
+}
+
+#container404 .main-photo {
+  display: block;
+  margin: auto;
+  position: relative;
+}
+
+#container404 a.home-icon img {
+  margin: auto;
+  width: 10rem;
+  height: 10rem;
+  position: absolute;
+  top: 13rem;
+  right: 30rem;
+}
+
+/* ================================================================================================================ */
 /* responsive design */
 @media only screen and (max-width: 300px) {
   img, #content img.main-image {
