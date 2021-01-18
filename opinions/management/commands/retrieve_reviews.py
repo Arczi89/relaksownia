@@ -1,3 +1,4 @@
+from datetime import time
 from random import seed, randint
 
 from django.core.management.base import BaseCommand
@@ -13,7 +14,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         opinion_list = OpinionItem.objects.order_by("element_order")
-        seed(1)
+        seed(time())
         position = 0
         for opinion in opinion_list:
             position = position + randint(0, 5)
