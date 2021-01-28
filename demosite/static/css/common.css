@@ -738,6 +738,10 @@ body ::placeholder {
   right: 30rem;
 }
 
+.policy-text #policy-privacy {
+  margin: 4rem;
+}
+
 /* ================================================================================================================ */
 /* responsive design */
 @media only screen and (max-width: 300px) {

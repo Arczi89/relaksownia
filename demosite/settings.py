@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'offer.apps.OfferConfig',
     'newsletter.apps.NewsletterConfig',
+    'policy.apps.PolicyConfig',
     'bootstrap_modal_forms',
     'django.contrib.admin',
     'django.contrib.auth',

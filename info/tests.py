@@ -5,7 +5,6 @@ from django.template.loader import render_to_string
 from django.test import TestCase
 
 
-
 from demosite.tests import SortAssert
 from .models import Info, CertItem
 
