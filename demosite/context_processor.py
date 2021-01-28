@@ -24,7 +24,7 @@ def social_media_processor(request):
         instagram = configuration.instagram
         snapchat = configuration.snapchat
         youtube = configuration.youtube
-        google_plus = configuration.google_plus
+        google_plus = configuration.google_map
     except ContactConfiguration.DoesNotExist:
         facebook = None
         twitter = None

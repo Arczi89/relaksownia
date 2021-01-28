@@ -18,7 +18,7 @@ class ContactConfiguration(models.Model):
     instagram = models.CharField(max_length=200, verbose_name=_('Url (adres) do Instagrama'), default='', blank=True)
     snapchat = models.CharField(max_length=200, verbose_name=_('Url (adres) do Snapchat'), default='', blank=True)
     youtube = models.CharField(max_length=200, verbose_name=_('Url (adres) do YouTube'), default='', blank=True)
-    google_plus = models.CharField(max_length=200, verbose_name=_('Url (adres) do Google+'), default='', blank=True)
+    google_map = models.CharField(max_length=200, verbose_name=_('Url (adres) do Google+'), default='', blank=True)
     update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
 
     def __str__(self):
