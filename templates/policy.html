@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if configuration %}
+<div class="policy-text">
+    <div class="policy-privacy" id="policy-privacy">
+        {{ configuration.privacy_text | safe }}
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -277,5 +277,4 @@ cypress/screenshots/*
 cypress/videos/*
 
 # End of https://www.toptal.com/developers/gitignore/api/cypressio
-/demosite/other/
-/demosite/other/*
+/.run/
