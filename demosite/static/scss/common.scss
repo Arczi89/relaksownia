@@ -4,6 +4,15 @@ $base-color: #ebe286;
 $almost-black: #2e2e2e;
 $borrowed-grey: #ccd0d3;
 
+$facebook-color: #3b5999;
+$linkedin-color: #0077B5;
+$snapchat-color: #FFFC00;
+$youtube-color: #cd201f;
+$twitter-color: #55acee;
+$google-maps-color: #dd4b39;
+$instagram-color: #e4405f;
+$youtube-color: #cd201f;
+
 @font-face {
   font-family: "Oswald";
   src: url('../webfonts/Oswald-Regular.ttf') format("truetype");
@@ -83,13 +92,14 @@ select:-webkit-autofill:focus {
 
 /* colorization */
 
-a {
+a.nav-link, .content a {
   color: $base-color;
   cursor: pointer;
   text-transform: uppercase;
-  &.nav-link {
+}
+
+a.nav-link {
     font-family: league;
-  }
 }
 
 .footer-container li a {
@@ -111,7 +121,7 @@ p, li {
 
 a {
   &:hover {
-    color: $base-color;
+    color: white;
     cursor: pointer;
   }
 
@@ -208,17 +218,30 @@ li.nav-item {
     text-decoration: none;
   }
 
-  .fa-street-view {
-    color: white;
-  }
-
-  .fa-twitter {
-    color: #1DA1F2;
-  }
-
-  .fa-facebook {
-    color: blue;
-  }
+    .fa-facebook {
+        color: $facebook-color
+    }
+    .fa-twitter {
+        color: $twitter-color;
+    }
+    .fa-linkedin {
+        color: $linkedin-color;
+    }
+    .fa-instagram {
+        color: $instagram-color;
+    }
+    .fa-snapchat {
+        color: $snapchat-color;
+    }
+    .fa-twitter {
+        color: $twitter-color;
+    }
+    .fa-map-marker {
+        color: $google-maps-color;
+    }
+    .fa-youtube {
+        color: $youtube-color;
+    }
 }
 
 /* carousel slider */

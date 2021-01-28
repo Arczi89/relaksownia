@@ -76,7 +76,7 @@ select:-webkit-autofill:focus {
 }
 
 /* colorization */
-a {
+a.nav-link, .content a {
   color: #ebe286;
   cursor: pointer;
   text-transform: uppercase;
@@ -104,7 +104,7 @@ p, li {
 }
 
 a:hover {
-  color: #ebe286;
+  color: white;
   cursor: pointer;
 }
 
@@ -199,16 +199,36 @@ li.nav-item {
   text-decoration: none;
 }
 
-.social .fa-street-view {
-  color: white;
+.social .fa-facebook {
+  color: #3b5999;
 }
 
 .social .fa-twitter {
-  color: #1DA1F2;
+  color: #55acee;
 }
 
-.social .fa-facebook {
-  color: blue;
+.social .fa-linkedin {
+  color: #0077B5;
+}
+
+.social .fa-instagram {
+  color: #e4405f;
+}
+
+.social .fa-snapchat {
+  color: #FFFC00;
+}
+
+.social .fa-twitter {
+  color: #55acee;
+}
+
+.social .fa-map-marker {
+  color: #dd4b39;
+}
+
+.social .fa-youtube {
+  color: #cd201f;
 }
 
 /* carousel slider */
