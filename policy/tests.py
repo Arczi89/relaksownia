@@ -16,7 +16,7 @@ class PolicyTests(TestCase):
         return policy_configuration.pk
 
     def removeMainConfiguration(self):
-        obj = PolicyConfiguration.objects.get(pk=self.info_configuration_pk)
+        obj = PolicyConfiguration.objects.get(pk=self.policy_configuration.pk)
         obj.delete()
 
     def setUp(self):

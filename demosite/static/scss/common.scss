@@ -786,6 +786,14 @@ body {
     margin: 4rem;
 }
 
+#promo-site {
+    margin-right: 4rem;
+    margin-left: 4rem;
+    .responsive-photos {
+        display: none;
+    }
+}
+
 /* ================================================================================================================ */
 /* responsive design */
 
@@ -941,6 +949,16 @@ $tiny-phone-width: 300px;
             }
         }
     }
+
+    #promo-site {
+        margin: auto;
+        .responsive-photos {
+            display: block;
+            .promo-part-item {
+                width: 100%;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: $tiny-phone-width) and (max-width: $phone-width) {
@@ -1092,6 +1110,18 @@ $tiny-phone-width: 300px;
             }
         }
     }
+    #promo-site {
+        margin: auto;
+        .promo-item-no-responsive {
+            display: none;
+        }
+        .responsive-photos {
+            display: block;
+            .promo-part-item {
+                width: 100%;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: $phone-width) and (max-width: $tablet-width) {
@@ -1218,6 +1248,19 @@ $tiny-phone-width: 300px;
             }
         }
     }
+
+    #promo-site {
+        margin: auto;
+        .promo-item-no-responsive {
+            display: none;
+        }
+        .responsive-photos {
+            display: block;
+            .promo-part-item {
+                width: 100%;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
@@ -1274,6 +1317,18 @@ $tiny-phone-width: 300px;
             margin: 0;
             .cert-img {
                 margin: 1rem;
+            }
+        }
+    }
+
+    #promo-site {
+        .promo-item-no-responsive {
+            display: none;
+        }
+        .responsive-photos {
+            display: block;
+            .promo-part-item {
+                width: 100%;
             }
         }
     }

@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'offer.apps.OfferConfig',
     'newsletter.apps.NewsletterConfig',
     'policy.apps.PolicyConfig',
+    'promo.apps.PromoConfig',
     'bootstrap_modal_forms',
     'django.contrib.admin',
     'django.contrib.auth',
