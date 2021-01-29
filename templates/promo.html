@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if promoItems %}
+<div id="promo-site">
+    {% for promoItem in promoItems %}
+    <div class="promo-part-item">
+        {% if promoItem.text_position <= 1 %}
+            <div class="promo-item-text">
+                {{ promoItem.text | safe }}
+            </div>
+        {% endif %}
+        <img class="w-100 promo-item-no-responsive" src="{{ promoItem.photo.url }}" alt="{{photo_alt}}"/>
+        <div class="main-content-2-columns responsive-photos">
+            <img class="w-100 column-left" src="{{ promoItem.photo_responsive1.url }}" alt="{{photo_responsive1_alt}}"/>
+            <img class="w-100 column-right" src="{{ promoItem.photo_responsive2.url }}" alt="{{photo_responsive2_alt}}"/>
+        </div>
+        {% if promoItem.text_position > 1 %}
+            <div class="promo-item-text">
+                {{ promoItem.text | safe }}
+            </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

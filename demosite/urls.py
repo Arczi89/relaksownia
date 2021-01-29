@@ -15,6 +15,7 @@ urlpatterns = [
                   path('faq/', include('faq.urls')),
                   path('newsletter/', include('newsletter.urls')),
                   path('policy/', include('policy.urls')),
+                  path('promo/', include('promo.urls')),
                   path('admin/', admin.site.urls),
                   path('djrichtextfield/', include('djrichtextfield.urls')),
                   path('400/', bad_request, kwargs={'exception': Exception('Bad Request!')}),
