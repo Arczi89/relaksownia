@@ -14,8 +14,14 @@
         {% endif %}
         <img class="w-100 promo-item-no-responsive" src="{{ promoItem.photo.url }}" alt="{{photo_alt}}"/>
         <div class="main-content-2-columns responsive-photos">
-            <img class="w-100 column-left" src="{{ promoItem.photo_responsive1.url }}" alt="{{photo_responsive1_alt}}"/>
-            <img class="w-100 column-right" src="{{ promoItem.photo_responsive2.url }}" alt="{{photo_responsive2_alt}}"/>
+            <img class="w-100 column-item" src="{{ promoItem.photo_responsive1.url }}" alt="{{photo_responsive1_alt}}"/>
+            <img class="w-100 column-item" src="{{ promoItem.photo_responsive2.url }}" alt="{{photo_responsive2_alt}}"/>
+            {% if promoItem.photo_responsive3 %}
+                <img class="w-100 column-item" src="{{ promoItem.photo_responsive3.url }}" alt="{{photo_responsive3_alt}}"/>
+            {% endif %}
+            {% if promoItem.photo_responsive4 %}
+                <img class="w-100 column-item" src="{{ promoItem.photo_responsive4.url }}" alt="{{photo_responsive4_alt}}"/>
+            {% endif %}
         </div>
         {% if promoItem.text_position > 1 %}
             <div class="promo-item-text">
