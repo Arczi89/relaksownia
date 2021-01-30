@@ -4,7 +4,7 @@ from .models import PromoItem
 
 
 def promo(request):
-    promo_items = PromoItem.objects.all()
+    promo_items = PromoItem.objects.order_by("element_order")
     context = {
         'promoItems': promo_items
     }

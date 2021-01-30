@@ -16,12 +16,12 @@ class PolicyTests(TestCase):
         return policy_configuration.pk
 
     def removeMainConfiguration(self):
-        obj = PolicyConfiguration.objects.get(pk=self.policy_configuration.pk)
+        obj = PolicyConfiguration.objects.get(pk=self.policy_configuration_pk)
         obj.delete()
 
     def setUp(self):
         self.baseUrl = "/policy/"
-        self.info_configuration_pk = self.addBasicConfigurations()
+        self.policy_configuration_pk = self.addBasicConfigurations()
 
     def test_policy_page_with_configuration_loaded(self):
         response = self.client.get(self.baseUrl)
