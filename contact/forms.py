@@ -2,7 +2,7 @@ from django.utils.translation import ugettext_lazy as _
 from django import forms
 
 from demosite.constants import incorrect_email_format, field_name_required, field_message_required, \
-    field_email_required, field_permission_required
+    field_email_required, field_permission_required, field_required
 from .models import Contact
 
 
@@ -11,10 +11,10 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = '__all__'
         error_messages = {
-            'message': {'required': "To pole jest wymagane"},
-            'name': {'required': "To pole jest wymagane"},
-            'email': {'required': "To pole jest wymagane"},
-            'permission': {'required': "To pole jest wymagane"}
+            'message': {'required': field_required},
+            'name': {'required': field_required},
+            'email': {'required': field_required},
+            'permission': {'required': field_required}
         }
         widgets = {
             'email': forms.TextInput(attrs={'placeholder': _('Adres e-mail')}),

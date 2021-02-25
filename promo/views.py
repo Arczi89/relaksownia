@@ -1,10 +1,10 @@
 from django.shortcuts import render
 
-from .models import PromoItem
+from .models import PromoPageComponent
 
 
 def promo(request):
-    promo_items = PromoItem.objects.order_by("element_order")
+    promo_items = PromoPageComponent.objects.order_by("element_order")
     context = {
         'promoItems': promo_items
     }

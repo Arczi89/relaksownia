@@ -10,8 +10,8 @@ class NewsletterFaqForm(forms.ModelForm):
         model = Newsletter
         fields = "__all__"
         error_messages = {
-            'message': {'required': "To pole jest wymagane"},
-            'name': {'required': "To pole jest wymagane"},
+            'message': {'required': field_required},
+            'name': {'required': field_required},
             'permission': {'required': "Musisz wyrazić zgodę aby zapisać się na newsletter"}
         }
         labels = {

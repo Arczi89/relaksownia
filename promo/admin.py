@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from .models import PromoItem
+from .models import PromoPageComponent
 
 
-@admin.register(PromoItem)
+@admin.register(PromoPageComponent)
 class PromoItemAdmin(admin.ModelAdmin):
     save_as = True

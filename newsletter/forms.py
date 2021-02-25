@@ -11,9 +11,9 @@ class NewsletterForm(BSModalModelForm):
         model = Newsletter
         fields = "__all__"
         error_messages = {
-            'message': {'required': "To pole jest wymagane"},
-            'name': {'required': "To pole jest wymagane"},
-            'permission': {'required': "Musisz wyrazić zgodę aby zapisać się na newsletter"}
+            'message': {'required': field_required},
+            'name': {'required': field_required},
+            'permission': {'required': newsletter_permission_required}
         }
         labels = {
             "permission": _('Wyrażam zgodę na przesyłanie mi ofert marketingowych i promocyjnych drogą elektroniczną'),
