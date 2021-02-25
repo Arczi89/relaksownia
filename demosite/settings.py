@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djrichtextfield',
+    'phone_field',
     'django_sass',
     'cookielaw'
 ]
