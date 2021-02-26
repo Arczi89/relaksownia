@@ -794,6 +794,36 @@ body {
     }
 }
 
+#promo_form {
+    display:flex;
+
+    input, select {
+        width: 100%;
+    }
+    #form_permission, #form_is_vat {
+        display:flex;
+
+        input {
+            align-self: center;
+            margin-bottom: 0;
+            width: 2rem;
+        }
+
+        label {
+            margin-bottom: 0;
+            margin-left: 1rem;
+        }
+    }
+    .submit-form-button {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+}
+
+
+
 /* ================================================================================================================ */
 /* responsive design */
 

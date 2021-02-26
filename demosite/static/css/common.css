@@ -771,6 +771,36 @@ body ::placeholder {
   display: none;
 }
 
+#promo_form {
+  display: flex;
+}
+
+#promo_form input, #promo_form select {
+  width: 100%;
+}
+
+#promo_form #form_permission, #promo_form #form_is_vat {
+  display: flex;
+}
+
+#promo_form #form_permission input, #promo_form #form_is_vat input {
+  align-self: center;
+  margin-bottom: 0;
+  width: 2rem;
+}
+
+#promo_form #form_permission label, #promo_form #form_is_vat label {
+  margin-bottom: 0;
+  margin-left: 1rem;
+}
+
+#promo_form .submit-form-button {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
 /* ================================================================================================================ */
 /* responsive design */
 @media only screen and (max-width: 300px) {
