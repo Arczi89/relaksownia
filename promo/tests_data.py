@@ -22,28 +22,28 @@ def get_initialized_form_data():
 def retrieve_incorrect_form_data_courier_to_person():
     form = get_initialized_form_data()
     form['is_vat'] = False
-    form['delivery_kind'] = DeliveryKind.COURIER
+    form['delivery_kind'] = DeliveryKind.get_value("COURIER")
     return form
 
 
 def retrieve_incorrect_form_data_inpost_to_person():
     form = get_initialized_form_data()
     form['is_vat'] = False
-    form['delivery_kind'] = DeliveryKind.INPOST
+    form['delivery_kind'] = DeliveryKind.get_value("INPOST")
     return form
 
 
 def retrieve_incorrect_form_data_courier_to_company():
     form = get_initialized_form_data()
     form['is_vat'] = True
-    form['delivery_kind'] = DeliveryKind.COURIER
+    form['delivery_kind'] = DeliveryKind.get_value("COURIER")
     return form
 
 
 def retrieve_incorrect_form_data_inpost_to_company():
     form = get_initialized_form_data()
     form['is_vat'] = True
-    form['delivery_kind'] = DeliveryKind.INPOST
+    form['delivery_kind'] = DeliveryKind.get_value("INPOST")
     return form
 
 
@@ -58,7 +58,7 @@ def retrieve_correct_form_data():
         "inpost_code": "GLI06A",
         "delivery_place": "",
         "is_vat": False,
-        "delivery_kind": DeliveryKind['INPOST'],
+        "delivery_kind": DeliveryKind.get_value("INPOST"),
         "nip": "",
         "permission": True
     }
