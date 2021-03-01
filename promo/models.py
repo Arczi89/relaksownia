@@ -48,7 +48,7 @@ class PromoConfiguration(models.Model):
                                     default=buy_permission_default)
     delivery_info = RichTextField(verbose_name=_('Informacja o dostawie'), blank=False,
                                     default=delivery_info_default)
-    bank_account_number = models.CharField(max_length=6, verbose_name=_('Numer konta bankowego'), blank=False,
+    bank_account_number = models.CharField(max_length=26, verbose_name=_('Numer konta bankowego'), blank=False,
                                     default=bank_account_number_default)
 
 
