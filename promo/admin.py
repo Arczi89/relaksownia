@@ -9,11 +9,11 @@ class PromoItemAdmin(admin.ModelAdmin):
 
 
 @admin.register(PromoConfiguration)
-class PromoItemAdmin(admin.ModelAdmin):
+class PromoConfigurationAdmin(admin.ModelAdmin):
     save_as = True
 
 
 @admin.register(PromoClient)
-class PromoItemAdmin(admin.ModelAdmin):
+class PromoClientAdmin(admin.ModelAdmin):
     save = False
     save_as = False
