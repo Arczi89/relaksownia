@@ -32,32 +32,44 @@
     {% endfor %}
 </div>
 {% endif %}
-
-<div class="promo_form" id="promo_form">
-    <form action="{% url 'promo' %}" method="post" novalidate>
-        {% csrf_token %}
-          {% if form.non_field_errors %}
-            {% for error in form.non_field_errors %}
-                <p class="help-block error">{{ error | safe }}</p>
-            {% endfor %}
-          {% endif %}
-        {% for field in form %}
-            <div class="form-group{% if field.errors %} invalid{% endif %}" id="form_{{ field.name }}">
-                {{ field }}
-                {% if field.name == 'permission' or field.name == 'is_vat' %}
-                <label for="{{ field.id_for_label }}">
-                    {{ field.label }}
-                </label>
-                {% endif %}
-                {% for error in field.errors %}
-                    <p class="help-block error error_{{ field.name }}">{{ error | safe }}</p>
+{% if promo_configuration %}
+    <p>
+        {{ promo_configuration.delivery_info }}
+    </p>
+    <p>
+        Numer konta do opłacenia zamówienia: {{ promo_configuration.bank_account_number }}
+    </p>
+    <div class="promo_form" id="promo_form">
+        <form action="{% url 'promo' %}" method="post" novalidate>
+            {% csrf_token %}
+              {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    <p class="help-block error">{{ error | safe }}</p>
                 {% endfor %}
-            </div>
-        {% endfor %}
-        <label class="submit-promo-form" for="submit-promo-form">
-            WYŚLIJ
-            <input type="submit" value="Send" id="submit-promo-form">
-        </label>
-    </form>
-</div>
+              {% endif %}
+            {% for field in form %}
+                <div class="form-group{% if field.errors %} invalid{% endif %}" id="form_{{ field.name }}">
+                    {{ field }}
+                    {% if field.name == 'permission' %}
+                    <label for="{{ field.id_for_label }}">
+                        {{ promo_configuration.permission_text }}
+                    </label>
+                    {% endif %}
+                    {% if field.name == 'is_vat' %}
+                    <label for="{{ field.id_for_label }}">
+                        {{ field.label }}
+                    </label>
+                    {% endif %}
+                    {% for error in field.errors %}
+                        <p class="help-block error error_{{ field.name }}">{{ error | safe }}</p>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <label class="submit-promo-form" for="submit-promo-form">
+                WYŚLIJ
+                <input type="submit" value="Send" id="submit-promo-form">
+            </label>
+        </form>
+    </div>
+{% endif %}
 {% endblock %}

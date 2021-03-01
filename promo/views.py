@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.contrib import messages
 
 from .forms import PromoClientForm
-from .models import PromoPageComponent
+from .models import PromoPageComponent, PromoConfiguration
 
 
 def promo(request):
@@ -16,9 +16,15 @@ def promo(request):
     else:
         form = PromoClientForm()
 
+    try:
+        promo_configuration = PromoConfiguration.objects.all()[:1].get()
+    except PromoConfiguration.DoesNotExist:
+        promo_configuration = PromoConfiguration()
+
     promo_items = PromoPageComponent.objects.order_by("element_order")
     context = {
         'promoItems': promo_items,
-        "form": form
+        'form': form,
+        'promo_configuration': promo_configuration
     }
     return render(request, 'promo.html', context)
