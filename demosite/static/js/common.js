@@ -34,5 +34,56 @@ $(document).ready(function() {
     });
     $('[data-toggle="tooltip"]').tooltip()
 
+    function onIsVatClicked() {
+        let isVat = document.getElementById("id_is_vat").checked;
+
+        ["company_name", "nip"].forEach((item) => {
+            showField(item, isVat);
+            clearField(item);
+            clearErrors(item, isVat);
+        });
+    }
+
+    function onDeliveryKindChanged() {
+        let isInpost = document.getElementById("id_delivery_kind").value == "INPOST";
+
+        ["inpost_code", "delivery_place"].forEach((item) => {
+            showField(item, isInpost);
+            clearField(item);
+            clearErrors(item, isInpost);
+        });
+
+        ["street", "postcode", "city"].forEach((item) => {
+            showField(item, !isInpost);
+            clearField(item);
+            clearErrors(item, !isInpost);
+        });
+    }
+
+    function clearField(field) {
+        if(document.getElementById("id_"+field)) {
+            document.getElementById("id_"+field).value = "";
+        }
+    }
+
+    function clearErrors(field, show) {
+        if(document.getElementById("error_"+field)) {
+            document.getElementById("error_"+field).style.display = show ? 'block' : 'none';
+        }
+    }
+
+    function showField(field, show) {
+        if(document.getElementById("form_"+field)) {
+            document.getElementById("form_"+field).style.display = show ? 'block' : 'none';
+        }
+    }
+
+
+    document.getElementById("id_is_vat").onclick = onIsVatClicked;
+    document.getElementById("id_delivery_kind").onclick = onDeliveryKindChanged;
+
+    onIsVatClicked();
+    onDeliveryKindChanged();
+
     console.log('ready!');
 });

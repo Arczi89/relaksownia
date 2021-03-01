@@ -56,10 +56,11 @@ class PromoClient(models.Model):
     contact_name = models.CharField(max_length=100, verbose_name=_('Imie i nazwisko osoby kontaktowej'), blank=True)
     email = models.CharField(max_length=100, verbose_name=_('Adres email'))
     phone = models.TextField(max_length=20, verbose_name=_('Telefon'))
+    delivery_kind = models.CharField(choices=[x.value for x in DeliveryKind], default=DeliveryKind.get_value('INPOST'),
+                                     verbose_name=_('Czy kurier czy paczkomat?'), max_length=30)
     street = models.TextField(max_length=100, verbose_name=_('Ulica i numer'), blank=True)
     postcode = models.TextField(max_length=6, verbose_name=_('Kod pocztowy'), blank=True)
     city = models.TextField(max_length=100, verbose_name=_('Miasto'), blank=True)
-    delivery_kind = models.CharField(choices=[x.value for x in DeliveryKind], default=DeliveryKind.get_value('INPOST'), verbose_name=_('Czy kurier czy paczkomat?'), max_length=30)
     inpost_code = models.CharField(max_length=20, verbose_name=_('Kod InPost'), blank=True)
     delivery_place = models.CharField(max_length=100, verbose_name=_('Miejsce InPost (alternatywa dla kodu)'), blank=True)
     is_vat = models.BooleanField(default=False, verbose_name=_('Czy faktura VAT? Czy to firma?'))

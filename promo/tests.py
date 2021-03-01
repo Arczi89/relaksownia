@@ -59,18 +59,21 @@ class PromoTests(TestCase):
         form = PromoClientForm(data=data)
 
         # Assert
+        self.assertIn(field_required, form.errors['email'])
         self.assertIn(field_required, form.errors['contact_name'])
         self.assertIn(field_required, form.errors['phone'])
         self.assertIn(field_required, form.errors['street'])
         self.assertIn(field_required, form.errors['postcode'])
         self.assertIn(field_required, form.errors['city'])
         self.assertIn(field_required, form.errors['permission'])
+        self.assertEqual(len(form.errors), 7)
 
     def test_form_required_fields_courier_to_company(self):
         # Arrange && Act
         data = retrieve_incorrect_form_data_courier_to_company()
         form = PromoClientForm(data=data)
         # Assert
+        self.assertIn(field_required, form.errors['email'])
         self.assertIn(field_required, form.errors['contact_name'])
         self.assertIn(field_required, form.errors['company_name'])
         self.assertIn(field_required, form.errors['phone'])
@@ -79,6 +82,7 @@ class PromoTests(TestCase):
         self.assertIn(field_required, form.errors['city'])
         self.assertIn(field_required, form.errors['nip'])
         self.assertIn(field_required, form.errors['permission'])
+        self.assertEqual(len(form.errors), 9)
 
     def test_form_required_fields_inpost_to_person(self):
         # Arrange && Act
@@ -86,11 +90,13 @@ class PromoTests(TestCase):
         form = PromoClientForm(data=data)
 
         # Assert
+        self.assertIn(field_required, form.errors['email'])
         self.assertIn(field_required, form.errors['contact_name'])
         self.assertIn(field_required, form.errors['phone'])
         self.assertIn(inpost_code_or_delivery_place_required, form.errors['delivery_place'])
         self.assertIn(inpost_code_or_delivery_place_required, form.errors['inpost_code'])
         self.assertIn(field_required, form.errors['permission'])
+        self.assertEqual(len(form.errors), 6)
 
     def test_form_required_fields_inpost_to_company(self):
         # Arrange && Act
@@ -98,6 +104,7 @@ class PromoTests(TestCase):
         form = PromoClientForm(data=data)
 
         # Assert
+        self.assertIn(field_required, form.errors['email'])
         self.assertIn(field_required, form.errors['contact_name'])
         self.assertIn(field_required, form.errors['company_name'])
         self.assertIn(field_required, form.errors['phone'])
@@ -105,6 +112,7 @@ class PromoTests(TestCase):
         self.assertIn(inpost_code_or_delivery_place_required, form.errors['inpost_code'])
         self.assertIn(field_required, form.errors['nip'])
         self.assertIn(field_required, form.errors['permission'])
+        self.assertEqual(len(form.errors), 8)
 
     def test_form_accept_delivery_place_instead_of_inpost_code(self):
         # Arrange && Act
@@ -132,3 +140,4 @@ class PromoTests(TestCase):
         form = PromoClientForm(data=data)
         # Assert
         self.assertFalse(form.is_valid(), 'Form require delivery place or inpost code')
+        self.assertEqual(len(form.errors), 2)

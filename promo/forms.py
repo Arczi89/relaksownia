@@ -12,6 +12,7 @@ class PromoClientForm(ModelForm):
         fields = '__all__'
         error_messages = {
             'phone': {'required': field_required},
+            'email': {'required': field_required},
             'permission': {'required': field_required}
         }
         widgets = {
@@ -40,7 +41,6 @@ class PromoClientForm(ModelForm):
 
     def clean(self):
         cleaned_data = super(PromoClientForm, self).clean()
-        self.errors
         self.validate_permission(cleaned_data)
         self.validate_inpost_to_company(cleaned_data)
         self.validate_inpost_to_person(cleaned_data)
@@ -64,7 +64,6 @@ class PromoClientForm(ModelForm):
 
     def validate_courier_to_company(self, data):
         if data['is_vat'] and data['delivery_kind'] == DeliveryKind.get_value("COURIER"):
-            self.validate_delivery_place_or_inpost_code_required(data)
             if not data['contact_name']:
                 self.add_error('contact_name', field_required)
             if not data['company_name']:
@@ -80,7 +79,6 @@ class PromoClientForm(ModelForm):
 
     def validate_courier_to_person(self, data):
         if not data['is_vat'] and data['delivery_kind'] == DeliveryKind.get_value("COURIER"):
-            self.validate_delivery_place_or_inpost_code_required(data)
             if not data['contact_name']:
                 self.add_error('contact_name', field_required)
             if not data['street']:

@@ -49,10 +49,10 @@
                     {{ field.label }}
                 </label>
                 {% endif %}
+                {% for error in field.errors %}
+                    <p class="help-block error error_{{ field.name }}">{{ error | safe }}</p>
+                {% endfor %}
             </div>
-            {% for error in field.errors %}
-                <p class="help-block error">{{ error | safe }}</p>
-            {% endfor %}
         {% endfor %}
         <label class="submit-promo-form" for="submit-promo-form">
             WYŚLIJ
