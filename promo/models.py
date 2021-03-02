@@ -51,7 +51,7 @@ class PromoConfiguration(models.Model):
                                     default=delivery_info_default)
     bank_account_number = models.CharField(max_length=26, verbose_name=_('Numer konta bankowego'), blank=False,
                                     default=bank_account_number_default)
-    inpost_code_search_info = RichTextField(verbose_name=_('Link do wyszukiwarki paczkomatow INPOST'), blank=False,
+    inpost_code_search_info = models.CharField(max_length=100, verbose_name=_('Link do wyszukiwarki paczkomatow INPOST'), blank=False,
                                     default=default_search_inpost_url)
 
 
