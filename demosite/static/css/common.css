@@ -779,6 +779,10 @@ body ::placeholder {
   display: flex;
 }
 
+#promo_form a.search-inpost, #promo_form a.fa-search {
+  color: white;
+}
+
 #promo_form input, #promo_form select {
   width: 100%;
 }

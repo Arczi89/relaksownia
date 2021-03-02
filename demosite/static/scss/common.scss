@@ -801,6 +801,10 @@ body {
 #promo_form {
     display:flex;
 
+    a.search-inpost, a.fa-search {
+        color: white;
+    }
+
     input, select {
         width: 100%;
     }

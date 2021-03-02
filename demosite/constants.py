@@ -15,3 +15,4 @@ buy_permission_default = "Oświadczam, że wyrażam zgodę na przetwarzanie i wy
 delivery_info_default = "Książka będzie wysłana i doręczona za pomocą paczkomatu lub kuriera Inpost. W przypadku wyboru paczkomatu do ceny trzeba doliczyć 13 zł, w przypadku kuriera 16,50 zł. Wysyłka zamówienia będzie realizowana tylko na terenie Polski"
 bank_account_number_default = "00000000000000000000000000"
 thanks_for_order = "Dziękuję za zainteresowanie książką Doskonale Niedoskonali i złożenie zamówienia. Twoje zamówienie zostało przyjęte i zostanie realizowane jak tylko płatność zostanie potwierdzona. W dniu wysyłki zostaniesz o tym poinformowany drogą mailową i otrzymasz informacje zawierające: "
+default_search_inpost_url = "https://inpost.pl/znajdz-paczkomat"

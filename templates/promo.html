@@ -60,6 +60,10 @@
                         {{ field.label }}
                     </label>
                     {% endif %}
+                    {% if field.name == 'inpost_code' %}
+                        <a class="fa icon fa-search"></a>
+                        <a class="search-inpost" href="{{ promo_configuration.inpost_code_search_info }}" target="_blank">Znajdź najbliższy paczkomat</a>
+                    {% endif %}
                     {% for error in field.errors %}
                         <p class="help-block error error_{{ field.name }}">{{ error | safe }}</p>
                     {% endfor %}
