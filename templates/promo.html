@@ -34,10 +34,10 @@
 {% endif %}
 {% if promo_configuration %}
     <p>
-        {{ promo_configuration.delivery_info }}
+        {{ promo_configuration.delivery_info | safe }}
     </p>
     <p>
-        Numer konta do opłacenia zamówienia: {{ promo_configuration.bank_account_number }}
+        Numer konta do opłacenia zamówienia: {{ promo_configuration.bank_account_number | safe }}
     </p>
     <div class="promo_form" id="promo_form">
         <form action="{% url 'promo' %}" method="post" novalidate>
@@ -52,17 +52,17 @@
                     {{ field }}
                     {% if field.name == 'permission' %}
                     <label for="{{ field.id_for_label }}">
-                        {{ promo_configuration.permission_text }}
+                        {{ promo_configuration.permission_text | safe }}
                     </label>
                     {% endif %}
                     {% if field.name == 'is_vat' %}
                     <label for="{{ field.id_for_label }}">
-                        {{ field.label }}
+                        {{ field.label | safe }}
                     </label>
                     {% endif %}
                     {% if field.name == 'inpost_code' %}
                         <a class="fa icon fa-search"></a>
-                        <a class="search-inpost" href="{{ promo_configuration.inpost_code_search_info }}" target="_blank">Znajdź najbliższy paczkomat</a>
+                        <a class="search-inpost" href="{{ promo_configuration.inpost_code_search_info | safe }}" target="_blank">Znajdź najbliższy paczkomat</a>
                     {% endif %}
                     {% for error in field.errors %}
                         <p class="help-block error error_{{ field.name }}">{{ error | safe }}</p>
