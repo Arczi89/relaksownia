@@ -190,8 +190,8 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'mail.szwagrzak.pl'
+EMAIL_HOST = 'arturszwagrzak.atthost24.pl'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'artur@szwagrzak.pl'
-EMAIL_HOST_PASSWORD = '/Axesw8abc/123'
+EMAIL_HOST_USER = 'artur@wizytoowka.pl'
+EMAIL_HOST_PASSWORD = '/nrd2kl/'

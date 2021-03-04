@@ -2,7 +2,6 @@ from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib import messages
-from django.template.loader import render_to_string
 
 from .forms import PromoClientForm
 from .models import PromoPageComponent, PromoConfiguration, PromoEmailConfiguration
