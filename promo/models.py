@@ -54,11 +54,25 @@ class PromoConfiguration(models.Model):
     inpost_code_search_info = models.CharField(max_length=100, verbose_name=_('Link do wyszukiwarki paczkomatow INPOST'), blank=False,
                                     default=default_search_inpost_url)
 
+    def __str__(self):
+        return 'Konfiguracja'
+
+    class Meta:
+        verbose_name = _('Konfiguracja promocji')
+        verbose_name_plural = _('Konfiguracja promocji')
+
 
 class PromoEmailConfiguration(models.Model):
     subject = RichTextField(verbose_name=_('Temat wiadomosci'), blank=False, default=promo_email_subject)
     message = RichTextField(verbose_name=_('Tresc wiadomosci'), blank=False, default=thanks_for_order)
     from_email = RichTextField(verbose_name=_('Od kogo?'), blank=False, default=promo_from_email)
+
+    def __str__(self):
+        return 'Konfiguracja'
+
+    class Meta:
+        verbose_name = _('Konfiguracja wysylki')
+        verbose_name_plural = _('Konfiguracja wysylki')
 
 
 class PromoClient(models.Model):

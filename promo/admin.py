@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import PromoPageComponent, PromoConfiguration, PromoClient
+from .models import PromoPageComponent, PromoConfiguration, PromoClient, PromoEmailConfiguration
 
 
 @admin.register(PromoPageComponent)
@@ -9,6 +9,11 @@ class PromoItemAdmin(admin.ModelAdmin):
 
 
 @admin.register(PromoConfiguration)
+class PromoConfigurationAdmin(admin.ModelAdmin):
+    save_as = True
+
+
+@admin.register(PromoEmailConfiguration)
 class PromoConfigurationAdmin(admin.ModelAdmin):
     save_as = True
 
