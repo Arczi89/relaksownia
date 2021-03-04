@@ -65,7 +65,7 @@ class PromoConfiguration(models.Model):
 class PromoEmailConfiguration(models.Model):
     subject = RichTextField(verbose_name=_('Temat wiadomosci'), blank=False, default=promo_email_subject)
     message = RichTextField(verbose_name=_('Tresc wiadomosci'), blank=False, default=thanks_for_order)
-    from_email = RichTextField(verbose_name=_('Od kogo?'), blank=False, default=promo_from_email)
+    from_email = models.CharField(max_length=100, verbose_name=_('Od kogo?'), blank=False, default=promo_from_email)
 
     def __str__(self):
         return 'Konfiguracja'
