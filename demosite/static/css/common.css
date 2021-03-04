@@ -626,16 +626,18 @@ body input, body textarea {
   color: #ccd0d3;
 }
 
-body .form-group input[type="text"], body .form-group input[type="email"], body .form-group textarea {
+body .form-group input[type="text"], body .form-group input[type="email"], body .form-group textarea, body .form-group select {
   border: 1px #2e2e2e solid;
   background-color: #2e2e2e;
   min-height: 2.5rem;
+  color: #ccd0d3;
 }
 
-body input[type="text"]:hover, body input[type="email"]:hover, body textarea:hover,
-body input[type="text"]:active, body input[type="email"]:active, body textarea:active,
-body input[type="text"]:focus, body input[type="email"]:focus, body textarea:focus {
+body input[type="text"]:hover, body input[type="email"]:hover, body textarea:hover, body select:hover,
+body input[type="text"]:active, body input[type="email"]:active, body textarea:active, body select:active
+input[type="text"]:focus, body input[type="email"]:focus, body textarea:focus, body select:focus {
   border: 1px #2e2e2e solid;
+  background-color: #2e2e2e;
 }
 
 body input[type="file"] {
@@ -648,7 +650,7 @@ body input[type="submit"] {
   left: -99999rem;
 }
 
-body button, body .custom-file-upload, body .submit-contact-form {
+body button, body .custom-file-upload, body .submit-contact-form, body .submit-promo-form {
   border: 1px solid #ccc;
   display: inline-block;
   padding: 6px 12px;
@@ -779,6 +781,30 @@ body ::placeholder {
   display: flex;
 }
 
+#promo_form form {
+  width: 100%;
+}
+
+#promo_form select {
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M0 10l8 8 8-8z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 5px;
+  background-position-y: 5px;
+  padding-left: 30px;
+}
+
+#promo_form .submit-promo-form {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
 #promo_form a.search-inpost, #promo_form a.fa-search {
   color: white;
 }
@@ -794,19 +820,14 @@ body ::placeholder {
 #promo_form #form_permission input, #promo_form #form_is_vat input {
   align-self: center;
   margin-bottom: 0;
-  width: 2rem;
+  width: 1rem;
+  height: 1rem;
+  min-width: 1rem;
 }
 
 #promo_form #form_permission label, #promo_form #form_is_vat label {
   margin-bottom: 0;
   margin-left: 1rem;
-}
-
-#promo_form .submit-form-button {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
 }
 
 /* ================================================================================================================ */
