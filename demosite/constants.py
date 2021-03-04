@@ -23,4 +23,4 @@ thanks_for_order = """Dziękuję za zainteresowanie książką Doskonale Niedosk
                     Serdecznie pozdrawiam, Justyna"""
 default_search_inpost_url = "https://inpost.pl/znajdz-paczkomat"
 promo_email_subject = "Twoje zamówienie zostało przyjęte."
-promo_from_email = "artur@szwagrzak.pl"
+promo_from_email = "zamowienia@relaksownia.org.pl"
