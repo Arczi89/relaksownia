@@ -1,9 +1,11 @@
+from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib import messages
+from django.template.loader import render_to_string
 
 from .forms import PromoClientForm
-from .models import PromoPageComponent, PromoConfiguration
+from .models import PromoPageComponent, PromoConfiguration, PromoEmailConfiguration
 
 
 def promo(request):
@@ -11,8 +13,9 @@ def promo(request):
         form = PromoClientForm(request.POST)
         if form.is_valid():
             form.save()
+            send_email_message(form)
             messages.add_message(request, messages.SUCCESS, 'Twoja wiadomość została wysłana.')
-            return HttpResponseRedirect('/contact/')
+            return HttpResponseRedirect('/promo/')
     else:
         form = PromoClientForm()
 
@@ -28,3 +31,23 @@ def promo(request):
         'promo_configuration': promo_configuration
     }
     return render(request, 'promo.html', context)
+
+
+def send_email_message(form):
+    try:
+        config = PromoEmailConfiguration.objects.all()
+        email_configuration = config[:1].get()
+    except PromoEmailConfiguration.DoesNotExist:
+        email_configuration = PromoEmailConfiguration()
+
+    if form['email'].data:
+        send_mail(
+            subject=email_configuration.subject,
+            message=email_configuration.message,
+            html_message=email_configuration.message,
+            from_email=email_configuration.from_email,
+            recipient_list=[form['email'].data],
+            fail_silently=False,
+        )
+
+

@@ -5,7 +5,7 @@ from djrichtextfield.models import RichTextField
 from django.utils.translation import ugettext_lazy as _
 
 from demosite.constants import buy_permission_default, delivery_info_default, bank_account_number_default, \
-    default_search_inpost_url
+    default_search_inpost_url, promo_email_subject, promo_from_email, thanks_for_order
 
 
 class DeliveryKind(Enum):
@@ -53,6 +53,12 @@ class PromoConfiguration(models.Model):
                                     default=bank_account_number_default)
     inpost_code_search_info = models.CharField(max_length=100, verbose_name=_('Link do wyszukiwarki paczkomatow INPOST'), blank=False,
                                     default=default_search_inpost_url)
+
+
+class PromoEmailConfiguration(models.Model):
+    subject = RichTextField(verbose_name=_('Temat wiadomosci'), blank=False, default=promo_email_subject)
+    message = RichTextField(verbose_name=_('Tresc wiadomosci'), blank=False, default=thanks_for_order)
+    from_email = RichTextField(verbose_name=_('Od kogo?'), blank=False, default=promo_from_email)
 
 
 class PromoClient(models.Model):

@@ -14,5 +14,13 @@ default_contact_phone = 60855761
 buy_permission_default = "Oświadczam, że wyrażam zgodę na przetwarzanie i wykorzystanie moich danych osobowych w celu realizacji zamówienia przez Justyna Pietraszek Mobilne Centrum Masażu Relaksownia, ul. Świętej Bronisławy 13/5, 44-100 Gliwice, NIP: 9691217183, REGON: 383441026, który jest administratorem danych osobowych zgodnie z przepisami Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE i ustawy o ochronie danych osobowych z dnia 10 maja 2018 r. (Dz.U. 2018 poz. 1000)"
 delivery_info_default = "Książka będzie wysłana i doręczona za pomocą paczkomatu lub kuriera Inpost. W przypadku wyboru paczkomatu do ceny trzeba doliczyć 13 zł, w przypadku kuriera 16,50 zł. Wysyłka zamówienia będzie realizowana tylko na terenie Polski"
 bank_account_number_default = "00000000000000000000000000"
-thanks_for_order = "Dziękuję za zainteresowanie książką Doskonale Niedoskonali i złożenie zamówienia. Twoje zamówienie zostało przyjęte i zostanie realizowane jak tylko płatność zostanie potwierdzona. W dniu wysyłki zostaniesz o tym poinformowany drogą mailową i otrzymasz informacje zawierające: "
+thanks_for_order = """Dziękuję za zainteresowanie książką Doskonale Niedoskonali i złożenie zamówienia. Twoje zamówienie zostało przyjęte i zostanie realizowane jak tylko płatność zostanie potwierdzona. W dniu wysyłki zostaniesz o tym poinformowany drogą mailową i otrzymasz informacje zawierające:
+                    <ul>
+                        <li>numer listu przewozowego</li>
+                        <li>link do strony firmy kurierskiej umożliwiający monitorowanie przesyłki</li>
+                        <li>instrukcję postępowania podczas odbioru przesyłki od kuriera</li>
+                    </ul>
+                    Serdecznie pozdrawiam, Justyna"""
 default_search_inpost_url = "https://inpost.pl/znajdz-paczkomat"
+promo_email_subject = "Twoje zamówienie zostało przyjęte."
+promo_from_email = "artur@szwagrzak.pl"
