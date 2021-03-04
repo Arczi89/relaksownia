@@ -645,20 +645,21 @@ li.nav-item {
 
 /* inputs */
 body {
-
     input, textarea {
         color: $borrowed-grey;
     }
-    .form-group input[type="text"], .form-group input[type="email"], .form-group textarea {
+    .form-group input[type="text"], .form-group input[type="email"], .form-group textarea, .form-group select {
         border: 1px $almost-black solid;
         background-color: $almost-black;
         min-height: 2.5rem;
+        color: $borrowed-grey;
     }
 
-    input[type="text"]:hover, input[type="email"]:hover, textarea:hover,
-    input[type="text"]:active, input[type="email"]:active, textarea:active,
-    input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    input[type="text"]:hover, input[type="email"]:hover, textarea:hover, select:hover,
+    input[type="text"]:active, input[type="email"]:active, textarea:active, select:active
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focus {
         border: 1px $almost-black solid;
+        background-color: $almost-black;
     }
 
     input[type="file"] {
@@ -672,7 +673,7 @@ body {
     }
 
 
-    button, .custom-file-upload, .submit-contact-form {
+    button, .custom-file-upload, .submit-contact-form, .submit-promo-form {
         border: 1px solid #ccc;
         display: inline-block;
         padding: 6px 12px;
@@ -801,6 +802,28 @@ body {
 #promo_form {
     display:flex;
 
+    form {
+        width: 100%;
+    }
+
+    select {
+        -moz-appearance:none; /* Firefox */
+        -webkit-appearance:none; /* Safari and Chrome */
+        appearance:none;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M0 10l8 8 8-8z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+        background-repeat: no-repeat;
+        background-position-x: 5px;
+        background-position-y: 5px;
+        padding-left: 30px;
+    }
+
+    .submit-promo-form {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+
     a.search-inpost, a.fa-search {
         color: white;
     }
@@ -814,7 +837,9 @@ body {
         input {
             align-self: center;
             margin-bottom: 0;
-            width: 2rem;
+            width: 1rem;
+            height: 1rem;
+            min-width: 1rem;
         }
 
         label {
@@ -822,15 +847,7 @@ body {
             margin-left: 1rem;
         }
     }
-    .submit-form-button {
-        width: 100%;
-        margin-right: auto;
-        margin-left: auto;
-        text-align: center;
-    }
 }
-
-
 
 /* ================================================================================================================ */
 /* responsive design */

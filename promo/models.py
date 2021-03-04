@@ -9,8 +9,8 @@ from demosite.constants import buy_permission_default, delivery_info_default, ba
 
 
 class DeliveryKind(Enum):
-    COURIER = ("KURIER", _("KURIER"))
-    INPOST = ("INPOST", _("INPOST"))
+    COURIER = ("KURIER", _("Dostawa kurierem"))
+    INPOST = ("INPOST", _("Dostawa do paczkomatu InPOST"))
 
     @classmethod
     def get_value(cls, member):
