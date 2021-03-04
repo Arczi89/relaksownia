@@ -12,10 +12,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -60,7 +60,8 @@ INSTALLED_APPS = [
     'djrichtextfield',
     'phone_field',
     'django_sass',
-    'cookielaw'
+    'cookielaw',
+    'django.core.mail'
 ]
 
 MIDDLEWARE = [
@@ -80,9 +81,7 @@ ROOT_URLCONF = 'demosite.urls'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
-DEFAULT_CHARSET='utf-8'
-
+DEFAULT_CHARSET = 'utf-8'
 
 DJRICHTEXTFIELD_CONFIG = {
     'js': ['//cdn.ckeditor.com/4.14.0/standard/ckeditor.js'],
@@ -124,7 +123,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'demosite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -134,16 +132,15 @@ DATABASES = {
     #     'OPTIONS': {
     #         'read_default_file': os.path.join(BASE_DIR, 'mysql.cnf'),
     #     },
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'demosite',
-            'USER': 'postgres',
-            'PASSWORD': 'postgres',
-            'HOST': 'localhost'
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'demosite',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost'
+    }
     # }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -163,7 +160,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -177,7 +173,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
@@ -186,3 +181,17 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'demosite/static')
 ]
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-secondary',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.szwagrzak.pl'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'artur@szwagrzak.pl'
+EMAIL_HOST_PASSWORD = '/Axesw8abc/123'

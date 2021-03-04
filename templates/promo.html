@@ -51,7 +51,9 @@
                         {{ field }}
                         {% if field.name == 'permission' %}
                         <label for="{{ field.id_for_label }}">
-                            {{ promo_configuration.permission_text | safe }}
+                            <div>
+                                {{ promo_configuration.permission_text | safe }}
+                            </div>
                         </label>
                         {% endif %}
                         {% if field.name == 'is_vat' %}
