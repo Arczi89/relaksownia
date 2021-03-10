@@ -761,7 +761,7 @@ body ::placeholder {
   height: 10rem;
   position: absolute;
   top: 13rem;
-  right: 30rem;
+  left: 81rem;
 }
 
 .policy-text #policy-privacy {
