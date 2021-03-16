@@ -750,18 +750,18 @@ body ::placeholder {
 }
 
 #container404 .main-photo {
-  display: block;
   margin: auto;
-  position: relative;
+  width: 100%;
 }
 
-#container404 a.home-icon img {
-  margin: auto;
-  width: 10rem;
-  height: 10rem;
+#container404 a.home-icon {
+  display: block;
   position: absolute;
-  top: 13rem;
-  left: 81rem;
+  top: 22%;
+  left: 74%;
+  width: 20%;
+  height: 20%;
+  z-index: 100;
 }
 
 .policy-text #policy-privacy {
