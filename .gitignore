@@ -278,3 +278,5 @@ cypress/videos/*
 
 # End of https://www.toptal.com/developers/gitignore/api/cypressio
 /.run/
+
+.scannerwork/*
