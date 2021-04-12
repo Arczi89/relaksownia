@@ -37,6 +37,13 @@ CSRF_COOKIE_SECURE = True  # This instructs the browser to only send these cooki
 SECURE_HSTS_PRELOAD = True  # Preload page for google
 SECURE_BROWSER_XSS_FILTER = True  # work by looking for JavaScript content in the GET or POST parameters of a page. If the JavaScript is replayed in the server’s response, the page is blocked
 
+# Keep our policy as strict as possible
+CSP_DEFAULT_SRC = ("'none'",)
+CSP_STYLE_SRC = ("'self'", 'fonts.googleapis.com')
+CSP_SCRIPT_SRC = ("'self'",)
+CSP_FONT_SRC = ("'self'", 'fonts.gstatic.com')
+CSP_IMG_SRC = ("'self'",)
+
 ALLOWED_HOSTS = [
     'relaksownia.wizytoowka.pl',
     'demosite.arturszwagrzak.atthost24.pl',
@@ -78,6 +85,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'csp.middleware.CSPMiddleware',
 ]
 
 # MY CUSTOM SETTINGS

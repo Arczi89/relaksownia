@@ -27,15 +27,21 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 DEBUG = False
 
 # TODO: UNCOMMENT ON PRODUCTION
-# SECURE_CONTENT_TYPE_NOSNIFF = True  # prevent the browser from guessing the content type and force it to always use the type provided in the Content-Type header
-# SECURE_HSTS_SECONDS = 31536000  # 1 year # refuse to connect to your domain name via an insecure connection (for a given period of time) by setting the „Strict-Transport-Security” header
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # add the includeSubDomains directive to the Strict-Transport-Security header.
-# SECURE_SSL_REDIRECT = True  # redirect from http to https
-# SESSION_COOKIE_SECURE = True  # This instructs the browser to only send these cookies over HTTPS connections.
-# CSRF_COOKIE_SECURE = True  # This instructs the browser to only send these cookies over HTTPS connections.
-# SECURE_HSTS_PRELOAD = True  # Preload page for google
-# SECURE_BROWSER_XSS_FILTER = True  # work by looking for JavaScript content in the GET or POST parameters of a page. If the JavaScript is replayed in the server’s response, the page is blocked
+SECURE_CONTENT_TYPE_NOSNIFF = True  # prevent the browser from guessing the content type and force it to always use the type provided in the Content-Type header
+SECURE_HSTS_SECONDS = 31536000  # 1 year # refuse to connect to your domain name via an insecure connection (for a given period of time) by setting the „Strict-Transport-Security” header
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # add the includeSubDomains directive to the Strict-Transport-Security header.
+SECURE_SSL_REDIRECT = True  # redirect from http to https
+SESSION_COOKIE_SECURE = True  # This instructs the browser to only send these cookies over HTTPS connections.
+CSRF_COOKIE_SECURE = True  # This instructs the browser to only send these cookies over HTTPS connections.
+SECURE_HSTS_PRELOAD = True  # Preload page for google
+SECURE_BROWSER_XSS_FILTER = True  # work by looking for JavaScript content in the GET or POST parameters of a page. If the JavaScript is replayed in the server’s response, the page is blocked
 
+# Keep our policy as strict as possible
+CSP_DEFAULT_SRC = ("'none'",)
+CSP_STYLE_SRC = ("'self'", 'fonts.googleapis.com')
+CSP_SCRIPT_SRC = ("'self'",)
+CSP_FONT_SRC = ("'self'", 'fonts.gstatic.com')
+CSP_IMG_SRC = ("'self'",)
 
 ALLOWED_HOSTS = [
     'relaksownia.wizytoowka.pl',
@@ -77,6 +83,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'csp.middleware.CSPMiddleware',
 ]
 
 # MY CUSTOM SETTINGS
