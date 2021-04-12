@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'djrichtextfield',
     'django_sass',
-    'cookielaw'
+    'cookielaw',
+    'sslserver'
 ]
 
 MIDDLEWARE = [
