@@ -24,23 +24,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECRET_KEY = 'q$i&rh-y8*&m6)47_$5g-f!lg3qe$c*u1e$ypa=rdb=_94bh-@'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-# DEBUG = os.environ.get('DJANCSRF GO_DEBUG', '') != 'False'
+# TODO: SET FALSE ON PRODUCTION
+DEBUG = True
 
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_HSTS_SECONDS = 31536000
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-SECURE_HSTS_PRELOAD = True
-CSRF_COOKIE_SECURE = True
-
+# TODO: UNCOMMENT ON PRODUCTION
+SECURE_CONTENT_TYPE_NOSNIFF = True  # prevent the browser from guessing the content type and force it to always use the type provided in the Content-Type header
+SECURE_HSTS_SECONDS = 31536000  # 1 year # refuse to connect to your domain name via an insecure connection (for a given period of time) by setting the „Strict-Transport-Security” header
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # add the includeSubDomains directive to the Strict-Transport-Security header.
+SECURE_SSL_REDIRECT = True  # redirect from http to https
+SESSION_COOKIE_SECURE = True  # This instructs the browser to only send these cookies over HTTPS connections.
+CSRF_COOKIE_SECURE = True  # This instructs the browser to only send these cookies over HTTPS connections.
+SECURE_HSTS_PRELOAD = True  # Preload page for google
+SECURE_BROWSER_XSS_FILTER = True  # work by looking for JavaScript content in the GET or POST parameters of a page. If the JavaScript is replayed in the server’s response, the page is blocked
 
 ALLOWED_HOSTS = [
     'relaksownia.wizytoowka.pl',
     'demosite.arturszwagrzak.atthost24.pl',
-    '127.0.0.1'
+    '127.0.0.1',
 ]
 
 FILE_UPLOAD_PERMISSIONS = 0o644
@@ -70,7 +70,8 @@ INSTALLED_APPS = [
     'phone_field',
     'django_sass',
     'cookielaw',
-    'django.core.mail'
+    'django.core.mail',
+    'sslserver',  # <--  TODO: REMOVE ON PRODUCTION
 ]
 
 MIDDLEWARE = [
