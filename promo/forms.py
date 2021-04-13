@@ -25,7 +25,7 @@ class PromoClientForm(ModelForm):
             'inpost_code': forms.TextInput(attrs={'placeholder': _('Kod INPOST')}),
             'delivery_place': forms.TextInput(attrs={'placeholder': _('Miejsce dostawy')}),
             'is_vat': forms.CheckboxInput(attrs={'placeholder': _('Czy faktura VAT (firma)?')}),
-            'company_name': forms.TextInput(attrs={'placeholder': _('Nazwa firmy')}),
+            'company_name': forms.TextInput(attrs={'placeholder': _('Nazwa firmy oraz adres')}),
             'nip': forms.TextInput(attrs={'placeholder': _('Numer NIP')}),
             'permission': forms.CheckboxInput(attrs={'placeholder': _('Zgoda na przetwarzanie danych')})
         }

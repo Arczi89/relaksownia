@@ -87,7 +87,7 @@ class PromoClient(models.Model):
     inpost_code = models.CharField(max_length=20, verbose_name=_('Kod InPost'), blank=True)
     delivery_place = models.CharField(max_length=100, verbose_name=_('Miejsce InPost (alternatywa dla kodu)'), blank=True)
     is_vat = models.BooleanField(default=False, verbose_name=_('Czy faktura VAT? Czy to firma?'))
-    company_name = models.CharField(max_length=100, verbose_name=_('Nazwa firmy'), blank=True)
+    company_name = models.CharField(max_length=100, verbose_name=_('Nazwa firmy oraz adres'), blank=True)
     nip = models.CharField(max_length=30, verbose_name=_('Numer NIP'), blank=True)
     permission = models.BooleanField(default=False, verbose_name=_('Czy klient wyrazil konieczna zgode?'), blank=True)
 
