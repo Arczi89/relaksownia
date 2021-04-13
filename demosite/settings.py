@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -24,8 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECRET_KEY = 'q$i&rh-y8*&m6)47_$5g-f!lg3qe$c*u1e$ypa=rdb=_94bh-@'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
-# TODO: SET FALSE ON PRODUCTION
-DEBUG = True
+DEBUG = False
 
 # TODO: UNCOMMENT ON PRODUCTION
 SECURE_CONTENT_TYPE_NOSNIFF = True  # prevent the browser from guessing the content type and force it to always use the type provided in the Content-Type header
@@ -37,11 +35,12 @@ CSRF_COOKIE_SECURE = True  # This instructs the browser to only send these cooki
 SECURE_HSTS_PRELOAD = True  # Preload page for google
 SECURE_BROWSER_XSS_FILTER = True  # work by looking for JavaScript content in the GET or POST parameters of a page. If the JavaScript is replayed in the server’s response, the page is blocked
 
+
 ALLOWED_HOSTS = [
     'relaksownia.wizytoowka.pl',
-    'demosite.arturszwagrzak.atthost24.pl',
-    '127.0.0.1',
+    'demosite.arturszwagrzak.atthost24.pl'
 ]
+
 
 FILE_UPLOAD_PERMISSIONS = 0o644
 
@@ -57,8 +56,6 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'offer.apps.OfferConfig',
     'newsletter.apps.NewsletterConfig',
-    'policy.apps.PolicyConfig',
-    'promo.apps.PromoConfig',
     'bootstrap_modal_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -67,11 +64,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djrichtextfield',
-    'phone_field',
     'django_sass',
-    'cookielaw',
-    'django.core.mail',
-    'sslserver',  # <--  TODO: REMOVE ON PRODUCTION
+    'cookielaw'
 ]
 
 MIDDLEWARE = [
@@ -91,7 +85,9 @@ ROOT_URLCONF = 'demosite.urls'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-DEFAULT_CHARSET = 'utf-8'
+
+DEFAULT_CHARSET='utf-8'
+
 
 DJRICHTEXTFIELD_CONFIG = {
     'js': ['//cdn.ckeditor.com/4.14.0/standard/ckeditor.js'],
@@ -133,24 +129,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'demosite.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'OPTIONS': {
-    #         'read_default_file': os.path.join(BASE_DIR, 'mysql.cnf'),
-    #     },
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'demosite',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost'
-    }
-    # }
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'OPTIONS': {
+             'read_default_file': os.path.join(BASE_DIR, 'mysql.cnf'),
+         }
+    #    'default': {
+    #        'ENGINE': 'django.db.backends.postgresql',
+    #        'NAME': 'demosite',
+    #        'USER': 'postgres',
+    #        'PASSWORD': 'postgres',
+    #        'HOST': 'localhost'
+    #    }
+     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -170,6 +168,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -182,6 +181,7 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -204,4 +204,4 @@ EMAIL_HOST = 'arturszwagrzak.atthost24.pl'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'artur@wizytoowka.pl'
-EMAIL_HOST_PASSWORD = '/nrd2kl/'
+EMAIL_HOST_PASSWORD = "/nrd2kl/"
