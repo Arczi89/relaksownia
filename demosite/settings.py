@@ -29,7 +29,7 @@ DEBUG = True
 
 # TODO: UNCOMMENT ON PRODUCTION
 SECURE_CONTENT_TYPE_NOSNIFF = True  # prevent the browser from guessing the content type and force it to always use the type provided in the Content-Type header
-SECURE_HSTS_SECONDS = 31536000  # 1 year # refuse to connect to your domain name via an insecure connection (for a given period of time) by setting the „Strict-Transport-Security” header
+SECURE_HSTS_SECONDS = 60  # 1 year # refuse to connect to your domain name via an insecure connection (for a given period of time) by setting the „Strict-Transport-Security” header
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # add the includeSubDomains directive to the Strict-Transport-Security header.
 SECURE_SSL_REDIRECT = True  # redirect from http to https
 SESSION_COOKIE_SECURE = True  # This instructs the browser to only send these cookies over HTTPS connections.
