@@ -805,7 +805,9 @@ body {
     display:flex;
 
     form {
-        width: 100%;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     select {
@@ -1016,6 +1018,12 @@ $tiny-phone-width: 300px;
             }
         }
     }
+
+    #promo_form {
+        form {
+            width: 100%;
+        }
+    }
 }
 
 @media only screen and (min-width: $tiny-phone-width) and (max-width: $phone-width) {
@@ -1179,6 +1187,12 @@ $tiny-phone-width: 300px;
             }
         }
     }
+
+    #promo_form {
+        form {
+            width: 100%;
+        }
+    }
 }
 
 @media only screen and (min-width: $phone-width) and (max-width: $tablet-width) {
@@ -1318,6 +1332,12 @@ $tiny-phone-width: 300px;
             }
         }
     }
+
+    #promo_form {
+        form {
+            width: 100%;
+        }
+    }
 }
 
 @media only screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
@@ -1387,6 +1407,12 @@ $tiny-phone-width: 300px;
             .promo-part-item {
                 width: 100%;
             }
+        }
+    }
+
+    #promo_form {
+        form {
+            width: 100%;
         }
     }
 }
