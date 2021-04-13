@@ -39,7 +39,7 @@ SECURE_BROWSER_XSS_FILTER = True  # work by looking for JavaScript content in th
 
 ALLOWED_HOSTS = [
     'relaksownia.wizytoowka.pl',
-    'demosite.arturszwagrzak.atthost24.pl'
+    'demosite.arturszwagrzak.atthost24.pl',
 ]
 
 
@@ -57,6 +57,8 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'offer.apps.OfferConfig',
     'newsletter.apps.NewsletterConfig',
+    'policy.apps.PolicyConfig',
+    'promo.apps.PromoConfig',
     'bootstrap_modal_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -65,8 +67,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djrichtextfield',
+    'phone_field',
     'django_sass',
-    'cookielaw'
+    'cookielaw',
+    'django.core.mail',
 ]
 
 MIDDLEWARE = [
