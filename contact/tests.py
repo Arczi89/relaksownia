@@ -34,7 +34,7 @@ class ContactRequestTests(TestCase):
         self.configurationPk = self.addBasicConfiguration()
 
     def test_contact_page_loaded(self):
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_should_message_name_email_and_permission_be_required_fields(self):
@@ -69,13 +69,13 @@ class ContactRequestTests(TestCase):
 
     def test_should_display_contact_form(self):
         # Arrange & Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         self.assertTrue('form' in response.context, "form should be included in response")
 
     def test_should_return_success_message_on_valid_form_save(self):
         # Arrange & Act
-        response = self.client.post(self.baseUrl, data=self.valid_form_data)
+        response = self.client.post(self.baseUrl, secure=True, data=self.valid_form_data)
         # Assert
         self.assertEqual(response.status_code, 302, "page should be redirect/reload after save")
         self.assertEqual(len(list(get_messages(response.wsgi_request))), 1, "success message should be displayed after successfully contact form sent")

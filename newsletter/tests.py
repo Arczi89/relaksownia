@@ -33,11 +33,11 @@ class NewsletterTests(TestCase):
 
     def test_newsletter_modal_loaded_without_configuration(self):
         self.removeBasicConfiguration()
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_newsletter_modal_loaded_with_configuration(self):
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_should_message_and_name_and_permission_be_required_fields(self):
@@ -64,20 +64,20 @@ class NewsletterTests(TestCase):
 
     def test_should_display_contact_form(self):
         # Arrange & Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         self.assertTrue('form' in response.context, "form should be included in response")
 
     def test_should_return_success_message_on_valid_form_save(self):
         # Arrange & Act
-        response = self.client.post(self.baseUrl, data=self.valid_form_data)
+        response = self.client.post(self.baseUrl, secure=True, data=self.valid_form_data)
         # Assert
         self.assertEqual(response.status_code, 302, "page should be redirect/reload after save")
         self.assertEqual(len(list(get_messages(response.wsgi_request))), 1, "success message should be displayed after successfully contact form sent")
 
     def test_should_contact_data_be_saved_correctly_into_db(self):
         # Arrange & Act
-        self.client.post(self.baseUrl, data=self.valid_form_data)
+        self.client.post(self.baseUrl, secure=True, data=self.valid_form_data)
         # Assert
         saved_obj = Newsletter.objects.get(name=self.valid_form_data['name'])
         self.assertIsNotNone(saved_obj.pk, "object is not created in db")
@@ -91,7 +91,7 @@ class NewsletterTests(TestCase):
             "permission": False
         }
 
-        response = self.client.post(self.baseUrl, data=invalid_form_data)
+        response = self.client.post(self.baseUrl, secure=True, data=invalid_form_data)
 
         self.assertTemplateUsed(response, 'partials/_newsletter.html')
         self.assertContains(response, field_required, 2)

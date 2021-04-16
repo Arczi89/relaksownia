@@ -21,7 +21,7 @@ class OfferTests(TestCase):
         self.baseUrl = "/offer/"
 
     def test_offer_page_loaded(self):
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_offer_elements_are_in_correct_order(self):
@@ -30,7 +30,7 @@ class OfferTests(TestCase):
         self.addOfferItem(2)
         self.addOfferItem(1)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'offers').checkOrderOfElements()
 
@@ -40,6 +40,6 @@ class OfferTests(TestCase):
         self.addOfferItem(6)
         self.addOfferItem(1)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'offers').checkOrderOfElements()

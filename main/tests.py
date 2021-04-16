@@ -52,12 +52,12 @@ class MainPageTests(TestCase):
         self.mainConfigurationPk = self.addBasicConfigurations()
 
     def test_main_page_with_configuration_loaded(self):
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_mains_page_without_configuration_loaded(self):
         self.removeMainConfiguration()
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_slider_elements_are_in_correct_order(self):
@@ -66,7 +66,7 @@ class MainPageTests(TestCase):
         self.addSliderItem(2)
         self.addSliderItem(1)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'slider_items').checkOrderOfElements()
 
@@ -76,7 +76,7 @@ class MainPageTests(TestCase):
         self.addSliderItem(6)
         self.addSliderItem(1)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'slider_items').checkOrderOfElements()
 
@@ -86,7 +86,7 @@ class MainPageTests(TestCase):
         self.addMainBoxItem(9)
         self.addMainBoxItem(2)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'containers').checkOrderOfElements()
 
@@ -96,6 +96,6 @@ class MainPageTests(TestCase):
         self.addMainBoxItem(1)
         self.addMainBoxItem(0)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'containers').checkOrderOfElements()

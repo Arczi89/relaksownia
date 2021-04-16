@@ -50,12 +50,12 @@ class FaqTests(TestCase):
         self.mainConfigurationPk = self.addBasicConfigurations()
 
     def test_faq_page_with_configuration_loaded(self):
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_faq_page_without_configuration_loaded(self):
         self.removeMainConfiguration()
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_should_message_and_name_and_permission_be_required_fields(self):
@@ -76,7 +76,7 @@ class FaqTests(TestCase):
         }
         self.addFaqItem("question?", "answer!")
 
-        response = self.client.post(self.baseUrl, data=invalid_form_data)
+        response = self.client.post(self.baseUrl, secure=True, data=invalid_form_data)
 
         FaqTemplateAssert(self, response).checkIfTemplateIsCorrect()
 
@@ -90,7 +90,7 @@ class FaqTests(TestCase):
         CorrectFormAssert(self, form).checkEmailFormat()
 
     def test_should_display_contact_form(self):
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         
         self.assertTrue('form' in response.context, "form should be included in response")
 
@@ -99,20 +99,20 @@ class FaqTests(TestCase):
         answer = "answer!"
         self.addFaqItem(question, answer)
 
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
 
         self.assertContains(response, question, 1)
         self.assertContains(response, answer, 1)
 
     def test_should_return_success_message_on_valid_form_save(self):
-        response = self.client.post(self.baseUrl, data=self.valid_form_data)
+        response = self.client.post(self.baseUrl, secure=True, data=self.valid_form_data)
         
         self.assertEqual(response.resolver_match.route, "faq/", "page should be redirect/reload after save to faq page")
         self.assertEqual(len(list(get_messages(response.wsgi_request))), 1, "success message should be displayed after successfully contact form sent")
 
     def test_should_contact_data_be_saved_correctly_into_db(self):
 
-        self.client.post(self.baseUrl, data=self.valid_form_data)
+        self.client.post(self.baseUrl, secure=True, data=self.valid_form_data)
         
         saved_obj = Newsletter.objects.get(name=self.valid_form_data['name'])
         self.assertIsNotNone(saved_obj.pk, "object is not created in db")
@@ -124,7 +124,7 @@ class FaqTests(TestCase):
         self.addFaqItem("question2", "answer2", 2)
         self.addFaqItem("question3", "answer3", 1)
         
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
 
         SortAssert(response, 'faqs').checkOrderOfElements()
 
@@ -133,7 +133,7 @@ class FaqTests(TestCase):
         self.addFaqItem("question2", "answer2", 3)
         self.addFaqItem("question3", "answer3", 2)
         
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         
         SortAssert(response, 'faqs').checkOrderOfElements()
 
