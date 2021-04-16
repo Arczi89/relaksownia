@@ -72,6 +72,7 @@ INSTALLED_APPS = [
     'cookielaw',
     'django.core.mail',
     'sslserver',  # <--  TODO: REMOVE ON PRODUCTION
+    'post_office',
 ]
 
 MIDDLEWARE = [
@@ -199,7 +200,8 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 }
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'post_office.EmailBackend'
 EMAIL_HOST = 'arturszwagrzak.atthost24.pl'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

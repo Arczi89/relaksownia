@@ -1,7 +1,7 @@
-from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib import messages
+from post_office import mail
 
 from .forms import PromoClientForm
 from .models import PromoPageComponent, PromoConfiguration, PromoEmailConfiguration
@@ -40,13 +40,32 @@ def send_email_message(form):
         email_configuration = PromoEmailConfiguration()
 
     if form['email'].data:
-        send_mail(
-            subject=email_configuration.subject,
-            message=email_configuration.message,
-            html_message=email_configuration.message,
-            from_email=email_configuration.from_email,
-            recipient_list=[form['email'].data],
-            fail_silently=False,
+        mail.send(
+            [form['email'].data],  # List of email addresses also accepted
+            email_configuration.from_email,
+            template='potwierdzenie_zamowienia',
+            priority='now',
+            context={
+                'imie_i_nazwisko': form['contact_name'].data,
+                'telefon': form['phone'].data,
+                'ulica': form['street'].data,
+                'kod_pocztowy': form['postcode'].data,
+                'miasto': form['city'].data,
+                'kod_inpost': form['inpost_code'].data,
+                'miejsce_dostawy': form['delivery_place'].data,
+                'firma': form['company_name'].data,
+                'nip': form['nip'].data
+            }
         )
+
+    # if form['email'].data:
+    #     send_mail(
+    #         subject=email_configuration.subject,
+    #         message=email_configuration.message,
+    #         html_message=email_configuration.message,
+    #         from_email=email_configuration.from_email,
+    #         recipient_list=[form['email'].data],
+    #         fail_silently=False,
+    #     )
 
 

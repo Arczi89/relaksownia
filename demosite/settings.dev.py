@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.contrib.messages import constants as messages
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -67,7 +69,8 @@ INSTALLED_APPS = [
     'djrichtextfield',
     'django_sass',
     'cookielaw',
-    'sslserver'
+    'sslserver',
+    'post_office',
 ]
 
 MIDDLEWARE = [
@@ -201,7 +204,8 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 }
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'post_office.EmailBackend'
 EMAIL_HOST = 'arturszwagrzak.atthost24.pl'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
