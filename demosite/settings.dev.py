@@ -212,3 +212,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'artur@wizytoowka.pl'
 EMAIL_HOST_PASSWORD = os.environment.get('EMAIL_HOST_PASSWORD')
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
