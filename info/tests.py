@@ -38,12 +38,12 @@ class InfoTests(TestCase):
 
     def test_info_page_with_configuration_loaded(self):
         self.addCertItem("certificate 1", 1)
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_info_page_without_configuration_loaded(self):
         self.removeMainConfiguration()
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_elements_are_in_correct_order(self):
@@ -52,7 +52,7 @@ class InfoTests(TestCase):
         self.addCertItem("certificate 2", 2)
         self.addCertItem("certificate 3", 1)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'certs').checkOrderOfElements()
 
@@ -62,7 +62,7 @@ class InfoTests(TestCase):
         self.addCertItem("certificate 2", 7)
         self.addCertItem("certificate 3", 4)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'certs').checkOrderOfElements()
 

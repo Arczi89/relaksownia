@@ -30,7 +30,7 @@ class PromoTests(TestCase):
         self.baseUrl = "/promo/"
 
     def test_promo_page_loaded(self):
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_promo_elements_are_in_incorrect_order(self):
@@ -39,7 +39,7 @@ class PromoTests(TestCase):
         self.addPromoComponent(2)
         self.addPromoComponent(1)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'promoItems').checkOrderOfElements()
 
@@ -49,7 +49,7 @@ class PromoTests(TestCase):
         self.addPromoComponent(6)
         self.addPromoComponent(1)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'promoItems').checkOrderOfElements()
 

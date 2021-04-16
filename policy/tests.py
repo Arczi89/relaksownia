@@ -24,11 +24,11 @@ class PolicyTests(TestCase):
         self.policy_configuration_pk = self.addBasicConfigurations()
 
     def test_policy_page_with_configuration_loaded(self):
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_policy_page_without_configuration_loaded(self):
         self.removeMainConfiguration()
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 

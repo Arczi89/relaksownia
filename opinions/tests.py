@@ -29,7 +29,7 @@ class OpinionTests(TestCase):
         self.baseUrl = "/opinions/"
 
     def test_opinion_page_loaded(self):
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_opinion_elements_are_in_correct_order(self):
@@ -38,7 +38,7 @@ class OpinionTests(TestCase):
         self.addOpinionItem(3)
         self.addOpinionItem(1)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'opinions').checkOrderOfElements()
 
@@ -48,7 +48,7 @@ class OpinionTests(TestCase):
         self.addOpinionItem(1)
         self.addOpinionItem(0)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'opinions').checkOrderOfElements()
 
@@ -58,7 +58,7 @@ class OpinionTests(TestCase):
         self.addOpinionTreeItem(2)
         self.addOpinionTreeItem(1)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'opinion_tree').checkOrderOfElements()
 
@@ -68,6 +68,6 @@ class OpinionTests(TestCase):
         self.addOpinionTreeItem(7)
         self.addOpinionTreeItem(2)
         # Act
-        response = self.client.get(self.baseUrl)
+        response = self.client.get(self.baseUrl, secure=True)
         # Assert
         SortAssert(response, 'opinion_tree').checkOrderOfElements()
