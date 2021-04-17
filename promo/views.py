@@ -7,7 +7,7 @@ from post_office import mail
 from post_office.mail import logger
 
 from .forms import PromoClientForm
-from .models import PromoPageComponent, PromoConfiguration, PromoEmailConfiguration
+from .models import PromoPageComponent, PromoConfiguration, PromoEmailConfiguration, DeliveryKind
 
 
 def promo(request):
@@ -56,7 +56,7 @@ def send_email_to_customer(form):
         mail.send(
             [recipient],
             sender=get_email_configuration().from_email,
-            template='potwierdzenie_zamowienia',
+            template=determine_template_name(form),
             priority='now',
             context={
                 'imie_i_nazwisko': form['contact_name'].data,
@@ -74,6 +74,14 @@ def send_email_to_customer(form):
     else:
         logger.error("Wiadomość nie została wysłana do klienta, dane klienta: " + json.dumps(form))
         return False
+
+
+def determine_template_name(form):
+    if form['delivery_kind'].data == DeliveryKind.get_value('INPOST'):
+        template_name = 'potwierdzenie_zamowienia_inpost'
+    else:
+        template_name = 'potwierdzenie_zamowienia_kurier'
+    return template_name
 
 
 def get_email_configuration():
