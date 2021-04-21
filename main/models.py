@@ -3,12 +3,15 @@ from djrichtextfield.models import RichTextField
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.utils.translation import ugettext_lazy as _
 
+from demosite.constants import newsletter_permission_text_default
+
 
 class MainConfiguration(models.Model):
     app_name = "Strona glowna"
     is_modal_visible = models.BooleanField(default=False, verbose_name=_('Czy dialog newsletter ma sie wyswietlac?'))
     newsletter_info = RichTextField(verbose_name=_('Naglowek newslettera'))
     main_text = RichTextField(verbose_name=_('Tekst w newsletterze'))
+    permission_text = models.TextField(verbose_name=_('Tresc zgody klienta na przesylanie newslettera'), default=newsletter_permission_text_default, blank=False)
     update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
 
     def __str__(self):
