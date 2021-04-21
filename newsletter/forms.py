@@ -16,7 +16,9 @@ class NewsletterForm(BSModalModelForm):
             'permission': {'required': newsletter_permission_required}
         }
         labels = {
-            "permission": _('Wyrażam zgodę na przesyłanie mi ofert marketingowych i promocyjnych drogą elektroniczną'),
+            "permission": _('Wyrażam zgodę na przetwarzanie podanych powyżej danych w celu otrzymywania newslettera. ' +
+                            'Wyrażam zgodę na przesyłanie na mój adres e-mail informacji o nowościach, promocjach, produktach i usługach od firmy Justyna Pietraszek Mobilne Centrum Masażu Relaksownia. ' +
+                            'Zapoznałem się z Polityką Prywatności.'),
         }
         widgets = {
             'email': forms.TextInput(attrs={'placeholder': _('Adres e-mail')}),
@@ -37,4 +39,3 @@ class NewsletterForm(BSModalModelForm):
         self.fields['permission'].error_messages.update({
             'required': newsletter_permission_required
         })
-

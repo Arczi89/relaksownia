@@ -20,7 +20,7 @@
               {{ field }}
               {% if field.name == 'permission' %}
                 <label for="{{ field.id_for_label }}">
-                    {{ field.label }}
+                    {{ newsletterConfiguration.permission_text | safe }}
                 </label>
               {% endif %}
           </div>
