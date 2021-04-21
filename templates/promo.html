@@ -32,10 +32,10 @@
         {% endfor %}
     {% endif %}
     {% if promo_configuration %}
-        <p>
+        <p class="delivery-info promo-form-header">
             {{ promo_configuration.delivery_info | safe }}
         </p>
-        <p>
+        <p class="account-number promo-form-header">
             Numer konta do opłacenia zamówienia: {{ promo_configuration.bank_account_number | safe }}
         </p>
         <div class="promo_form" id="promo_form">

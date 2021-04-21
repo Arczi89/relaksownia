@@ -801,6 +801,12 @@ body {
     }
 }
 
+p.promo-form-header {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #promo_form {
     display:flex;
 
@@ -1019,6 +1025,9 @@ $tiny-phone-width: 300px;
         }
     }
 
+    p.promo-form-header {
+        width: 100%;
+    }
     #promo_form {
         form {
             width: 100%;
@@ -1188,6 +1197,10 @@ $tiny-phone-width: 300px;
         }
     }
 
+    p.promo-form-header {
+        width: 100%;
+    }
+
     #promo_form {
         form {
             width: 100%;
@@ -1333,6 +1346,10 @@ $tiny-phone-width: 300px;
         }
     }
 
+    p.promo-form-header {
+        width: 100%;
+    }
+
     #promo_form {
         form {
             width: 100%;
@@ -1408,6 +1425,10 @@ $tiny-phone-width: 300px;
                 width: 100%;
             }
         }
+    }
+
+    p.promo-form-header {
+        width: 100%;
     }
 
     #promo_form {
