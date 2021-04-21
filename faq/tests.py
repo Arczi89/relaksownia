@@ -1,5 +1,6 @@
 import tempfile
 from http import HTTPStatus
+from unittest.mock import patch
 
 from django.contrib.messages import get_messages
 from django.test import TestCase
@@ -104,14 +105,19 @@ class FaqTests(TestCase):
         self.assertContains(response, question, 1)
         self.assertContains(response, answer, 1)
 
-    def test_should_return_success_message_on_valid_form_save(self):
+    @patch('faq.views.send_email_to_customer')
+    @patch('faq.views.send_email_to_admin')
+    def test_should_return_success_message_on_valid_form_save(self, send_customer, send_admin):
+        send_customer.return_value = True
         response = self.client.post(self.baseUrl, secure=True, data=self.valid_form_data)
-        
+
         self.assertEqual(response.resolver_match.route, "faq/", "page should be redirect/reload after save to faq page")
         self.assertEqual(len(list(get_messages(response.wsgi_request))), 1, "success message should be displayed after successfully contact form sent")
 
-    def test_should_contact_data_be_saved_correctly_into_db(self):
-
+    @patch('faq.views.send_email_to_customer')
+    @patch('faq.views.send_email_to_admin')
+    def test_should_contact_data_be_saved_correctly_into_db(self, send_customer, send_admin):
+        send_customer.return_value = True
         self.client.post(self.baseUrl, secure=True, data=self.valid_form_data)
         
         saved_obj = Newsletter.objects.get(name=self.valid_form_data['name'])
