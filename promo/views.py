@@ -1,5 +1,3 @@
-import json
-
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib import messages
@@ -72,7 +70,7 @@ def send_email_to_customer(form):
         )
         return True
     else:
-        logger.error("Wiadomość nie została wysłana do klienta, dane klienta: " + json.dumps(form))
+        logger.error("Wiadomość nie została wysłana do klienta, dane klienta: " + form_to_string(form))
         return False
 
 
@@ -115,4 +113,12 @@ def send_email_to_admin(form):
             }
         )
     else:
-        logger.error("Wiadomość nie została wysłana do admina, dane klienta: " + json.dumps(form))
+        logger.error("Wiadomość nie została wysłana do admina, dane klienta: " + form_to_string(form))
+
+
+def form_to_string(form):
+    result = "{"
+    for key, value in form.data.items():
+        result += key + " : " + value + ", "
+    result += "}"
+    return result
