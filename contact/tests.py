@@ -1,4 +1,5 @@
 from http import HTTPStatus
+from unittest.mock import patch
 
 from django.contrib.messages import get_messages
 from django.template.loader import render_to_string
@@ -73,8 +74,11 @@ class ContactRequestTests(TestCase):
         # Assert
         self.assertTrue('form' in response.context, "form should be included in response")
 
-    def test_should_return_success_message_on_valid_form_save(self):
+    @patch('contact.views.send_email_to_customer')
+    @patch('contact.views.send_email_to_admin')
+    def test_should_return_success_message_on_valid_form_save(self, send_customer, send_admin):
         # Arrange & Act
+        send_customer.return_value = True
         response = self.client.post(self.baseUrl, secure=True, data=self.valid_form_data)
         # Assert
         self.assertEqual(response.status_code, 302, "page should be redirect/reload after save")
