@@ -1,5 +1,3 @@
-import json
-
 from django.contrib import messages
 from django.urls import reverse_lazy
 from post_office import mail
@@ -67,7 +65,7 @@ class NewsletterView(BSModalCreateView):
             )
             return True
         else:
-            logger.error("Wiadomość nie została wysłana do klienta, dane klienta: " + json.dumps(form))
+            logger.error("Wiadomość nie została wysłana do klienta, dane klienta: " + self.form_to_string(form))
             return False
 
     def send_email_to_admin(self, form):
@@ -84,4 +82,11 @@ class NewsletterView(BSModalCreateView):
                 }
             )
         else:
-            logger.error("Wiadomość nie została wysłana do admina, dane klienta: " + json.dumps(form))
+            logger.error("Wiadomość nie została wysłana do admina, dane klienta: " + self.form_to_string(form))
+
+    def form_to_string(self, form):
+        result = "{"
+        for key, value in form.data.items():
+            result += key + " : " + value + ", "
+        result += "}"
+        return result

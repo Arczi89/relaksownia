@@ -1,4 +1,6 @@
 from http import HTTPStatus
+from unittest.mock import patch
+
 from django.contrib.messages import get_messages
 from django.test import TestCase
 from demosite.constants import field_required, incorrect_email_format, newsletter_permission_required
@@ -68,16 +70,22 @@ class NewsletterTests(TestCase):
         # Assert
         self.assertTrue('form' in response.context, "form should be included in response")
 
-    def test_should_return_success_message_on_valid_form_save(self):
+    @patch('newsletter.views.NewsletterView.send_email_to_customer')
+    @patch('newsletter.views.NewsletterView.send_email_to_admin')
+    def test_should_return_success_message_on_valid_form_save(self, send_customer, send_admin):
         # Arrange & Act
+        send_customer.return_value = True
         response = self.client.post(self.baseUrl, secure=True, data=self.valid_form_data)
         # Assert
         self.assertEqual(response.status_code, 302, "page should be redirect/reload after save")
-        self.assertEqual(len(list(get_messages(response.wsgi_request))), 1, "success message should be displayed after successfully contact form sent")
+        self.assertEqual(len(list(get_messages(response.wsgi_request))), 2, "success messages should be displayed after successfully contact form sent")
 
-    def test_should_contact_data_be_saved_correctly_into_db(self):
+    @patch('newsletter.views.NewsletterView.send_email_to_customer')
+    @patch('newsletter.views.NewsletterView.send_email_to_admin')
+    def test_should_contact_data_be_saved_correctly_into_db(self, send_customer, send_admin):
         # Arrange & Act
         self.client.post(self.baseUrl, secure=True, data=self.valid_form_data)
+        send_customer.return_value = True
         # Assert
         saved_obj = Newsletter.objects.get(name=self.valid_form_data['name'])
         self.assertIsNotNone(saved_obj.pk, "object is not created in db")
