@@ -24,3 +24,4 @@ thanks_for_order = """Dziękuję za zainteresowanie książką Doskonale Niedosk
 default_search_inpost_url = "https://inpost.pl/znajdz-paczkomat"
 promo_email_subject = "Twoje zamówienie zostało przyjęte."
 promo_from_email = "zamowienia@relaksownia.org.pl"
+newsletter_permission_text_default = "Wyrażam zgodę na przetwarzanie podanych powyżej danych w celu otrzymywania newslettera. Wyrażam zgodę na przesyłanie na mój adres e-mail informacji o nowościach, promocjach, produktach i usługach od firmy Justyna Pietraszek Mobilne Centrum Masażu Relaksownia. Zapoznałem się z Polityką Prywatności."
