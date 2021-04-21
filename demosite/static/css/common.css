@@ -777,6 +777,12 @@ body ::placeholder {
   display: none;
 }
 
+p.promo-form-header {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #promo_form {
   display: flex;
 }
@@ -972,6 +978,9 @@ body ::placeholder {
   #promo-site .responsive-photos .promo-part-item {
     width: 100%;
   }
+  p.promo-form-header {
+    width: 100%;
+  }
   #promo_form form {
     width: 100%;
   }
@@ -1123,6 +1132,9 @@ body ::placeholder {
   #promo-site .responsive-photos .promo-part-item {
     width: 100%;
   }
+  p.promo-form-header {
+    width: 100%;
+  }
   #promo_form form {
     width: 100%;
   }
@@ -1252,6 +1264,9 @@ body ::placeholder {
   #promo-site .responsive-photos .promo-part-item {
     width: 100%;
   }
+  p.promo-form-header {
+    width: 100%;
+  }
   #promo_form form {
     width: 100%;
   }
@@ -1319,6 +1334,9 @@ body ::placeholder {
     display: block;
   }
   #promo-site .responsive-photos .promo-part-item {
+    width: 100%;
+  }
+  p.promo-form-header {
     width: 100%;
   }
   #promo_form form {
