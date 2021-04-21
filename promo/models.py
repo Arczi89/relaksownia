@@ -5,7 +5,7 @@ from djrichtextfield.models import RichTextField
 from django.utils.translation import ugettext_lazy as _
 
 from demosite.constants import buy_permission_default, delivery_info_default, bank_account_number_default, \
-    default_search_inpost_url, promo_email_subject, promo_from_email, thanks_for_order
+    default_search_inpost_url, promo_from_email
 
 
 class DeliveryKind(Enum):
@@ -45,7 +45,7 @@ class PromoPageComponent(models.Model):
 
 
 class PromoConfiguration(models.Model):
-    permission_text = RichTextField(verbose_name=_('Treść zgody przy formularzu zamówienia'), blank=False,
+    permission_text = models.TextField(verbose_name=_('Treść zgody przy formularzu zamówienia'), blank=False,
                                     default=buy_permission_default)
     delivery_info = RichTextField(verbose_name=_('Informacja o dostawie'), blank=False,
                                     default=delivery_info_default)
