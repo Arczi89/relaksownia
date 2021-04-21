@@ -777,7 +777,8 @@ body ::placeholder {
   display: none;
 }
 
-p.promo-form-header {
+.promo-form-header {
+  font-size: 1.5rem;
   width: 60%;
   margin-left: auto;
   margin-right: auto;
@@ -978,7 +979,8 @@ p.promo-form-header {
   #promo-site .responsive-photos .promo-part-item {
     width: 100%;
   }
-  p.promo-form-header {
+  .promo-form-header {
+    font-size: 2rem;
     width: 100%;
   }
   #promo_form form {
@@ -1132,7 +1134,8 @@ p.promo-form-header {
   #promo-site .responsive-photos .promo-part-item {
     width: 100%;
   }
-  p.promo-form-header {
+  .promo-form-header {
+    font-size: 1.5rem;
     width: 100%;
   }
   #promo_form form {
@@ -1264,7 +1267,8 @@ p.promo-form-header {
   #promo-site .responsive-photos .promo-part-item {
     width: 100%;
   }
-  p.promo-form-header {
+  .promo-form-header {
+    font-size: 1.5rem;
     width: 100%;
   }
   #promo_form form {
@@ -1336,7 +1340,8 @@ p.promo-form-header {
   #promo-site .responsive-photos .promo-part-item {
     width: 100%;
   }
-  p.promo-form-header {
+  .promo-form-header {
+    font-size: 1.5rem;
     width: 100%;
   }
   #promo_form form {

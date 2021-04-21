@@ -32,12 +32,16 @@
         {% endfor %}
     {% endif %}
     {% if promo_configuration %}
-        <p class="delivery-info promo-form-header">
-            {{ promo_configuration.delivery_info | safe }}
-        </p>
-        <p class="account-number promo-form-header">
-            Numer konta do opłacenia zamówienia: {{ promo_configuration.bank_account_number | safe }}
-        </p>
+        <div class="promo-form-header">
+            <div class="delivery-info">
+                {{ promo_configuration.delivery_info | safe }}
+            </div>
+            <div class="account-number">
+                <p>
+                    Numer konta do opłacenia zamówienia: {{ promo_configuration.bank_account_number | safe }}
+                </p>
+            </div>
+        </div>
         <div class="promo_form" id="promo_form">
             <form action="{% url 'promo' %}" method="post" novalidate>
                 {% csrf_token %}
