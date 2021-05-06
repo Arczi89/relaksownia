@@ -1,6 +1,6 @@
 /* common styles */
 
-$base-color: #ebe286;
+$base-color: #ebe286; // blank gold
 $almost-black: #2e2e2e;
 $borrowed-grey: #ccd0d3;
 
@@ -107,7 +107,7 @@ a.nav-link {
 }
 
 .footer-container li a {
-  color: white;
+  color: $base-color;
   font-size: 1rem;
 }
 
@@ -203,6 +203,7 @@ li.nav-item {
     margin-left: auto;
     margin-right: auto;
     display: table;
+    color: $base-color;
 }
 .container-title {
     text-transform: uppercase;
@@ -212,6 +213,11 @@ li.nav-item {
 
 .footer-container {
   margin: 2rem;
+  color: $base-color;
+}
+
+.col.phone-contact, .col.copyright {
+  color: white;
 }
 
 .social {
@@ -277,10 +283,9 @@ li.nav-item {
     font-size: 1.2rem;
 }
 
-.container-title, .about-me-justyna {
+.container-title {
   border-bottom: 1px solid white;
   margin-bottom: 1rem;
-  color: white;
   text-align: center;
 }
 
@@ -306,8 +311,11 @@ li.nav-item {
     margin-left: 4rem;
 }
 
-.about-me-justyna {
+.about-me-text h2 {
+  color: $base-color;
   font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .about-me-container {
@@ -346,6 +354,7 @@ li.nav-item {
 
 .cert-info {
     font-size: 2.5rem;
+    color: $base-color;
 }
 .cert-info-zoom {
     font-size: 1.5rem;
@@ -357,7 +366,10 @@ li.nav-item {
 }
 
 .about-me-img, .about-me-desc {
-  margin: 0.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .about-me-desc {
@@ -406,6 +418,7 @@ li.nav-item {
   .offer-title {
     font-size: 2rem;
     font-family: league;
+    color: $base-color;
   }
 }
 
@@ -561,6 +574,13 @@ li.nav-item {
   font-size: 2.5rem;
 }
 
+#contact .contact-left {
+    color: $base-color;
+    p {
+        color: $base-color;
+    }
+}
+
 #contact #form_permission {
     display:flex;
 
@@ -583,6 +603,7 @@ li.nav-item {
     text-align: center;
     font-size: 2rem;
     margin-top: 8rem;
+    color: $base-color;
 }
 
 
@@ -607,6 +628,7 @@ li.nav-item {
                 bottom: 0;
                 font-size: 2rem;
                 text-transform: uppercase;
+                color: $base-color;
             }
         }
 
