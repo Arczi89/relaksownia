@@ -91,7 +91,7 @@ a.nav-link {
 }
 
 .footer-container li a {
-  color: white;
+  color: #ebe286;
   font-size: 1rem;
 }
 
@@ -185,6 +185,7 @@ li.nav-item {
   margin-left: auto;
   margin-right: auto;
   display: table;
+  color: #ebe286;
 }
 
 .container-title {
@@ -194,6 +195,11 @@ li.nav-item {
 /* footer */
 .footer-container {
   margin: 2rem;
+  color: #ebe286;
+}
+
+.col.phone-contact, .col.copyright {
+  color: white;
 }
 
 .social .icon {
@@ -262,10 +268,9 @@ li.nav-item {
   font-size: 1.2rem;
 }
 
-.container-title, .about-me-justyna {
+.container-title {
   border-bottom: 1px solid white;
   margin-bottom: 1rem;
-  color: white;
   text-align: center;
 }
 
@@ -290,8 +295,11 @@ li.nav-item {
   margin-left: 4rem;
 }
 
-.about-me-justyna {
+.about-me-text h2 {
+  color: #ebe286;
   font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .about-me-container {
@@ -331,6 +339,7 @@ li.nav-item {
 
 .cert-info {
   font-size: 2.5rem;
+  color: #ebe286;
 }
 
 .cert-info-zoom {
@@ -343,7 +352,10 @@ li.nav-item {
 }
 
 .about-me-img, .about-me-desc {
-  margin: 0.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .about-me-desc {
@@ -393,6 +405,7 @@ li.nav-item {
 .offer-text .offer-title {
   font-size: 2rem;
   font-family: league;
+  color: #ebe286;
 }
 
 .offer-main {
@@ -538,6 +551,14 @@ li.nav-item {
   font-size: 2.5rem;
 }
 
+#contact .contact-left {
+  color: #ebe286;
+}
+
+#contact .contact-left p {
+  color: #ebe286;
+}
+
 #contact #form_permission {
   display: flex;
 }
@@ -559,6 +580,7 @@ li.nav-item {
   text-align: center;
   font-size: 2rem;
   margin-top: 8rem;
+  color: #ebe286;
 }
 
 #opinions-container #customer-opinions {
@@ -587,6 +609,7 @@ li.nav-item {
   bottom: 0;
   font-size: 2rem;
   text-transform: uppercase;
+  color: #ebe286;
 }
 
 #opinions-container #customer-opinions .slick-dots {
