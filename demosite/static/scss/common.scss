@@ -107,7 +107,7 @@ a.nav-link {
 }
 
 .footer-container li a {
-  color: $base-color;
+  color: white;
   font-size: 1rem;
 }
 
@@ -203,17 +203,24 @@ li.nav-item {
     margin-left: auto;
     margin-right: auto;
     display: table;
-    color: $base-color;
+    text-align: center;
+    h1, h2, h3, h4, h5 {
+        color: $base-color;
+    }
 }
 .container-title {
     text-transform: uppercase;
+    color: $base-color;
 }
 
 /* footer */
 
+#sitemap-title {
+    color: $base-color;
+}
+
 .footer-container {
   margin: 2rem;
-  color: $base-color;
 }
 
 .col.phone-contact, .col.copyright {
@@ -551,6 +558,13 @@ li.nav-item {
   margin-left: 2rem;
 }
 
+.help-info, .on-site, .contact-block {
+    h1, h2, h3, h4, h5 {
+        color: $base-color;
+        text-decoration: underline;
+    }
+}
+
 .contact-left-inner {
 
   flex-direction: row;
@@ -560,6 +574,7 @@ li.nav-item {
   .item-title {
     text-decoration: underline;
     font-size: 1.5rem;
+    color: $base-color;
   }
   .item-desc {
     font-size: 1.5rem;
@@ -572,13 +587,6 @@ li.nav-item {
 
 #contact .fa {
   font-size: 2.5rem;
-}
-
-#contact .contact-left {
-    color: $base-color;
-    p {
-        color: $base-color;
-    }
 }
 
 #contact #form_permission {
