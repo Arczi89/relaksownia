@@ -91,7 +91,7 @@ a.nav-link {
 }
 
 .footer-container li a {
-  color: #ebe286;
+  color: white;
   font-size: 1rem;
 }
 
@@ -185,17 +185,25 @@ li.nav-item {
   margin-left: auto;
   margin-right: auto;
   display: table;
+  text-align: center;
+}
+
+#main-text.main-text h1, #main-text.main-text h2, #main-text.main-text h3, #main-text.main-text h4, #main-text.main-text h5 {
   color: #ebe286;
 }
 
 .container-title {
   text-transform: uppercase;
+  color: #ebe286;
 }
 
 /* footer */
+#sitemap-title {
+  color: #ebe286;
+}
+
 .footer-container {
   margin: 2rem;
-  color: #ebe286;
 }
 
 .col.phone-contact, .col.copyright {
@@ -528,6 +536,11 @@ li.nav-item {
   margin-left: 2rem;
 }
 
+.help-info h1, .help-info h2, .help-info h3, .help-info h4, .help-info h5, .on-site h1, .on-site h2, .on-site h3, .on-site h4, .on-site h5, .contact-block h1, .contact-block h2, .contact-block h3, .contact-block h4, .contact-block h5 {
+  color: #ebe286;
+  text-decoration: underline;
+}
+
 .contact-left-inner {
   flex-direction: row;
   display: flex;
@@ -537,6 +550,7 @@ li.nav-item {
 .contact-left-inner .item-title {
   text-decoration: underline;
   font-size: 1.5rem;
+  color: #ebe286;
 }
 
 .contact-left-inner .item-desc {
@@ -549,14 +563,6 @@ li.nav-item {
 
 #contact .fa {
   font-size: 2.5rem;
-}
-
-#contact .contact-left {
-  color: #ebe286;
-}
-
-#contact .contact-left p {
-  color: #ebe286;
 }
 
 #contact #form_permission {
