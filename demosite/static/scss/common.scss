@@ -94,6 +94,14 @@ select:-webkit-autofill:focus {
   height: auto;
 }
 
+/* sticky scroll to top */
+#back-to-top {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    display: none;
+}
+
 /* colorization */
 
 a.nav-link, .content a {
