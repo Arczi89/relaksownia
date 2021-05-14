@@ -2,6 +2,8 @@ from django.db import models
 from djrichtextfield.models import RichTextField
 from django.utils.translation import ugettext_lazy as _
 
+from demosite.constants import default_opinion_tree_header
+
 
 class OpinionsConfiguration(models.Model):
     app_name = "Strona opinii"
@@ -9,6 +11,7 @@ class OpinionsConfiguration(models.Model):
     main_image_alt = models.CharField(max_length=200, verbose_name=_('Nazwa'))
     update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
     tree_img = models.ImageField(upload_to='images/', verbose_name=_('Obrazek wyswietlany jako glowny w drzewku'))
+    tree_header = models.TextField(verbose_name=_('Tekst nad drzewkiem'), default=default_opinion_tree_header)
 
     def __str__(self):
         return self.app_name + " konfiguracja"
