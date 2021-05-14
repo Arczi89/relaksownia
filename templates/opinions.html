@@ -19,7 +19,7 @@
         </div>
 
         {% if opinion_tree and opinion_tree|length >= 6 %}
-        <div class="main-message"> Dlaczego nasza oferta jest taka wyjątkowa?</div>
+        <div class="main-message"> {{ configuration.tree_header | safe }}</div>
         <div id="opinion-tree" class="opinion-tree left-right-center">
             <div class="lrc-inner op-container">
                 <div class="item left-right">
