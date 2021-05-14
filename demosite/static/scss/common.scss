@@ -839,6 +839,29 @@ body {
     }
 }
 
+a#order_now_button {
+    position: absolute;
+    left: 28%;
+    bottom: 7%;
+    display: block;
+    width: 15%;
+    height: 20%;
+    z-index: 200;
+}
+.responsive-photos, .promo-part-item {
+    position: relative
+}
+
+a#order_now_button_responsive {
+position: absolute;
+    left: 49%;
+    top: 35%;
+    display: block;
+    width: 35%;
+    height: 10%;
+    z-index: 200;
+}
+
 .promo-form-header {
     font-size: 1.5rem;
     width: 60%;
@@ -1077,6 +1100,10 @@ $tiny-phone-width: 300px;
 
 @media only screen and (min-width: $tiny-phone-width) and (max-width: $phone-width) {
 
+    a#order_now_button {
+        display: none;
+    }
+
     #container.columns {
         flex-wrap: wrap;
 
@@ -1251,6 +1278,11 @@ $tiny-phone-width: 300px;
 
 @media only screen and (min-width: $phone-width) and (max-width: $tablet-width) {
 
+    a#order_now_button {
+        display: none;
+    }
+
+
     .h3, h3 {
       font-size: 1.5rem;
     }
@@ -1400,6 +1432,10 @@ $tiny-phone-width: 300px;
 }
 
 @media only screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
+
+    a#order_now_button {
+        display: none;
+    }
 
     #container.columns {
         flex-wrap: wrap;

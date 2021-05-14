@@ -13,8 +13,14 @@
                 </div>
             {% endif %}
             <img class="w-100 promo-item-no-responsive" src="{{ promoItem.photo.url }}" alt="{{photo_alt}}"/>
+            {% if forloop.counter == 1 %}
+                <a id="order_now_button" href="#promo-form-header"></a>
+            {% endif %}
             <div class="main-content-2-columns responsive-photos">
                 <img class="w-100 column-item" src="{{ promoItem.photo_responsive1.url }}" alt="{{photo_responsive1_alt}}"/>
+                {% if forloop.counter == 1 %}
+                    <a id="order_now_button_responsive" href="#promo-form-header"></a>
+                {% endif %}
                 <img class="w-100 column-item" src="{{ promoItem.photo_responsive2.url }}" alt="{{photo_responsive2_alt}}"/>
                 {% if promoItem.photo_responsive3 %}
                     <img class="w-100 column-item" src="{{ promoItem.photo_responsive3.url }}" alt="{{photo_responsive3_alt}}"/>
@@ -32,7 +38,7 @@
         {% endfor %}
     {% endif %}
     {% if promo_configuration %}
-        <div class="promo-form-header">
+        <div id="promo-form-header" class="promo-form-header">
             <div class="delivery-info">
                 {{ promo_configuration.delivery_info | safe }}
             </div>
