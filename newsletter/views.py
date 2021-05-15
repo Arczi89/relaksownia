@@ -65,7 +65,6 @@ class NewsletterView(BSModalCreateView):
             )
             return True
         else:
-            logger.error("Wiadomość nie została wysłana do klienta, dane klienta: " + self.form_to_string(form))
             return False
 
     def send_email_to_admin(self, form):
@@ -81,8 +80,6 @@ class NewsletterView(BSModalCreateView):
                     'email': form['email'].data,
                 }
             )
-        else:
-            logger.error("Wiadomość nie została wysłana do admina, dane klienta: " + self.form_to_string(form))
 
     def form_to_string(self, form):
         result = "{"
