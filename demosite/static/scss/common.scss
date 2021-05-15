@@ -396,6 +396,14 @@ li.nav-item {
 
 /* offer */
 
+#offer-main-text, #offer-main-text p {
+    text-align: center;
+
+    h1, h2, h3, h4, h5 {
+        color: $base-color;
+    }
+}
+
 .offer-container {
     margin-top: 4rem;
 }

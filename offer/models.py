@@ -18,3 +18,11 @@ class OfferItem(models.Model):
         verbose_name = _('Oferta')
         verbose_name_plural = _('Lista ofert')
 
+
+class OfferConfiguration(models.Model):
+    app_name = "Offers"
+    main_text = RichTextField(verbose_name=_('Text wyswietlany na gorze strony pod menu'), default="")
+    update_date = models.DateTimeField('modification date', auto_now=True)
+
+    def __str__(self):
+        return self.app_name + " page configuration"
