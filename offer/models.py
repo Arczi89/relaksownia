@@ -26,3 +26,7 @@ class OfferConfiguration(models.Model):
 
     def __str__(self):
         return self.app_name + " konfiguracja"
+
+    class Meta:
+        verbose_name = _('Oferta - konfiguracja')
+        verbose_name_plural = _('Oferta - konfiguracja')
