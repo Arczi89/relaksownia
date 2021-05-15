@@ -20,9 +20,9 @@ class OfferItem(models.Model):
 
 
 class OfferConfiguration(models.Model):
-    app_name = "Offers"
+    app_name = "Oferta"
     main_text = RichTextField(verbose_name=_('Text wyswietlany na gorze strony pod menu'), default="")
     update_date = models.DateTimeField('modification date', auto_now=True)
 
     def __str__(self):
-        return self.app_name + " page configuration"
+        return self.app_name + " konfiguracja"
