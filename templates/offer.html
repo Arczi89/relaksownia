@@ -3,6 +3,12 @@
 
 {% block content %}
 
+{% if configuration %}
+<div id="offer-main-text">
+    {{ configuration.main_text | safe }}
+</div>
+{% endif %}
+
 {% if offers %}
 <div id="offer-container" class="offer-container">
     {% for offer in offers %}

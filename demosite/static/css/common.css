@@ -382,6 +382,14 @@ li.nav-item {
 }
 
 /* offer */
+#offer-main-text, #offer-main-text p {
+  text-align: center;
+}
+
+#offer-main-text h1, #offer-main-text h2, #offer-main-text h3, #offer-main-text h4, #offer-main-text h5, #offer-main-text p h1, #offer-main-text p h2, #offer-main-text p h3, #offer-main-text p h4, #offer-main-text p h5 {
+  color: #ebe286;
+}
+
 .offer-container {
   margin-top: 4rem;
 }
