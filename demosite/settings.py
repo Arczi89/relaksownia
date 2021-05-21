@@ -35,18 +35,18 @@ def get_secret(setting, secrets=secrets):
 # SECRET_KEY = 'q$i&rh-y8*&m6)47_$5g-f!lg3qe$c*u1e$ypa=rdb=_94bh-@'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
-# TODO: SET FALSE ON PRODUCTION
-DEBUG = True
+DEBUG = get_secret("DEBUG")
 
 # TODO: UNCOMMENT ON PRODUCTION
 SECURE_CONTENT_TYPE_NOSNIFF = True  # prevent the browser from guessing the content type and force it to always use the type provided in the Content-Type header
-SECURE_HSTS_SECONDS = 60  # 1 year # refuse to connect to your domain name via an insecure connection (for a given period of time) by setting the „Strict-Transport-Security” header
+SECURE_HSTS_SECONDS = 31536000  # 1 year # refuse to connect to your domain name via an insecure connection (for a given period of time) by setting the „Strict-Transport-Security” header
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # add the includeSubDomains directive to the Strict-Transport-Security header.
 SECURE_SSL_REDIRECT = True  # redirect from http to https
 SESSION_COOKIE_SECURE = True  # This instructs the browser to only send these cookies over HTTPS connections.
 CSRF_COOKIE_SECURE = True  # This instructs the browser to only send these cookies over HTTPS connections.
 SECURE_HSTS_PRELOAD = True  # Preload page for google
 SECURE_BROWSER_XSS_FILTER = True  # work by looking for JavaScript content in the GET or POST parameters of a page. If the JavaScript is replayed in the server’s response, the page is blocked
+
 
 ALLOWED_HOSTS = [
     'relaksownia.wizytoowka.pl',
@@ -149,19 +149,12 @@ WSGI_APPLICATION = 'demosite.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'OPTIONS': {
-    #         'read_default_file': os.path.join(BASE_DIR, 'mysql.cnf'),
-    #     },
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'demosite',
-        'USER': 'postgres',
-        'PASSWORD': get_secret("DB_PASSWORD"),
-        'HOST': 'localhost'
-    }
-    # }
+     'default': {
+         'ENGINE': get_secret("DATABASE_ENGINE"),
+         'OPTIONS': {
+             'read_default_file': os.path.join(BASE_DIR, get_secret("DATABASE_CONF")),
+         }
+     }
 }
 
 # Password validation
@@ -213,7 +206,7 @@ MESSAGE_TAGS = {
 }
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_BACKEND = 'post_office.EmailBackend'
-EMAIL_HOST = 'arturszwagrzak.atthost24.pl'
+EMAIL_HOST = get_secret("EMAIL_HOST")
 EMAIL_PORT = get_secret("EMAIL_PORT")
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = get_secret("EMAIL_HOST_USER")
