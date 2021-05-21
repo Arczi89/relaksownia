@@ -552,9 +552,16 @@ li.nav-item {
   margin-left: 2rem;
 }
 
+.help-info, .on-site, .contact-block {
+  font-size: 1.5rem;
+  font-family: Oswald;
+}
+
 .help-info h1, .help-info h2, .help-info h3, .help-info h4, .help-info h5, .on-site h1, .on-site h2, .on-site h3, .on-site h4, .on-site h5, .contact-block h1, .contact-block h2, .contact-block h3, .contact-block h4, .contact-block h5 {
   color: #ebe286;
   text-decoration: underline;
+  font-size: 1.5rem;
+  font-family: Oswald;
 }
 
 .contact-left-inner {

@@ -571,14 +571,17 @@ li.nav-item {
 
 .contact-block {
     width: 75%;
-  margin-left: 2rem;
+    margin-left: 2rem;
 }
 
 .help-info, .on-site, .contact-block {
+    font-size: 1.5rem;
+    font-family: Oswald;
     h1, h2, h3, h4, h5 {
         color: $base-color;
         text-decoration: underline;
         font-size: 1.5rem;
+        font-family: Oswald;
     }
 }
 
