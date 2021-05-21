@@ -82,7 +82,6 @@ INSTALLED_APPS = [
     'django_sass',
     'cookielaw',
     'django.core.mail',
-    'sslserver',  # <--  TODO: REMOVE ON PRODUCTION
     'post_office',
 ]
 
