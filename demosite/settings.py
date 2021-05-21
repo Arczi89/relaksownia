@@ -51,7 +51,6 @@ SECURE_BROWSER_XSS_FILTER = True  # work by looking for JavaScript content in th
 ALLOWED_HOSTS = [
     'relaksownia.wizytoowka.pl',
     'demosite.arturszwagrzak.atthost24.pl',
-    '127.0.0.1',
 ]
 
 FILE_UPLOAD_PERMISSIONS = 0o644
