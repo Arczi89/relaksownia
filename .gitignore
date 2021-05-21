@@ -280,3 +280,6 @@ cypress/videos/*
 /.run/
 
 .scannerwork/*
+mysql.cnf
+postgresql.cnf
+secrets.json
