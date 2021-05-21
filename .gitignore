@@ -281,3 +281,6 @@ cypress/videos/*
 
 .scannerwork/*
 /secrets.json
+/mysql.cnf
+/mysqlcnf
+/secretjson

@@ -9,15 +9,24 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
-from pathlib import Path
+import json
 import os
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-from django.contrib.messages import constants as messages
+from django.core.exceptions import ImproperlyConfigured
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+    secrets = json.load(secrets_file)
+
+
+def get_secret(setting, secrets=secrets):
+    try:
+        return secrets[setting]
+    except KeyError:
+        raise ImproperlyConfigured("Set the {} setting".format(setting))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -26,12 +35,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECRET_KEY = 'q$i&rh-y8*&m6)47_$5g-f!lg3qe$c*u1e$ypa=rdb=_94bh-@'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
-# TODO: SET FALSE ON PRODUCTION
-DEBUG = True
+DEBUG = get_secret("DEBUG")
 
 # TODO: UNCOMMENT ON PRODUCTION
 SECURE_CONTENT_TYPE_NOSNIFF = True  # prevent the browser from guessing the content type and force it to always use the type provided in the Content-Type header
-SECURE_HSTS_SECONDS = 60  # 1 year # refuse to connect to your domain name via an insecure connection (for a given period of time) by setting the „Strict-Transport-Security” header
+SECURE_HSTS_SECONDS = 31536000  # 1 year # refuse to connect to your domain name via an insecure connection (for a given period of time) by setting the „Strict-Transport-Security” header
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # add the includeSubDomains directive to the Strict-Transport-Security header.
 SECURE_SSL_REDIRECT = True  # redirect from http to https
 SESSION_COOKIE_SECURE = True  # This instructs the browser to only send these cookies over HTTPS connections.
@@ -39,10 +47,11 @@ CSRF_COOKIE_SECURE = True  # This instructs the browser to only send these cooki
 SECURE_HSTS_PRELOAD = True  # Preload page for google
 SECURE_BROWSER_XSS_FILTER = True  # work by looking for JavaScript content in the GET or POST parameters of a page. If the JavaScript is replayed in the server’s response, the page is blocked
 
+
 ALLOWED_HOSTS = [
     'relaksownia.wizytoowka.pl',
     'demosite.arturszwagrzak.atthost24.pl',
-    '127.0.0.1'
+    '127.0.0.1',
 ]
 
 FILE_UPLOAD_PERMISSIONS = 0o644
@@ -59,6 +68,8 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'offer.apps.OfferConfig',
     'newsletter.apps.NewsletterConfig',
+    'policy.apps.PolicyConfig',
+    'promo.apps.PromoConfig',
     'bootstrap_modal_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -67,9 +78,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djrichtextfield',
+    'phone_field',
     'django_sass',
     'cookielaw',
-    'sslserver',
+    'django.core.mail',
+    'sslserver',  # <--  TODO: REMOVE ON PRODUCTION
     'post_office',
 ]
 
@@ -87,12 +100,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'demosite.urls'
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '../media')
 
-
-DEFAULT_CHARSET='utf-8'
-
+DEFAULT_CHARSET = 'utf-8'
 
 DJRICHTEXTFIELD_CONFIG = {
     'js': ['//cdn.ckeditor.com/4.14.0/standard/ckeditor.js'],
@@ -116,7 +127,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates')
+            os.path.join(BASE_DIR, '../templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -134,26 +145,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'demosite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'OPTIONS': {
-    #         'read_default_file': os.path.join(BASE_DIR, 'mysql.cnf'),
-    #     },
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'demosite',
-            'USER': 'postgres',
-            'PASSWORD': 'postgres',
-            'HOST': 'localhost'
-        }
-    # }
+     # 'default': {
+     #     'ENGINE': get_secret("DATABASE_ENGINE"),
+     #     'OPTIONS': {
+     #         'read_default_file': os.path.join(BASE_DIR, get_secret("DATABASE_CONF")),
+     #     }
+     # },
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'demosite',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost'
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -173,7 +182,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -187,14 +195,13 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'demosite/static')
+    os.path.join(BASE_DIR, 'static')
 ]
 
 MESSAGE_TAGS = {
@@ -206,10 +213,10 @@ MESSAGE_TAGS = {
 }
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_BACKEND = 'post_office.EmailBackend'
-EMAIL_HOST = 'arturszwagrzak.atthost24.pl'
-EMAIL_PORT = 587
+EMAIL_HOST = get_secret("EMAIL_HOST")
+EMAIL_PORT = get_secret("EMAIL_PORT")
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'artur@wizytoowka.pl'
-EMAIL_HOST_PASSWORD = os.environment.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = get_secret("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = get_secret("EMAIL_HOST_PASSWORD")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
