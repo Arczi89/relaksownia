@@ -9,13 +9,24 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
-from pathlib import Path
+import json
 import os
 from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.core.exceptions import ImproperlyConfigured
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+    secrets = json.load(secrets_file)
+
+
+def get_secret(setting, secrets=secrets):
+    try:
+        return secrets[setting]
+    except KeyError:
+        raise ImproperlyConfigured("Set the {} setting".format(setting))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -24,7 +35,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECRET_KEY = 'q$i&rh-y8*&m6)47_$5g-f!lg3qe$c*u1e$ypa=rdb=_94bh-@'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
-DEBUG = False
+DEBUG = get_secret("DEBUG")
 
 # TODO: UNCOMMENT ON PRODUCTION
 SECURE_CONTENT_TYPE_NOSNIFF = True  # prevent the browser from guessing the content type and force it to always use the type provided in the Content-Type header
@@ -141,17 +152,10 @@ WSGI_APPLICATION = 'demosite.wsgi.application'
 
 DATABASES = {
      'default': {
-         'ENGINE': 'django.db.backends.mysql',
+         'ENGINE': get_secret("DATABASE_ENGINE"),
          'OPTIONS': {
-             'read_default_file': os.path.join(BASE_DIR, 'mysql.cnf'),
+             'read_default_file': os.path.join(BASE_DIR, get_secret("DATABASE_CONF")),
          }
-    #    'default': {
-    #        'ENGINE': 'django.db.backends.postgresql',
-    #        'NAME': 'demosite',
-    #        'USER': 'postgres',
-    #        'PASSWORD': 'postgres',
-    #        'HOST': 'localhost'
-    #    }
      }
 }
 
@@ -207,10 +211,10 @@ MESSAGE_TAGS = {
 }
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_BACKEND = 'post_office.EmailBackend'
-EMAIL_HOST = 'arturszwagrzak.atthost24.pl'
-EMAIL_PORT = 587
+EMAIL_HOST = get_secret("EMAIL_HOST")
+EMAIL_PORT = get_secret("EMAIL_PORT")
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'artur@wizytoowka.pl'
-EMAIL_HOST_PASSWORD = "/nrd2kl/"
+EMAIL_HOST_USER = get_secret("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = get_secret("EMAIL_HOST_PASSWORD")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
