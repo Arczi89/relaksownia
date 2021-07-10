@@ -948,6 +948,17 @@ $tiny-phone-width: 300px;
 
 @media only screen and (max-width: $tiny-phone-width) {
 
+    .footer-container .col {
+        font-size: 2rem;
+        * {
+            font-size: 2rem;
+        }
+    }
+
+    .navbar-nav .nav-item a {
+        font-size: 2rem;
+    }
+
     img, #content img.main-image {
         display: none;
     }
@@ -955,14 +966,15 @@ $tiny-phone-width: 300px;
     .navbar-brand::after {
         content: 'Relaksownia';
         color: white;
+        font-size: 3rem;
     }
 
     .h3, h3 {
-      font-size: 1rem;
+      font-size: 2rem;
     }
 
     p {
-      font-size: 1rem;
+      font-size: 2rem;
     }
 
     #container.columns {
@@ -985,10 +997,10 @@ $tiny-phone-width: 300px;
     .offer-item {
         flex-wrap: wrap;
         .offer-desc {
-            font-size: 1rem;
+            font-size: 2rem;
         }
         .offer-title {
-            font-size: 1rem;
+            font-size: 2rem;
         }
     }
 
@@ -1001,7 +1013,7 @@ $tiny-phone-width: 300px;
         }
     }
     .offer-text .offer-desc p {
-        font-size: 1rem;
+        font-size: 2rem;
     }
     .about-me {
         margin: 1rem;
@@ -1085,9 +1097,9 @@ $tiny-phone-width: 300px;
         }
         .cert-info-zoom, .cert-info {
             margin: 0;
-            font-size: 1rem;
+            font-size: 2rem;
             .fa-search {
-                font-size: 1rem;
+                font-size: 2rem;
                 margin: 2px;
             }
         }
@@ -1104,7 +1116,7 @@ $tiny-phone-width: 300px;
     }
 
     .promo-form-header {
-        font-size: 2rem;
+        font-size: 4rem;
         width: 100%;
     }
     #promo_form {
@@ -1115,6 +1127,17 @@ $tiny-phone-width: 300px;
 }
 
 @media only screen and (min-width: $tiny-phone-width) and (max-width: $phone-width) {
+
+    .footer-container .col {
+        font-size: 2rem;
+        * {
+            font-size: 2rem;
+        }
+    }
+
+    .navbar-nav .nav-item a {
+        font-size: 2rem;
+    }
 
     a#order_now_button {
         display: none;
@@ -1129,11 +1152,11 @@ $tiny-phone-width: 300px;
     }
 
     .h3, h3 {
-      font-size: 1.5rem;
+      font-size: 3rem;
     }
 
     p {
-      font-size: 1rem;
+      font-size: 2rem;
     }
 
     .carousel-inner {
@@ -1143,10 +1166,10 @@ $tiny-phone-width: 300px;
     .offer-item {
         flex-wrap: wrap;
         .offer-desc {
-            font-size: 1.5rem;
+            font-size: 3rem;
         }
         .offer-title {
-            font-size: 2rem;
+            font-size: 4rem;
         }
     }
 
@@ -1260,9 +1283,9 @@ $tiny-phone-width: 300px;
         }
         .cert-info-zoom, .cert-info {
             margin: 0;
-            font-size: 1.2rem;
+            font-size: 2.4rem;
             .fa-search {
-                font-size: 1.2rem;
+                font-size: 2.4rem;
                 margin: 2px;
             }
         }
@@ -1281,7 +1304,7 @@ $tiny-phone-width: 300px;
     }
 
     .promo-form-header {
-        font-size: 1.5rem;
+        font-size: 3rem;
         width: 100%;
     }
 
@@ -1294,17 +1317,27 @@ $tiny-phone-width: 300px;
 
 @media only screen and (min-width: $phone-width) and (max-width: $tablet-width) {
 
+    .footer-container .col {
+        font-size: 2rem;
+        * {
+            font-size: 2rem;
+        }
+    }
+
+    .navbar-nav .nav-item a {
+        font-size: 2rem;
+    }
+
     a#order_now_button {
         display: none;
     }
 
-
     .h3, h3 {
-      font-size: 1.5rem;
+      font-size: 3rem;
     }
 
     p {
-      font-size: 1rem;
+      font-size: 2rem;
     }
 
     #container.columns {
@@ -1326,10 +1359,10 @@ $tiny-phone-width: 300px;
     .offer-item {
         flex-wrap: wrap;
         .offer-desc {
-            font-size: 1.5rem;
+            font-size: 3rem;
         }
         .offer-title {
-            font-size: 2rem;
+            font-size: 4rem;
         }
     }
 
@@ -1342,7 +1375,7 @@ $tiny-phone-width: 300px;
         }
     }
     .about-me {
-        margin: 1rem;
+        margin: 2rem;
     }
     .about-me-container {
         flex-wrap: wrap;
@@ -1391,7 +1424,7 @@ $tiny-phone-width: 300px;
             margin: 0;
             .contact-block {
                 width: 100%;
-                margin-left: 1rem;;
+                margin-left: 1rem;
                 margin-right: 0;
                 padding-top: 1rem;
                 padding-bottom: 1rem;
@@ -1414,9 +1447,9 @@ $tiny-phone-width: 300px;
         }
         .cert-info-zoom, .cert-info {
             margin: 0;
-            font-size: 1.2rem;
+            font-size: 2.4rem;
             .fa-search {
-                font-size: 1.2rem;
+                font-size: 2.4rem;
                 margin: 2px;
             }
         }
@@ -1436,7 +1469,7 @@ $tiny-phone-width: 300px;
     }
 
     .promo-form-header {
-        font-size: 1.5rem;
+        font-size: 3rem;
         width: 100%;
     }
 

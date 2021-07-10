@@ -135,8 +135,7 @@ img.contact-icon {
 }
 
 img.contact-icon.car-icon {
-  width: 3rem;
-  height: 3.5rem;
+  zoom: 120%;
 }
 
 /* menu styles */
@@ -923,18 +922,28 @@ a#order_now_button_responsive {
 /* ================================================================================================================ */
 /* responsive design */
 @media only screen and (max-width: 300px) {
+  .footer-container .col {
+    font-size: 2rem;
+  }
+  .footer-container .col * {
+    font-size: 2rem;
+  }
+  .navbar-nav .nav-item a {
+    font-size: 2rem;
+  }
   img, #content img.main-image {
     display: none;
   }
   .navbar-brand::after {
     content: 'Relaksownia';
     color: white;
+    font-size: 3rem;
   }
   .h3, h3 {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   p {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   #container.columns {
     flex-wrap: wrap;
@@ -954,10 +963,10 @@ a#order_now_button_responsive {
     flex-wrap: wrap;
   }
   .offer-item .offer-desc {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .offer-item .offer-title {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .offer-item:nth-of-type(odd) .right-side {
     order: 2;
@@ -966,7 +975,7 @@ a#order_now_button_responsive {
     order: 1;
   }
   .offer-text .offer-desc p {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .about-me {
     margin: 1rem;
@@ -1045,10 +1054,10 @@ a#order_now_button_responsive {
   }
   .certs .cert-info-zoom, .certs .cert-info {
     margin: 0;
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .certs .cert-info-zoom .fa-search, .certs .cert-info .fa-search {
-    font-size: 1rem;
+    font-size: 2rem;
     margin: 2px;
   }
   #promo-site {
@@ -1061,7 +1070,7 @@ a#order_now_button_responsive {
     width: 100%;
   }
   .promo-form-header {
-    font-size: 2rem;
+    font-size: 4rem;
     width: 100%;
   }
   #promo_form form {
@@ -1070,6 +1079,15 @@ a#order_now_button_responsive {
 }
 
 @media only screen and (min-width: 300px) and (max-width: 600px) {
+  .footer-container .col {
+    font-size: 2rem;
+  }
+  .footer-container .col * {
+    font-size: 2rem;
+  }
+  .navbar-nav .nav-item a {
+    font-size: 2rem;
+  }
   a#order_now_button {
     display: none;
   }
@@ -1080,10 +1098,10 @@ a#order_now_button_responsive {
     flex: auto;
   }
   .h3, h3 {
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
   p {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .carousel-inner {
     height: auto;
@@ -1092,10 +1110,10 @@ a#order_now_button_responsive {
     flex-wrap: wrap;
   }
   .offer-item .offer-desc {
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
   .offer-item .offer-title {
-    font-size: 2rem;
+    font-size: 4rem;
   }
   .right-side, .left-side {
     width: 100%;
@@ -1200,10 +1218,10 @@ a#order_now_button_responsive {
   }
   .certs .cert-info-zoom, .certs .cert-info {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 2.4rem;
   }
   .certs .cert-info-zoom .fa-search, .certs .cert-info .fa-search {
-    font-size: 1.2rem;
+    font-size: 2.4rem;
     margin: 2px;
   }
   #promo-site {
@@ -1219,7 +1237,7 @@ a#order_now_button_responsive {
     width: 100%;
   }
   .promo-form-header {
-    font-size: 1.5rem;
+    font-size: 3rem;
     width: 100%;
   }
   #promo_form form {
@@ -1228,14 +1246,23 @@ a#order_now_button_responsive {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
+  .footer-container .col {
+    font-size: 2rem;
+  }
+  .footer-container .col * {
+    font-size: 2rem;
+  }
+  .navbar-nav .nav-item a {
+    font-size: 2rem;
+  }
   a#order_now_button {
     display: none;
   }
   .h3, h3 {
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
   p {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   #container.columns {
     flex-wrap: wrap;
@@ -1254,10 +1281,10 @@ a#order_now_button_responsive {
     flex-wrap: wrap;
   }
   .offer-item .offer-desc {
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
   .offer-item .offer-title {
-    font-size: 2rem;
+    font-size: 4rem;
   }
   .offer-item:nth-of-type(odd) .right-side {
     order: 2;
@@ -1266,7 +1293,7 @@ a#order_now_button_responsive {
     order: 1;
   }
   .about-me {
-    margin: 1rem;
+    margin: 2rem;
   }
   .about-me-container {
     flex-wrap: wrap;
@@ -1336,10 +1363,10 @@ a#order_now_button_responsive {
   }
   .certs .cert-info-zoom, .certs .cert-info {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 2.4rem;
   }
   .certs .cert-info-zoom .fa-search, .certs .cert-info .fa-search {
-    font-size: 1.2rem;
+    font-size: 2.4rem;
     margin: 2px;
   }
   #promo-site {
@@ -1355,7 +1382,7 @@ a#order_now_button_responsive {
     width: 100%;
   }
   .promo-form-header {
-    font-size: 1.5rem;
+    font-size: 3rem;
     width: 100%;
   }
   #promo_form form {
