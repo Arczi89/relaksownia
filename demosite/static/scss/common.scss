@@ -1482,6 +1482,25 @@ $tiny-phone-width: 300px;
 
 @media only screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
 
+    .footer-container .col {
+        font-size: 2rem;
+        * {
+            font-size: 2rem;
+        }
+    }
+
+    .navbar-nav .nav-item a {
+        font-size: 2rem;
+    }
+
+    .h3, h3 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
     a#order_now_button {
         display: none;
     }
@@ -1555,7 +1574,7 @@ $tiny-phone-width: 300px;
     }
 
     .promo-form-header {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         width: 100%;
     }
 

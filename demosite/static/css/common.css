@@ -1391,6 +1391,21 @@ a#order_now_button_responsive {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1100px) {
+  .footer-container .col {
+    font-size: 2rem;
+  }
+  .footer-container .col * {
+    font-size: 2rem;
+  }
+  .navbar-nav .nav-item a {
+    font-size: 2rem;
+  }
+  .h3, h3 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
   a#order_now_button {
     display: none;
   }
@@ -1458,7 +1473,7 @@ a#order_now_button_responsive {
     width: 100%;
   }
   .promo-form-header {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     width: 100%;
   }
   #promo_form form {
