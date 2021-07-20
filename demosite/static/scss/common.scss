@@ -948,17 +948,6 @@ $tiny-phone-width: 300px;
 
 @media only screen and (max-width: $tiny-phone-width) {
 
-    .footer-container .col {
-        font-size: 2rem;
-        * {
-            font-size: 2rem;
-        }
-    }
-
-    .navbar-nav .nav-item a {
-        font-size: 2rem;
-    }
-
     img, #content img.main-image {
         display: none;
     }
@@ -966,15 +955,14 @@ $tiny-phone-width: 300px;
     .navbar-brand::after {
         content: 'Relaksownia';
         color: white;
-        font-size: 3rem;
     }
 
     .h3, h3 {
-      font-size: 2rem;
+      font-size: 1rem;
     }
 
     p {
-      font-size: 2rem;
+      font-size: 1rem;
     }
 
     #container.columns {
@@ -997,10 +985,10 @@ $tiny-phone-width: 300px;
     .offer-item {
         flex-wrap: wrap;
         .offer-desc {
-            font-size: 2rem;
+            font-size: 1rem;
         }
         .offer-title {
-            font-size: 2rem;
+            font-size: 1rem;
         }
     }
 
@@ -1013,7 +1001,7 @@ $tiny-phone-width: 300px;
         }
     }
     .offer-text .offer-desc p {
-        font-size: 2rem;
+        font-size: 1rem;
     }
     .about-me {
         margin: 1rem;
@@ -1097,9 +1085,9 @@ $tiny-phone-width: 300px;
         }
         .cert-info-zoom, .cert-info {
             margin: 0;
-            font-size: 2rem;
+            font-size: 1rem;
             .fa-search {
-                font-size: 2rem;
+                font-size: 1rem;
                 margin: 2px;
             }
         }
@@ -1116,7 +1104,7 @@ $tiny-phone-width: 300px;
     }
 
     .promo-form-header {
-        font-size: 4rem;
+        font-size: 2rem;
         width: 100%;
     }
     #promo_form {
@@ -1127,17 +1115,6 @@ $tiny-phone-width: 300px;
 }
 
 @media only screen and (min-width: $tiny-phone-width) and (max-width: $phone-width) {
-
-    .footer-container .col {
-        font-size: 2rem;
-        * {
-            font-size: 2rem;
-        }
-    }
-
-    .navbar-nav .nav-item a {
-        font-size: 2rem;
-    }
 
     a#order_now_button {
         display: none;
@@ -1152,11 +1129,11 @@ $tiny-phone-width: 300px;
     }
 
     .h3, h3 {
-      font-size: 3rem;
+      font-size: 1.5rem;
     }
 
     p {
-      font-size: 2rem;
+      font-size: 1rem;
     }
 
     .carousel-inner {
@@ -1166,10 +1143,10 @@ $tiny-phone-width: 300px;
     .offer-item {
         flex-wrap: wrap;
         .offer-desc {
-            font-size: 3rem;
+            font-size: 1.5rem;
         }
         .offer-title {
-            font-size: 4rem;
+            font-size: 2rem;
         }
     }
 
@@ -1283,9 +1260,9 @@ $tiny-phone-width: 300px;
         }
         .cert-info-zoom, .cert-info {
             margin: 0;
-            font-size: 2.4rem;
+            font-size: 1.2rem;
             .fa-search {
-                font-size: 2.4rem;
+                font-size: 1.2rem;
                 margin: 2px;
             }
         }
@@ -1304,7 +1281,7 @@ $tiny-phone-width: 300px;
     }
 
     .promo-form-header {
-        font-size: 3rem;
+        font-size: 1.5rem;
         width: 100%;
     }
 
@@ -1317,27 +1294,17 @@ $tiny-phone-width: 300px;
 
 @media only screen and (min-width: $phone-width) and (max-width: $tablet-width) {
 
-    .footer-container .col {
-        font-size: 2rem;
-        * {
-            font-size: 2rem;
-        }
-    }
-
-    .navbar-nav .nav-item a {
-        font-size: 2rem;
-    }
-
     a#order_now_button {
         display: none;
     }
 
+
     .h3, h3 {
-      font-size: 3rem;
+      font-size: 1.5rem;
     }
 
     p {
-      font-size: 2rem;
+      font-size: 1rem;
     }
 
     #container.columns {
@@ -1359,10 +1326,10 @@ $tiny-phone-width: 300px;
     .offer-item {
         flex-wrap: wrap;
         .offer-desc {
-            font-size: 3rem;
+            font-size: 1.5rem;
         }
         .offer-title {
-            font-size: 4rem;
+            font-size: 2rem;
         }
     }
 
@@ -1375,7 +1342,7 @@ $tiny-phone-width: 300px;
         }
     }
     .about-me {
-        margin: 2rem;
+        margin: 1rem;
     }
     .about-me-container {
         flex-wrap: wrap;
@@ -1447,9 +1414,9 @@ $tiny-phone-width: 300px;
         }
         .cert-info-zoom, .cert-info {
             margin: 0;
-            font-size: 2.4rem;
+            font-size: 1.2rem;
             .fa-search {
-                font-size: 2.4rem;
+                font-size: 1.2rem;
                 margin: 2px;
             }
         }
@@ -1469,7 +1436,7 @@ $tiny-phone-width: 300px;
     }
 
     .promo-form-header {
-        font-size: 3rem;
+        font-size: 1.5rem;
         width: 100%;
     }
 
@@ -1481,25 +1448,6 @@ $tiny-phone-width: 300px;
 }
 
 @media only screen and (min-width: $tablet-width) and (max-width: $desktop-width) {
-
-    .footer-container .col {
-        font-size: 2rem;
-        * {
-            font-size: 2rem;
-        }
-    }
-
-    .navbar-nav .nav-item a {
-        font-size: 2rem;
-    }
-
-    .h3, h3 {
-      font-size: 2rem;
-    }
-
-    p {
-      font-size: 1.5rem;
-    }
 
     a#order_now_button {
         display: none;
@@ -1574,7 +1522,7 @@ $tiny-phone-width: 300px;
     }
 
     .promo-form-header {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         width: 100%;
     }
 
