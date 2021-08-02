@@ -127,7 +127,11 @@ h1, h2, h3, h4, h5 {
   font-size: 2rem;
 }
 
-p, li {
+p {
+  font-size: 1.2rem;
+}
+
+li {
   font-size: 1.5rem;
 }
 
@@ -160,12 +164,12 @@ img.contact-icon.car-icon {
 
 .nav-item a {
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 i.fa-bars {
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .navbar-brand {
@@ -229,6 +233,7 @@ li.nav-item {
 
 #sitemap-title {
     color: $base-color;
+    font-size: 1.3rem;
 }
 
 .footer-container {
@@ -436,10 +441,6 @@ li.nav-item {
 
   .offer-desc {
     margin-top: 2rem;
-    font-size: 1.5rem;
-    * {
-        font-size: 1.5rem;
-    }
   }
 
   .offer-title {
@@ -499,7 +500,7 @@ li.nav-item {
   p {
     font-family: league;
     text-transform: uppercase;
-    font-size: 1.7rem;
+    font-size: 2rem;
     color: $base-color;
   }
 
@@ -584,7 +585,7 @@ li.nav-item {
     h1, h2, h3, h4, h5 {
         color: $base-color;
         text-decoration: underline;
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-family: Oswald;
     }
 }
@@ -597,16 +598,12 @@ li.nav-item {
 
   .item-title {
     text-decoration: underline;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: $base-color;
   }
   .item-desc {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
-}
-
-.main-title p {
-  font-size: 1.5rem;
 }
 
 #contact .fa {
@@ -650,9 +647,6 @@ li.nav-item {
             height: auto;
             outline: none;
             .opinion-text {
-                * {
-                    font-size: 1.5rem;
-                }
                 bottom: 1rem;
             }
             .opinion-customer-name {
@@ -984,9 +978,6 @@ $tiny-phone-width: 300px;
 
     .offer-item {
         flex-wrap: wrap;
-        .offer-desc {
-            font-size: 1rem;
-        }
         .offer-title {
             font-size: 1rem;
         }
@@ -999,9 +990,6 @@ $tiny-phone-width: 300px;
         .left-side {
             order: 1;
         }
-    }
-    .offer-text .offer-desc p {
-        font-size: 1rem;
     }
     .about-me {
         margin: 1rem;
@@ -1142,9 +1130,6 @@ $tiny-phone-width: 300px;
 
     .offer-item {
         flex-wrap: wrap;
-        .offer-desc {
-            font-size: 1.5rem;
-        }
         .offer-title {
             font-size: 2rem;
         }
@@ -1325,9 +1310,6 @@ $tiny-phone-width: 300px;
 
     .offer-item {
         flex-wrap: wrap;
-        .offer-desc {
-            font-size: 1.5rem;
-        }
         .offer-title {
             font-size: 2rem;
         }

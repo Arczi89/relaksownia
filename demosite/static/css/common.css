@@ -111,7 +111,11 @@ h1, h2, h3, h4, h5 {
   font-size: 2rem;
 }
 
-p, li {
+p {
+  font-size: 1.2rem;
+}
+
+li {
   font-size: 1.5rem;
 }
 
@@ -141,12 +145,12 @@ img.contact-icon.car-icon {
 /* menu styles */
 .nav-item a {
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 i.fa-bars {
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .navbar-brand {
@@ -212,6 +216,7 @@ li.nav-item {
 /* footer */
 #sitemap-title {
   color: #ebe286;
+  font-size: 1.3rem;
 }
 
 .footer-container {
@@ -423,11 +428,6 @@ li.nav-item {
 
 .offer-text .offer-desc {
   margin-top: 2rem;
-  font-size: 1.5rem;
-}
-
-.offer-text .offer-desc * {
-  font-size: 1.5rem;
 }
 
 .offer-text .offer-title {
@@ -484,7 +484,7 @@ li.nav-item {
 .accordion a p {
   font-family: league;
   text-transform: uppercase;
-  font-size: 1.7rem;
+  font-size: 2rem;
   color: #ebe286;
 }
 
@@ -564,7 +564,7 @@ li.nav-item {
 .help-info h1, .help-info h2, .help-info h3, .help-info h4, .help-info h5, .on-site h1, .on-site h2, .on-site h3, .on-site h4, .on-site h5, .contact-block h1, .contact-block h2, .contact-block h3, .contact-block h4, .contact-block h5 {
   color: #ebe286;
   text-decoration: underline;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: Oswald;
 }
 
@@ -576,16 +576,12 @@ li.nav-item {
 
 .contact-left-inner .item-title {
   text-decoration: underline;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #ebe286;
 }
 
 .contact-left-inner .item-desc {
-  font-size: 1.5rem;
-}
-
-.main-title p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 #contact .fa {
@@ -631,10 +627,6 @@ li.nav-item {
 
 #opinions-container #customer-opinions .single .opinion-text {
   bottom: 1rem;
-}
-
-#opinions-container #customer-opinions .single .opinion-text * {
-  font-size: 1.5rem;
 }
 
 #opinions-container #customer-opinions .single .opinion-customer-name {
@@ -952,9 +944,6 @@ a#order_now_button_responsive {
   .offer-item {
     flex-wrap: wrap;
   }
-  .offer-item .offer-desc {
-    font-size: 1rem;
-  }
   .offer-item .offer-title {
     font-size: 1rem;
   }
@@ -963,9 +952,6 @@ a#order_now_button_responsive {
   }
   .offer-item:nth-of-type(odd) .left-side {
     order: 1;
-  }
-  .offer-text .offer-desc p {
-    font-size: 1rem;
   }
   .about-me {
     margin: 1rem;
@@ -1089,9 +1075,6 @@ a#order_now_button_responsive {
   }
   .offer-item {
     flex-wrap: wrap;
-  }
-  .offer-item .offer-desc {
-    font-size: 1.5rem;
   }
   .offer-item .offer-title {
     font-size: 2rem;
@@ -1251,9 +1234,6 @@ a#order_now_button_responsive {
   }
   .offer-item {
     flex-wrap: wrap;
-  }
-  .offer-item .offer-desc {
-    font-size: 1.5rem;
   }
   .offer-item .offer-title {
     font-size: 2rem;
