@@ -921,12 +921,6 @@ a#order_now_button_responsive {
     content: 'Relaksownia';
     color: white;
   }
-  .h3, h3 {
-    font-size: 1rem;
-  }
-  p {
-    font-size: 1rem;
-  }
   #container.columns {
     flex-wrap: wrap;
   }
@@ -1030,7 +1024,6 @@ a#order_now_button_responsive {
   }
   .certs .cert-info-zoom, .certs .cert-info {
     margin: 0;
-    font-size: 1rem;
   }
   .certs .cert-info-zoom .fa-search, .certs .cert-info .fa-search {
     font-size: 1rem;
@@ -1063,12 +1056,6 @@ a#order_now_button_responsive {
   }
   #container.columns .column-item {
     flex: auto;
-  }
-  .h3, h3 {
-    font-size: 1.5rem;
-  }
-  p {
-    font-size: 1rem;
   }
   .carousel-inner {
     height: auto;
@@ -1182,7 +1169,6 @@ a#order_now_button_responsive {
   }
   .certs .cert-info-zoom, .certs .cert-info {
     margin: 0;
-    font-size: 1.2rem;
   }
   .certs .cert-info-zoom .fa-search, .certs .cert-info .fa-search {
     font-size: 1.2rem;
@@ -1212,12 +1198,6 @@ a#order_now_button_responsive {
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   a#order_now_button {
     display: none;
-  }
-  .h3, h3 {
-    font-size: 1.5rem;
-  }
-  p {
-    font-size: 1rem;
   }
   #container.columns {
     flex-wrap: wrap;
@@ -1315,7 +1295,6 @@ a#order_now_button_responsive {
   }
   .certs .cert-info-zoom, .certs .cert-info {
     margin: 0;
-    font-size: 1.2rem;
   }
   .certs .cert-info-zoom .fa-search, .certs .cert-info .fa-search {
     font-size: 1.2rem;
