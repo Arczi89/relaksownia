@@ -13,7 +13,7 @@
             {% for faq in faqs %}
             <div class="card">
                 <div class="card-header">
-                    <h2>
+                    <h2 class="faq-question-header">
                         <a class="inline-block" aria-controls="collapseOne" href="#" aria-expanded="{% if forloop.counter == 1 %} true {% else %} false {% endif %}"
                            data-target="#faq-{{forloop.counter}}" data-toggle="collapse">
                             {{faq.question_text|safe}}
