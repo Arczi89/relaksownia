@@ -1476,27 +1476,6 @@ a#order_now_button_responsive {
 }
 
 @media only screen and (min-width: 1100px) {
-  #main-text.main-text, .main-message {
-    font-size: 1.5rem;
-  }
-  h2, h3 {
-    font-size: 1.5rem;
-  }
-  .about-me-text, .cert-info, .about-me-text h2 {
-    font-size: 1.5rem;
-  }
-  #opinions-container #customer-opinions .single .opinion-customer-name {
-    font-size: 1.5rem;
-  }
-  .help-info h1, .help-info h2, .help-info h3, .help-info h4, .help-info h5, .on-site h1, .on-site h2, .on-site h3, .on-site h4, .on-site h5, .contact-block h1, .contact-block h2, .contact-block h3, .contact-block h4, .contact-block h5 {
-    font-size: 1.5rem;
-  }
-  .accordion a p {
-    font-size: 1.5rem;
-  }
-  .contact-left-inner .item-title {
-    font-size: 1.5rem;
-  }
   .about-me-container .about-me-img {
     width: 50%;
     flex: auto;
