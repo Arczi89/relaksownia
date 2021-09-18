@@ -562,6 +562,10 @@ li.nav-item {
     resize: none;
   }
 
+  .contact-block.contact-car {
+    margin-left: 1.5rem;
+  }
+
   .contact-block table {
     width: 100%;
     margin: 1rem;
@@ -1060,6 +1064,7 @@ $tiny-phone-width: 300px;
         }
         .contact-left-inner, .contact-right-inner {
             margin: 0;
+
             .contact-block {
                 width: 100%;
                 margin-left: 0;
@@ -1067,6 +1072,10 @@ $tiny-phone-width: 300px;
                 padding-top: 1rem;
                 padding-bottom: 1rem;
                 border-bottom: 1px solid white;
+
+                &.contact-car {
+                    margin-left: 0.5rem;
+                }
             }
         }
 
@@ -1268,6 +1277,9 @@ $tiny-phone-width: 300px;
                 padding-top: 1rem;
                 padding-bottom: 1rem;
                 border-bottom: 1px solid white;
+                &.contact-car {
+                    margin-left: 0.5rem;
+                }
             }
         }
 
@@ -1459,6 +1471,9 @@ $tiny-phone-width: 300px;
                 padding-top: 1rem;
                 padding-bottom: 1rem;
                 border-bottom: 1px solid white;
+                &.contact-car {
+                    margin-left: 0.5rem;
+                }
             }
         }
 

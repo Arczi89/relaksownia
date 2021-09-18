@@ -538,6 +538,10 @@ li.nav-item {
   resize: none;
 }
 
+.contact-left-inner .contact-block.contact-car, .contact-right-inner .contact-block.contact-car {
+  margin-left: 1.5rem;
+}
+
 .contact-left-inner .contact-block table, .contact-right-inner .contact-block table {
   width: 100%;
   margin: 1rem;
@@ -1020,6 +1024,9 @@ a#order_now_button_responsive {
     padding-bottom: 1rem;
     border-bottom: 1px solid white;
   }
+  #contact .contact-left-inner .contact-block.contact-car, #contact .contact-right-inner .contact-block.contact-car {
+    margin-left: 0.5rem;
+  }
   #contact #form_permission input {
     width: auto;
   }
@@ -1191,6 +1198,9 @@ a#order_now_button_responsive {
     padding-bottom: 1rem;
     border-bottom: 1px solid white;
   }
+  #contact .contact-left-inner .contact-block.contact-car, #contact .contact-right-inner .contact-block.contact-car {
+    margin-left: 0.5rem;
+  }
   #contact #form_permission input {
     width: auto;
   }
@@ -1354,6 +1364,9 @@ a#order_now_button_responsive {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid white;
+  }
+  #contact .contact-left-inner .contact-block.contact-car, #contact .contact-right-inner .contact-block.contact-car {
+    margin-left: 0.5rem;
   }
   #contact #form_permission input {
     width: auto;
