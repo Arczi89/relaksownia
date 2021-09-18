@@ -957,9 +957,15 @@ a#order_now_button_responsive {
     font-size: 1rem;
   }
   .offer-item:nth-of-type(odd) .right-side {
-    order: 2;
+    order: 1;
   }
   .offer-item:nth-of-type(odd) .left-side {
+    order: 2;
+  }
+  .offer-item:nth-of-type(even) .right-side {
+    order: 2;
+  }
+  .offer-item:nth-of-type(even) .left-side {
     order: 1;
   }
   .about-me {
@@ -1107,9 +1113,15 @@ a#order_now_button_responsive {
     border: none;
   }
   .offer-item:nth-of-type(odd) .right-side {
-    order: 2;
+    order: 1;
   }
   .offer-item:nth-of-type(odd) .left-side {
+    order: 2;
+  }
+  .offer-item:nth-of-type(even) .right-side {
+    order: 2;
+  }
+  .offer-item:nth-of-type(even) .left-side {
     order: 1;
   }
   .about-me {
@@ -1276,9 +1288,15 @@ a#order_now_button_responsive {
     font-size: 1.5rem;
   }
   .offer-item:nth-of-type(odd) .right-side {
-    order: 2;
+    order: 1;
   }
   .offer-item:nth-of-type(odd) .left-side {
+    order: 2;
+  }
+  .offer-item:nth-of-type(even) .right-side {
+    order: 2;
+  }
+  .offer-item:nth-of-type(even) .left-side {
     order: 1;
   }
   .about-me {
