@@ -12,7 +12,25 @@
         <div class="customer-opinions" id="customer-opinions">
         {% for opinion in opinions %}
             <div class="single customer-opinions-item">
-                <span class="opinion-customer-name">{{ opinion.customer_name | safe }}</span>
+                <div class="opinion-customer">
+                    <div class="opinion-customer-photo">
+                        {% if opinion.image %}
+                            <img height="100" width="100" src="{{ opinion.image.url }}" alt="{{ opinion.image_alt }}" class="item-img lr-inner"/>
+                        {% else %}
+                            <img height="100" width="100" src="{% static 'img/CUSTOMER.jpg' %}" alt="{{ opinion.image_alt }}" class="item-img lr-inner"/>
+                        {% endif %}
+                    </div>
+                    <div class="opinion-customer-inner">
+                        <span class="opinion-customer-name">{{ opinion.customer_name | safe }}</span>
+                        <span class="opinion-customer-stars">
+                            {% with ''|center:opinion.stars as range %}
+                            {% for _ in range %}
+                                <img height="20" width="20" src="{% static 'img/STAR.PNG' %}" alt="*" class="item-img lr-inner"/>
+                            {% endfor %}
+                        {% endwith %}
+                        </span>
+                    </div>
+                </div>
                 <span class="opinion-text">{{ opinion.opinion_text | safe }}</span>
             </div>
         {% endfor %}

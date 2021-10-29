@@ -26,6 +26,9 @@ class OpinionItem(models.Model):
     customer_name = models.CharField(max_length=400, verbose_name=_('Imie osoby polecajacej'))
     update_date = models.DateTimeField(verbose_name=_('Data modyfikacji'), auto_now=True)
     element_order = models.IntegerField(default=0, verbose_name=_('Kolejnosc'))
+    stars = models.IntegerField(default=5, verbose_name=_('Ocena, ilosc gwiazdek'))
+    image = models.ImageField(upload_to='images/', verbose_name=_('Zdjecie miniaturka osoby'), default='')
+    image_alt = models.CharField(max_length=200, verbose_name=_('Tekst gdy zdjecie sie nie zaladuje'), default='')
 
     def __str__(self):
         return '%s ( %i )' % (self.customer_name, self.element_order)

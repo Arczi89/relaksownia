@@ -13,6 +13,8 @@ class OpinionTests(TestCase):
         opinion_item = OpinionItem(
             opinion_text="opinion_text",
             customer_name="customer_name",
+            stars=4,
+            image=tempfile.NamedTemporaryFile(suffix=".jpg").name,
             element_order=order
         )
         opinion_item.save()

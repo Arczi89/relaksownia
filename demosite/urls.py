@@ -1,4 +1,4 @@
-from django.conf.urls import url
+import debug_toolbar
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -22,5 +22,6 @@ urlpatterns = [
                   path('403/', permission_denied, kwargs={'exception': Exception('Permission Denied')}),
                   path('404/', page_not_found, kwargs={'exception': Exception('Page not Found')}),
                   path('500/', server_error),
+                  path('__debug__/', include(debug_toolbar.urls)),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

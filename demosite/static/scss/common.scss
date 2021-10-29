@@ -646,6 +646,21 @@ li.nav-item {
         height: auto;
         width: 80%;
         margin: auto;
+
+        .opinion-customer {
+            display: flex;
+            flex-direction: row;
+            margin: 1rem;
+
+            .opinion-customer-inner {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .slick-slide img {
+            display: inherit;
+        }
         .single {
             margin-left: 1rem;
             margin-right: 1rem;
@@ -657,9 +672,16 @@ li.nav-item {
             .opinion-customer-name {
                 position: relative;
                 bottom: 0;
-                font-size: 2rem;
+                font-size: 1.5rem;
                 text-transform: uppercase;
                 color: $base-color;
+                margin: 1rem;
+            }
+            .opinion-customer-stars {
+                margin-left: 1rem;
+                margin-right: 1rem;
+                display: flex;
+                flex-direction: row;
             }
         }
 
