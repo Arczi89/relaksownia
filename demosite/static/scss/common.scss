@@ -987,10 +987,20 @@ $tiny-phone-width: 300px;
 
     #opinions-container #customer-opinions .single .opinion-customer-name {
         font-size: 1.5rem;
+        text-align: center;
     }
 
     #opinions-container #customer-opinions .opinion-customer {
         flex-wrap: wrap;
+    }
+
+    #opinions-container .opinion-customer {
+        align-content: center;
+        justify-content: center;
+        .opinion-customer-stars {
+            align-content: center;
+            justify-content: center;
+        }
     }
 
     .contact-left-inner .item-title {
@@ -1176,10 +1186,20 @@ $tiny-phone-width: 300px;
 
     #opinions-container #customer-opinions .single .opinion-customer-name {
         font-size: 1.5rem;
+        text-align: center;
     }
 
     #opinions-container #customer-opinions .opinion-customer {
         flex-wrap: wrap;
+    }
+
+    #opinions-container .opinion-customer {
+        align-content: center;
+        justify-content: center;
+        .opinion-customer-stars {
+            align-content: center;
+            justify-content: center;
+        }
     }
 
     .help-info h1, .help-info h2, .help-info h3, .help-info h4, .help-info h5, .on-site h1, .on-site h2, .on-site h3, .on-site h4, .on-site h5, .contact-block h1, .contact-block h2, .contact-block h3, .contact-block h4, .contact-block h5 {
@@ -1387,10 +1407,20 @@ $tiny-phone-width: 300px;
 
     #opinions-container #customer-opinions .single .opinion-customer-name {
         font-size: 1.5rem;
+        text-align: center;
     }
 
     #opinions-container #customer-opinions .opinion-customer {
         flex-wrap: wrap;
+    }
+
+    #opinions-container .opinion-customer {
+        align-content: center;
+        justify-content: center;
+        .opinion-customer-stars {
+            align-content: center;
+            justify-content: center;
+        }
     }
 
     .help-info h1, .help-info h2, .help-info h3, .help-info h4, .help-info h5, .on-site h1, .on-site h2, .on-site h3, .on-site h4, .on-site h5, .contact-block h1, .contact-block h2, .contact-block h3, .contact-block h4, .contact-block h5 {
@@ -1574,6 +1604,16 @@ $tiny-phone-width: 300px;
 
     #opinions-container #customer-opinions .single .opinion-customer-name {
         font-size: 1.5rem;
+        text-align: center;
+    }
+
+    #opinions-container .opinion-customer {
+        align-content: center;
+        justify-content: center;
+        .opinion-customer-stars {
+            align-content: center;
+            justify-content: center;
+        }
     }
 
     .help-info h1, .help-info h2, .help-info h3, .help-info h4, .help-info h5, .on-site h1, .on-site h2, .on-site h3, .on-site h4, .on-site h5, .contact-block h1, .contact-block h2, .contact-block h3, .contact-block h4, .contact-block h5 {
